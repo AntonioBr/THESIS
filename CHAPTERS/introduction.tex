@@ -1,0 +1,28 @@
+\chapter{Introduction}
+
+\paragraph{} Nowadays every aspect of life is characterized by the need to make choices. Each choice is conditioned by a variable number of parameters. In many applicative domains (recommendation systems, medical analysis tools, real time game engines, speech recognizers...), this number could be very high.  The possibility to manage in an efficient way such a number of parameters is guaranteed by a significant number of mathematical techniques increasingly performing and refined.  
+
+\paragraph{} Every decisional problem can be translated into a \textit{mathematical model} that represents the essence of the problem itself. A crucial step in formulating a model is the construction of the \textit{objective function}. This requires developing a quantitative measure of performance relative to each of the decision maker’s ultimate objectives that were identified while the problem was being defined.~\cite{HillLieb01}
+
+\paragraph{} However we know that it is not always possible to define the objective function in advance. It is possible that objective function is unknown or, at least, partially unknown at the time the problem is dealt with. 
+In these cases the optimization process of the objective function takes the name of \textit{black-box optimization}.
+
+\paragraph{} Mathematically, we are considering the problem of finding a global maximizer (or minimizer) of an unknown objective function \textit{f} :
+
+\begin{equation}
+x^* = \arg \max_{x \in \mathcal{X}} f(x)
+\end{equation}
+
+where $\mathcal{X}$ is some design space of interest. In global optimization, $\mathcal{X}$ is often a compact subset of $\mathbb{R}^d$ ~\cite{DBLP:journals/pieee/ShahriariSWAF16}.
+
+\paragraph{} Bayesian optimization is one of the best known black-box optimization techniques. It is a powerful tool for the joint optimization of design choices that is gaining great popularity in recent years. It is a sequential model-based approach to solving problem ~\cite{Adams2008GaussianPP}. We prescribe a prior beliefs over the possible objective functions and then sequentially refine this model as data are observed via Bayesian posterior updating. The Bayesian Posterior represents our updated beliefs -given data- on the likely objective function we are optimizing ~\cite{DBLP:journals/pieee/ShahriariSWAF16}.
+
+\paragraph {} In this thesis I propose an innovative approach to black-box optimization based on the Reinforcement Learning (RL) technique.
+
+Reinforcement Learning (RL) is the problem faced by a learner that must behaviour through trial-and-error interactions with a dynamic environment. It can be considered the problem of mapping situations to actions in order to maximize a numerical reward signal~\cite{RLDef1}.
+
+\paragraph{} In the first part of this work I will compare the state of the art performances of the Bayesian model with those obtained through the implementation of a Reinforcement Learning (RL) agent in the same order. 
+
+In the last part of the thesis I will explain how RL and Bayesian optimization can be joined to emulate human brain learning process.
+
+

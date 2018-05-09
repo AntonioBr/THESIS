@@ -1,0 +1,81 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{SSW{\etalchar{+}}16}
+
+\bibitem[AS08]{Adams2008GaussianPP}
+Ryan~P. Adams and Oliver Stegle.
+\newblock Gaussian process product models for nonparametric nonstationarity.
+\newblock In {\em ICML}, 2008.
+
+\bibitem[HL01]{HillLieb01}
+Frederick~S. Hillier and Gerald~J. Lieberman.
+\newblock {\em Introduction to Operations Research}.
+\newblock McGraw-Hill, New York, NY, USA, seventh edition, 2001.
+
+\bibitem[KLM96]{RLDef1}
+Leslie~Pack Kaelbling, Michael~L. Littman, and Andrew~W. Moore.
+\newblock Reinforcement learning: A survey.
+\newblock {\em CoRR}, cs.AI/9605103, 1996.
+
+\bibitem[Kon09]{konstantopoulos2009markov}
+Takis Konstantopoulos.
+\newblock Markov chains and random walks.
+\newblock 2009.
+
+\bibitem[LM16]{LiMalik}
+Ke~Li and Jitendra Malik.
+\newblock Learning to optimize.
+\newblock {\em CoRR}, abs/1606.01885, 2016.
+
+\bibitem[Mai09]{Maia2009}
+Tiago~V. Maia.
+\newblock Reinforcement learning, conditioning, and the brain: Successes and
+  challenges.
+\newblock {\em Cognitive, Affective {\&} Behavioral Neuroscience}, pages
+  343--364, Dec 2009.
+
+\bibitem[Mit97]{Mitchell}
+Tom~M. Mitchell.
+\newblock {\em Machine Learning}.
+\newblock 1997.
+
+\bibitem[NFK06]{Nevmyvaka}
+Yuriy Nevmyvaka, Yi~Feng, and Michael Kearns.
+\newblock Reinforcement learning for optimized trade execution.
+\newblock In {\em Proceedings of the 23rd International Conference on Machine
+  Learning}, ICML '06, pages 673--680, New York, NY, USA, 2006. ACM.
+
+\bibitem[Pow07]{Powell}
+Warren~B. Powell.
+\newblock {\em Approximate Dynamic Programming: Solving the Curses of
+  Dimensionality (Wiley Series in Probability and Statistics)}.
+\newblock Wiley-Interscience, 2007.
+
+\bibitem[Put94]{Put94}
+M.~Puterman.
+\newblock {\em Markov Decision Processes: Discrete Stochastic Dynamic
+  Programming}.
+\newblock John Wiley and Sons, 1994.
+
+\bibitem[SB10]{Sigaud:2010:MDP:1841781}
+Olivier Sigaud and Olivier Buffet.
+\newblock {\em Markov Decision Processes in Artificial Intelligence}.
+\newblock Wiley-IEEE Press, 2010.
+
+\bibitem[SB18]{SuttonBarto}
+R.~S. Sutton and A.~G. Barto.
+\newblock {\em Reinforcement Learning : An Introduction}.
+\newblock 2018.
+
+\bibitem[SSW{\etalchar{+}}16]{DBLP:journals/pieee/ShahriariSWAF16}
+Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan~P. Adams, and Nando de~Freitas.
+\newblock Taking the human out of the loop: {A} review of bayesian
+  optimization.
+\newblock {\em Proceedings of the {IEEE}}, 104(1):148--175, 2016.
+
+\bibitem[WvO12]{wiering2012reinforcement}
+M.~Wiering and M.~van Otterlo.
+\newblock {\em Reinforcement Learning: State-of-the-Art}.
+\newblock Adaptation, Learning, and Optimization. Springer Berlin Heidelberg,
+  2012.
+
+\end{thebibliography}
