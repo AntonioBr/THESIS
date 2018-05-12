@@ -14,19 +14,19 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 	\item $r()$ provides the reward function defined on state transitions.	
 \end{itemize}
 
-\subparagraph{States} The set of environmental states $S$ is defined as the finite set $\{s_1, . . . , s_N\}$ where the size of the state space is $N$, i.e. $|S| = N$~\cite{wiering2012reinforcement}. Each state ${s \in S}$ is a vector of attributes (\textit{state variables}) that describes the current configuration of the system~\cite{Nevmyvaka}. More specifically, a state variable is the minimally dimensioned function of history that is necessary and sufficient to compute the "state of knowledge"~\cite{Powell}.
+\paragraph{States} The set of environmental states $S$ is defined as the finite set $\{s_1, . . . , s_N\}$ where the size of the state space is $N$, i.e. $|S| = N$~\cite{wiering2012reinforcement}. Each state ${s \in S}$ is a vector of attributes (\textit{state variables}) that describes the current configuration of the system~\cite{Nevmyvaka}. More specifically, a state variable is the minimally dimensioned function of history that is necessary and sufficient to compute the "state of knowledge"~\cite{Powell}.
 
-\subparagraph{Actions} The set of actions $A$ is defined as the finite set $\{a_1, . . . ,a_K\}$ where the size of the action space is $K$, i.e. $|A| = K$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$, where $A(s) \subseteq A$. In more structured representations the fact that some actions are not applicable in some states, is modelled by a precondition function : $S$ × $A→{true,false}$, stating whether action $a \in A$ is applicable in state $s \in S$~\cite{wiering2012reinforcement}.
+\paragraph{Actions} The set of actions $A$ is defined as the finite set $\{a_1, . . . ,a_K\}$ where the size of the action space is $K$, i.e. $|A| = K$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$, where $A(s) \subseteq A$. In more structured representations the fact that some actions are not applicable in some states, is modelled by a precondition function : $S$ × $A→{true,false}$, stating whether action $a \in A$ is applicable in state $s \in S$~\cite{wiering2012reinforcement}.
 
-\subparagraph{Time Steps} The set of time steps $T$ is defined as the finite set $\{t_1, . . . ,t_M\}$ where the size of the action space is $M$, i.e. $|T| = M$.
+\paragraph{Time Steps} The set of time steps $T$ is defined as the finite set $\{t_1, . . . ,t_M\}$ where the size of the action space is $M$, i.e. $|T| = M$. Speaking about time we have to distinguish between \textit{epochs} and \textit{episodes}. An episode is made of a fixed number $Z$ of epochs. An epoch is the smallest time unit in an MDP.
 
-\subparagraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in matrix form where we write $P_a$ the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ are said to be stochastic matrices. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov decision processes. If we write $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. We can resume this concept through the following equation :
+\paragraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in matrix form where we write $P_a$ the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ are said to be stochastic matrices. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov decision processes. If we write $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. We can resume this concept through the following equation :
 
 \begin{equation}
 	\forall h_t, a_t, s\textsubscript{t+1} \quad P(s\textsubscript{t+1} | h_t, a_t) = P(s\textsubscript{t+1} | s_t, a_t) = p(s\textsubscript{t+1} | s_t, a_t)
 \end{equation}
 
-\subparagraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the rewards we set up truly indicate what we want accomplished. If we reward the achievement of subgoals , then the agent might find a way to achieve them without achieving the real goal. Reward signal is our way of communicating the agent \textit{what} we want to achieve, not \textit{how} it achieved~\cite{SuttonBarto}.
+\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the rewards we set up truly indicate what we want accomplished. If we reward the achievement of subgoals , then the agent might find a way to achieve them without achieving the real goal. Reward signal is our way of communicating the agent \textit{what} we want to achieve, not \textit{how} it achieved~\cite{SuttonBarto}.
 
 \begin{figure}[h!]
 	\centering
@@ -35,12 +35,9 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 	\label{fig:MDP}
 \end{figure}
 
-Markov decision processes allow us to model the state evolution dynamics of a
-stochastic system when this system is controlled by an agent choosing and applying
-the actions $a_t$ at every time step $t$. The procedure of choosing such actions is called
-an action policy, or strategy, and is written as $\pi$~\cite{Sigaud:2010:MDP:1841781} .
+Markov decision processes allow us to model the state evolution dynamics of a stochastic system when this system is controlled by an agent choosing and applying the actions $a_t$ at every time step $t$. The procedure of choosing such actions is called an action policy, or strategy, and is written as $\pi$~\cite{Sigaud:2010:MDP:1841781} .
 
-\subparagraph{Policy} Formally, given an MDP $\bigl\langle S, A, p(), r() \bigr\rangle$, a policy is a computable function that outputs for each state $s \in S$ an action $a \in A(s)$~\cite{wiering2012reinforcement} A policy can decide deterministically upon the action to apply or can define a probability deistribution over the possible applicable actions. Then, a policy can be based on the whole history $h_t$ (history-dependent policy) or can only consider the current state $s_t$. Thus, we can obtain four main families policies, as shown in table \ref{table:T1}.
+\paragraph{Policy} Formally, given an MDP $\bigl\langle S, A, p(), r() \bigr\rangle$, a policy is a computable function that outputs for each state $s \in S$ an action $a \in A(s)$~\cite{wiering2012reinforcement} A policy can decide deterministically upon the action to apply or can define a probability deistribution over the possible applicable actions. Then, a policy can be based on the whole history $h_t$ (history-dependent policy) or can only consider the current state $s_t$. Thus, we can obtain four main families policies, as shown in table \ref{table:T1}.
 
 \begin{table}[h!]
 \centering
@@ -89,12 +86,12 @@ E[\sum_{t = 0}^\infty \gamma^t r_t]
 \caption{Optimality : \textbf{a)} finite horizon, \textbf{b)} discounted, infinite horizon, \textbf{c)} average reward}
 \end{figure}
 
-\subparagraph{Discount Factor}The \textit{finite horizon} model simply takes a finite horizon of length $h$ and states that the agent should optimize its expected reward over this horizon. In the \textit{infinite-horizon model}, the long-run reward is taken into account, but the rewards that are received in the future are discounted according to how far away in time they will be received.
+\paragraph{Discount Factor}The \textit{finite horizon} model simply takes a finite horizon of length $h$ and states that the agent should optimize its expected reward over this horizon. In the \textit{infinite-horizon model}, the long-run reward is taken into account, but the rewards that are received in the future are discounted according to how far away in time they will be received.
 A \textit{discount factor} $\gamma$, with $0 \leq \gamma \leq 1$ is used for this. Note that in this discounted case, rewards obtained later are discounted more than rewards obtained earlier. Additionally, the discount factor, ensures that, even with infinite horizon, the sum of the rewards obtained is finite. In episodic tasks, i.e. in tasks where the horizon is finite, the discount factor is not
 needed or can equivalently be set to $1$. If $\gamma = 0$ the agent is said to be myopic, which means that it is only concerned about immediate rewards.
 The last optimality model is \textit{average-reward} model, maximizing the long-run \textit{average-reward}. Sometimes this is called the \textit{gain optimal} policy and in the limit, it is equal to the infinite-horizon discounted model~\cite{wiering2012reinforcement}
 
-\subparagraph{Bellman Equation} The concept of \textit{value function} is the link between optimality criteria and policies. Most learning algorithms for MDPs compute optimal policies by learning value functions. The value of a state $s$ under policy $\pi$, denoted $V^\pi (s)$ is the expected return when starting in $s$ and following $\pi$ thereafter. Using the infinite-horizon, discounted model :
+\paragraph{Bellman Equation} The concept of \textit{value function} is the link between optimality criteria and policies. Most learning algorithms for MDPs compute optimal policies by learning value functions. The value of a state $s$ under policy $\pi$, denoted $V^\pi (s)$ is the expected return when starting in $s$ and following $\pi$ thereafter. Using the infinite-horizon, discounted model :
 
 \begin{equation}
 	V^\pi (s) = E_\pi \{\sum_{k = 0}^{\infty} \gamma^k t\textsubscript{t+k} | s_t = s\}
@@ -116,7 +113,7 @@ For any policy $\pi$ and any state $s$ the expression \ref{eq:2.2} can recursive
 \end{split}	
 \end{equation}
 
-It denotes that the expected value of state is defined in terms of immediate reward and values of possible next state weighted by thei transition probabilities, and additionally a discount factor. Note that multiple policies can have the same value function, but for a given policy $\pi$, $V^\pi$ is unique. The goal for any MDP is to find a best policy, i.e. the policy that receives the most reward. This means maximizing the value function of equation \ref{eq:2.2} for all states $s \in S$. An optimal policy, denoted $\pi^*$, is such that $V\textsuperscript{$\pi$*} (s) \geq V^\pi (s)$ for all $s \in S$ and all policies $\pi$ :
+It denotes that the expected value of state is defined in terms of immediate reward and values of possible next state weighted by the transition probabilities, and additionally a discount factor. Note that multiple policies can have the same value function, but for a given policy $\pi$, $V^\pi$ is unique. The goal for any MDP is to find a best policy, i.e. the policy that receives the most reward. This means maximizing the value function of equation \ref{eq:2.2} for all states $s \in S$. An optimal policy, denoted $\pi^*$, is such that $V\textsuperscript{$\pi$*} (s) \geq V^\pi (s)$ for all $s \in S$ and all policies $\pi$ :
 
 \begin{equation} 
 \label{eq:2.5}
@@ -125,9 +122,11 @@ V^*(s) = \max_{a \in A} \sum_{s'}T(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s
 
 This expression is called the \textit{Bellman optimality equation}. It states that the value of a state under an optimal policy must be equal to the expected return for the best action in a state~\cite{wiering2012reinforcement}.
 
+\paragraph{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify differences between two key concepts we will commonly find : \textit{value iteration} and \textit{policy iteration}. Policy iteration includes \textit{policy evaluation} and \textit{policy improvement}, and the two are repeated iteratively until policy converges. Value iteration includes finding \textit{optimal value function} and extracting a policy; there is no repetition of those actions because onece the value function is optimal, than the policy should also be optimal, i.e. the policy should converges. Finding optimal value function can also be seen as a combination of policy improvements and truncated policy evaluation. The key step to policy improvements and policy extraction are identical except the former involves a stability check. %% Migliorare
+
 \section{Solving MDP}
 
-Now that we have defined MDPs, policies, optimality criteria and value functions, it is time to consider the question of how to compute optimal policies. As already said, solving an MDP means computing an optimal policy $\pi^*$. Several dimensions exists along which algorithms have been developed for this purpose. The most important distinction is that between \textit{model-based} and \textit{model-free} algorithms ~\cite{wiering2012reinforcement}.
+Now that we have defined MDPs, policies, optimality criteria and value functions, it is time to consider the question of how to solve an MDP computing an optimal policy $\pi^*$. Several dimensions exists along which algorithms have been developed for this purpose. The most important distinction is that between \textit{model-based} and \textit{model-free} algorithms ~\cite{wiering2012reinforcement}.
 \begin{table}[h!]
 	\resizebox{\textwidth}{!}{ 
 		\begin{tabular}{|c|c|c|}
@@ -136,191 +135,234 @@ Now that we have defined MDPs, policies, optimality criteria and value functions
 			\hline \textbf{General name} 
 			&DP  &RL  \\ 
 			\hline \textbf{Basic assumption} 
-			&\thead{A model of the MDP is known \\ beforehand, and can be used to compute \\ value functions and policies using \\ the Bellman equation.}  &\thead{They rely on interaction with the environment. \\ Because a model\\ of the MDP is not known, \\ the agent has to explore the MDP to obtain \\ information.}  \\
+			&\thead{A model of the MDP is known \\ beforehand, and can be used to compute \\ value functions and policies using \\ the Bellman equation.}  &\thead{Rely on interaction with the environment. \\ Because a model of the MDP\\ is not known, the agent has\\ to explore the MDP to obtain information.}  \\
+			\hline \textbf{Planning} 
+			&Yes  &Yes  \\ 
+			\hline \textbf{Learning} 
+			&No  &Yes  \\ 
 			\hline 
 		\end{tabular} 
 	}
 	\caption{Main differences between model-based and model-free algorithms.}
 \end{table}
 
-\subparagraph{Dynamic Programming} The term DP refers to a class of algorithms that is able to compute optimal policies in the presence of a perfect model of the environment~\cite{wiering2012reinforcement}. The method of dynamic programming systematically records solutions for all sub-problems of increasing lengths. According to Bellman optimality principle, all optimal sub-policies of an optimal policy are optimal sub-policies. Using this programming paradigm the optimal policy is defined through the step-by-step definition of optimal sub-policies.
-The assumption that a model is available will be hard to ensure for many applications, however DP algorithms are very relevant because they define fundamental computational mechanism which are also used when no model is available.
+\subsection{Dynamic Programming} The term Dynamic Programming (DP) refers to a class of algorithms that is able to compute optimal policies in the presence of a perfect model of the environment described as a Markov Decision Process. These algorithms are known as \textit{planning algorithms}. In planning, the idea is that we are given some description of a starting state or states; a goal state or states; and some set of possible actions that the agent can take; we want to find the sequence of actions that get us from the start state to the goal state. We search through a tree that is the sequences of actions that we can take, and we try to find a nice short plan. In so doing two of the possible planning algorithms are {\tt BFS algorithm} and {\tt DFS algorithm}. \\
+
+The method of Dynamic Programming systematically records solutions for all sub-problems of increasing lengths. Using this programming paradigm the optimal policy is defined through the step-by-step definition of optimal sub-policies. According to Bellman optimality principle, all optimal sub-policies of an optimal policy are optimal sub-policies. DP algorithms are obtained by turning Bellman equations into update rules for improving approximations of the desired value functions.
 
 
+Studying DP we can distinguish two different main methods. \textit{Policy evaluation} refers to the typically iterative computation of the value functions for a given policy. \textit{Policy improvement} refers to the computation of an improved policy given the value function for that policy. Either of these can be used to reliably compute optimal policies and value functions for finite MDPs given complete knowledge of the MDP.
 
 
-\section{The nature of Reinforcement Learning}
+Classical DP methods operate in sweeps through the state set, performing an \textit{expected update} operation on each state. Each such operation updates the value of one state based on the values of all possible successor states and their probabilities of occurring. Expected updates are closely related to Bellman equations: they are little more than these equations turned into assignment statements. When the updates no longer result in any changes in value, convergence has occurred to values that satisfy the corresponding Bellman equation~\cite{SuttonBarto}. \\
 
-\paragraph{} Reinforcement Learning (RL) is the problem faced by a learner that must behavior through trial-and-error interactions with a dynamic environment. It can be considered a problem of mapping situations to actions in order to maximize a numerical reward signal~\cite{RLDef1}.
 
-\paragraph{} In RL the learner must select an action to take in each time step: every choice done by the agent changes the environment in an unknown fashion and receives a reward which value is based on the consequences. The objective of the learner is to choose a sequence of actions based on observations of the current environment that maximizes cumulative reward or minimizes cumulative cost over all time steps~\cite{LiMalik}.
+The assumption that a model is available will be hard to ensure for many applications, however DP algorithms are very relevant because they define fundamental computational mechanism which are also used when no model is available. 
 
-\paragraph{} RL is different both from \textit{supervised learning} and from \textit{unsupervised learning}. It is not a sample of learning from a training set of labelled examples provided by a knowledgeable external supervisor (\textit{supervised learning}) and it is not a sample of searching and finding structure hidden in a collection of unlabelled data (\textit{unsupervised learning}). More specifically we can say that RL can be distinguished from other forms of learning based on the following characteristics :
+\subsection{Reinforcement Learning}
+Dynamic Programming' s methods compute optimal policies for an MDP assuming that a perfect model is available. Reinforcement Learning (or \textit{approximate dynamic programming}, or \textit{neuro-dynamic programming}) is primarily concerned with how to obtain an optimal policy when such a model is not available. RL adds to MDPs a focus on approximation and incomplete information, and the need for sampling and exploration. In contrast with DP's algorithms, model-free methods do not rely on the availability of priori known transition and reward models. The lack of the model generates a need to \textit{sample} the MDP to gather statistical knowledge about this unknown model. Many model-free RL techniques exist that probe the environment by doing actions, thereby estimating the same kind of state value and state-action value functions as model-based techniques~\cite{wiering2012reinforcement}.\\
 
-\begin{itemize}
-  \item Reinforcement Learning deals with temporal sequences. In contrast with non-supervised learning problems where the order in which the examples are presented is not relevant, the choice of an action at a given time step will have consequences on the examples that are received at a subsequent time steps~\cite{Sigaud:2010:MDP:1841781}.
-  \item In contrast with supervised learning, the environment does not tell the agent what would be the best possible action. Instead, the agent may just receive a scalar reward representing the value of its action and it must \textit{explore} the possible alternative actions to determine whether its action was the best or not~\cite{Sigaud:2010:MDP:1841781}.
-\end{itemize}
+Roughly speaking Reinforcement Learning (RL) is the problem faced by a learner that must behaviour through trial-and-error interactions with a dynamic environment. It can be considered a problem of mapping situations to actions in order to maximize a numerical reward signal~\cite{RLDef1}. \\
 
-According to what just said, one of the challenges that arise in RL, and not in other kind of learning, is the trade-off between \textit{exploration} and \textit{exploitation}. To obtain an higher reward, an RL agent must prefer actions that it has tried in the past and found to be effective in producing reward. In order to discover such actions, it has to try actions that it has not selected before. The agent \textit{exploits} what it has already experienced in order to obtain reward, but it has also to \textit{explore} in order to eventually make better action selections in the future~\cite{SuttonBarto}. In other words \textit{exploitation} consists of doing again actions which have proven fruitful in the past, whereas \textit{exploration} consists of trying new actions, looking for a larger cumulated reward, but eventually leading to a worse performance. Dealing with the exploration/exploitation trade-off consists of determining how the agent should explore to get as fast as possible a policy that is optimal or close enough to the optimum~\cite{Sigaud:2010:MDP:1841781}.
+In RL the learner must select an action to take in each time step: every choice done by the agent changes the environment in an unknown fashion and receives a reward which value is based on the consequences. The objective of the learner is to choose a sequence of actions based on observations of the current environment that maximizes cumulative reward or minimizes cumulative cost over all time steps~\cite{LiMalik}. The general class of algorithms that interact with the environment and update their estimates after each experience is called \textit{online} RL.
 
-\section{Elements of reinforcement learning}
+\begin{algorithm}
+	\ForEach{episode}{
+		$s \in S$ is initialized as the starting state\;
+		$t := 0$\;
+		\Repeat{$s'$ is a goal state}{
+			choose an action $a \in A(s)$\;
+			perform action $a$ \;
+			observe the new state $s'$ and received reward $r$ update $\tilde{T}, \tilde{R}, \tilde{Q}$ and/or $\tilde{V}$ using the experience $\bigl \langle$$s, a, r, s'$$\bigr\rangle$\;
+			$s:=s'$\;
+		}
+		
+	}
+	\caption{A general algorithm for online RL~\cite{wiering2012reinforcement}}
+\end{algorithm}
 
-\paragraph{} In RL the learner and decision maker is called the \textit{agent}. The thing it interacts with, comprising everything outside the agent, is called the \textit{environment}. It is described by some set of possible \textit{states} (\textit{S}). The agent can perform any of a set of possible \textit{actions} (\textit{A}). Each state ${s \in S}$ is a vector of attributes (\textit{state variables}) that describes the current configuration of the system~\cite{Nevmyvaka}. More specifically, a state variable is the minimally dimensioned function of history that is necessary and sufficient to compute the "state of knowledge"~\cite{Powell}.
+Studying RL, one of the first problems we have to face with is the distinction between \textit{direct} and \textit{indirect} Reinforcement Learning. We will explain the difference between these two approaches in figure \ref{fig:RL_possibilities_schema}.
 
-Except for the \textit{agent} and for the \textit{environment} one can identify four other main sub-elements: 
 
-\begin{itemize}
-  \item the \textit{policy} : defines the learning agent's way of behaving at a given time (a mapping from states to actions).
-  \item the \textit{reward signal} : defines the goal in a RL problem. On each time step, the environment sends to the RL agent a single number called the \textit{reward}. The agent's sole objective is to maximize the total reward it receives over the run. 
-  \item the \textit{value function} : specifies the total amount of reward an agent can expect to accumulate over future, starting from a specific state.
-  \item the \textit{model} : allows inferences to be made about how the environment will behave.
-\end{itemize}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width= 12cm, height = 10cm]{RLSchema.png}
-  \caption{RL working schema.}
-  \label{fig:RLWS}
+\begin{figure} [h!]
+		\centering
+		\includegraphics[width= \textwidth, height = 4cm]{RL_possibilities_schema.png}
+		\caption{RL's approaches classification.}
+		\label{fig:RL_possibilities_schema}
 \end{figure}
 
-As shown in figure \ref{fig:RLWS} each time an agent performs an action $a\textsubscript{t}$ in a state $s\textsubscript{t}$, it receives a real-valued reward $t\textsubscript{t}$ that indicates the immediate value of this state-action transition. This produces a sequence of states $s\textsubscript{i}$, actions $a\textsubscript{i}$, and immediate rewards $r\textsubscript{i}$ as shown in the figure. The agent's task is to learn a control policy, $\{\pi : S \longrightarrow A\}$, that maximizes the expected sum of these rewards, with future rewards discounted exponentially by their delay~\cite{Mitchell}.
 
-\paragraph{} According to how just said, the most important feature distinguishing RL from other types of learning is that it uses training information that \textit{evaluates} the actions taken rather than \textit{instructs} by giving correct actions. It is clearly an \textit{on-line learning} technique (data arrives sequentially and the model is continually updated as new data becomes available).
+RL is different both from \textit{supervised learning} and from \textit{unsupervised learning}. It is not a sample of learning from a training set of labelled examples provided by a knowledgeable external supervisor (\textit{supervised learning}) and it is not a sample of searching and finding structure hidden in a collection of unlabelled data (\textit{unsupervised learning}). More specifically we can say that RL can be distinguished from other forms of learning based on the following characteristics :
 
-\section{Finite Markov Decision Processes}
+\begin{itemize}
+	\item Reinforcement Learning deals with temporal sequences. In contrast with non-supervised learning problems where the order in which the examples are presented is not relevant, the choice of an action at a given time step will have consequences on the examples that are received at a subsequent time steps~\cite{Sigaud:2010:MDP:1841781}.
+	\item In contrast with supervised learning, the environment does not tell the agent what would be the best possible action. Instead, the agent may just receive a scalar reward representing the value of its action and it must \textit{explore} the possible alternative actions to determine whether its action was the best or not~\cite{Sigaud:2010:MDP:1841781}.
+\end{itemize}
 
-\paragraph{} The environment in RL problems can be well described as \textit{Markov decision processes} (MDPs). MDPs are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate rewards, but also subsequent situations, or states, and through those future rewards. From a similar perspective we can define MDPs as a general mathematical formalism for representing shortest path problems in stochastic environments.
+According to what just said, one of the challenges that arise in RL, and not in other kind of learning, is the trade-off between \textit{exploration} and \textit{exploitation}. To obtain an higher reward, an RL agent must prefer actions that it has tried in the past and found to be effective in producing reward. In order to discover such actions, it has to try actions that it has not selected before. The agent \textit{exploits} what it has already experienced in order to obtain reward, but it has also to \textit{explore} in order to eventually make better action selections in the future~\cite{SuttonBarto}. In other words \textit{exploitation} consists of doing again actions which have proven fruitful in the past, whereas \textit{exploration} consists of trying new actions, looking for a larger cumulated reward, but eventually leading to a worse performance. Dealing with the exploration/exploitation trade-off consists of determining how the agent should explore to get as fast as possible a policy that is optimal or close enough to the optimum. The most basic exploration strategy is the $\epsilon$-greedy policy, i.e. the learner takes its current best action with probability $(1-\epsilon)$ and a (randomly selected) other action with probability $\epsilon$. ~\cite{Sigaud:2010:MDP:1841781}. 
 
-\paragraph{} A MDP process relies on the notation of state at time $t$, $S_t$, the action selected on time $t$, $A\textsubscript{t}$, the corresponding reward $R\textsubscript{t}$. The value of an arbitrary action $a$, denoted $q\textsubscript{*}(a)$ is the expected reward given that $a$ is selected : $q\textsubscript{*}(a) = \mathbb{E}[ R\textsubscript{t}|A\textsubscript{t} = a ]$. We denote the estimated value of an action $a$ at time step $t$ as $Q\textsubscript{t}(a)$.
+\paragraph{Monte Carlo Methods} Monte Carlo Methods (MC)  represent a first instance of model-free RL's algorithms. They are one way solving the Reinforcement Learning problem based on averaging sample returns.
 
-\paragraph{} Solving an MDP consists
-of controlling the agent in order to reach an optimal behaviour, i.e. to maximize its overall revenue. Because action effects are stochastic and, thus, can result in different possible states at the next stage of the decision process, the optimal control strategy cannot necessarily be represented as a single sequence of actions. Due to the uncertainty in actions’ results, applying a given policy can result in different sequences of states/actions~\cite{Sigaud:2010:MDP:1841781}.
+The Monte Carlo approach consists of performing a large number of trajectories from all states $s$ in $S$, and estimating $V(s)$ as an average of the cumulated rewards observed along these trajectories. In each trial, the agent records its transitions and rewards, and updates the estimates of the value of the  encountered states according to a discounted reward scheme. The value of each state then converges to $V^\pi (s)$ for each $s$ if the agent follows policy $\pi$.
 
-
-\subsection{The Agent-Environment Interface}
-\paragraph{} In MDPs the agent and environment interact at each of a sequence of discrete time steps, $t = 0, 1, 2, 3, 4, ...$. At each time step $t$, the agent receives some representation of the environment's $state$, $S\textsubscript{t} \in S$, and on that basis selects an $action$, $A\textsubscript{t} \in A(s)$. One time step later, in part as a consequence of its action, the agent receives a numerical $reward$, $R\textsubscript{t+1} \in R \subset \mathbb{R}$, and finds itself in a new state, $S\textsubscript{t+1}$. The MDP and agent together thereby give rise to a sequence of $trajectory$ that begins like this :
-\begin{equation}
-S\textsubscript{0}, A\textsubscript{0}, R\textsubscript{1}, S\textsubscript{1}, A\textsubscript{1}, R\textsubscript{2}, S\textsubscript{2}, A\textsubscript{2}, R\textsubscript{3}, S\textsubscript{3}, A\textsubscript{3}, ...
-\end{equation}
-
-\paragraph{} In a $finite$ MDP, the set of states, actions and rewards ($S, A, R$) all have a finite number of elements. In this case, the random variables $R\textsubscript{t}$ and $S\textsubscript{t}$ have well defined discrete probability distributions dependent only on the preceding state and actions. That is, for particular values of these random variables, $s' \in S$ and $r \in R$, there is a probability of those values occurring at time $t$, given particular values of the preceding state and action : 
-
-\begin{equation}
-p(s', r | s, a) = Pr\{S\textsubscript{t} = s', R\textsubscript{t} = r | S\textsubscript{t-1} = s, A\textsubscript{t-1} = a\}
-\end{equation}
-
-for all $s'$, $s \in S$, $r \in R$, and $a \in A(s)$. The function $p : S$ x $R$ x $S$ x $A \longrightarrow [0, 1]$ is an ordinary deterministic function of four arguments~\cite{SuttonBarto}. The '$\mid$' in the middle of it just reminds us that $p$ specifies a probability distribution for each choice of $s$ and $a$ :
-
-\begin{equation}
-  \sum_{s'\in S} \sum_{r\in R} p(s', r | s, a) = 1,  \forall s \in S, a \in A(s). 
-\end{equation}
-
-\begin{center}
-
-  \begin{figure}[h!]
-  \includegraphics[width= 15cm, height = 6.5cm]{MDPSchema.png}
-    \caption{The agent-environment interaction in a MDP.}
-    \label{fig:MDPS}
-  \end{figure}
-  
-\end{center}
-
-This type of decision process is called a Markov process because it obeys the \textit{Markov property}. In systems that obey this property, the future of the system is independent of its past, given the current state. In other words, if we know the current state, knowing additional information about previous states and reinforcements does not improve our ability to predict future states or reinforcements~\cite{Maia2009}.
-
-
-\subsection{Goals, Rewards, Returns and Episodes}
-\paragraph{} As previous said, in RL, the goal of the agent is to maximize the expected value of the cumulative sum of a received scalar signal called \textit{reward}. It is critical that the rewards we set up truly indicate what we want accomplished. If we reward the achievement of subgoals , then the agent might find a way to achieve them without achieving the real goal. Reward signal is our way of communicating the agent \textit{what} we want to achieve, not \textit{how} it achieved. 
-
-\paragraph{}Let's suppose that the sequence of rewards received after time step $t$ is denoted $R\textsubscript{t+1}$, $R\textsubscript{t+2}$, $R\textsubscript{t+3}$, $R\textsubscript{t+4}$, $...$. We expect the agent maximizes the \textit{expected return}, where the return, denoted $G_t$, is defined as some specific function of the reward sequence. In the simplest case the return is the sum of the rewards :
-
-\begin{equation}
-  G_t = R\textsubscript{t+1} + R\textsubscript{t+2} + R\textsubscript{t+3} + R\textsubscript{t+4} + ... + R_T, 
-\end{equation}
-
-where $T$ is a final time step. This approach make sense in  applications in which there is a natural notion of final time step, that is, when the agent-environment interaction breaks naturally into subsequences, which we call \textit{episodes} (\textit{E})~\cite{SuttonBarto}. To be more specific, in this case, the breaking into subsequences is also visible in episodes and we call them \textit{epochs} (\textit{e}). 
-
-\begin{center}
-  \begin{figure}[h!]
-  \includegraphics[width= 9cm, height = 5cm]{TrainingModel.png}
-    \caption{Schema of an agent-environment interaction broken into two episodes ($E$), each one broken into three epochs ($e$).}
-    \label{fig:MDPS}
-  \end{figure}
-\end{center}
-
-Each episode ends in a special state called \textit{terminal state}, followed by a reset to a starting state or to a sample from a standard distribution of a standard of starting states.
-
-\paragraph{} In many cases the agent environment interaction does not break naturally into identifiable episodes, but goes on continually without limit; we call this \textit{continuing tasks}. The return formulation is problematic for continuing tasks because the final time step would be $T = \infty$, and the return, which is what we are trying to maximize, could itself be infinite~\cite{SuttonBarto}.
-
-\paragraph{} An additional concept that we need is that of \textit{discounting}. According to approach previously explained, the agent tries to select actions so that the sum of the discounted rewards it receives over the future is maximized. In particular, it choses $A_t$ to maximize the expected \textit{discounted return} :
+More formally, let $(s_0, s_1, ..., s_N)$ be a trajectory consistent with the policy $\pi$ and the unknown transition function $p()$, and let $(r_1, ..., r_N)$ be the rewards observed along this trajectory. In MC method, the $N$ values $V(s_t), \quad t = 0, ...., N-1$ are updated according to :
 
 \begin{equation} 
-  G_t = R\textsubscript{t+1} + \gamma R\textsubscript{t+2} + \gamma^2 R\textsubscript{t+3} + ... = \sum_{k=0}^{\infty} \gamma^kR\textsubscript{t+k+1}
+\label{eq:2.6}
+V(s_t) \leftarrow V(s_t) + \alpha(s_t)(r\textsubscript{t+1} + r\textsubscript{t+2} + ... + r_N - V(s_t))
 \end{equation}
 
-where $\gamma$ is a parameter, $0 \eqslantless \gamma \eqslantless 1$, called the \textit{discount rate}. This value determines the present value of future rewards.
-If $\gamma < 1$, the infinite sum in (1.5) has a finite value as long as the reward sequence ${R_k}$ is bounded.
-If $\gamma = 0$, the agent is "myopic" in being concerned only with maximizing immediate rewards: its objective in this case is to learn how to choose $A_t$ so as to maximize only $R\textsubscript{t+1}$.
-As $\gamma$ approaches 1, the return objective takes future rewards into account more strongly~\cite{SuttonBarto}.
+with the learning rates $\alpha(s_t)$ converging to $0$ along the iterations~\cite{Sigaud:2010:MDP:1841781} . MC algorithms treat the long-term reward as a random variable and take as its estimate the sampled mean. Because the sampling is dependent on the current policy $\pi$, only returns for actions suggested by $\pi$ are evaluated. Thus, \textit{exploration} is of key importance here, just as in other model-free methods. One way of ensuring enough exploration is to use exploring starts, i.e. each state-action pair has a non-zero probability of being selected as the initial pair.
 
-\subsection{Policies and Value Functions}
-\paragraph{} Almost all reinforcement learning algorithms involve estimating \textit{value functions} that estimate \textit{how good} it is for an agent to be in a given state (or how good it is to perform a given action in a given state). 
-More formally we can say that a \textit{policy} is a mapping from states to probabilities of selecting each possible action. If the agent is following policy $\pi$ at time \textit{t}, then $\pi(a|s)$ is the probability that $A_t = a$ if $S_t = s$. 
+A distinction can be made between \textit{every-visit} MC, which averages over all visits of a state $s \in S$ in all episodes, and \textit{first-visit} MC, which averages over just the returns obtained from the first visit to a state $s \in S$ for all episodes. Both variants will
+converge to $V^\pi$ for the current policy $\pi$ over time~\cite{wiering2012reinforcement} .
 
-The \textit{value} of a state \textit{s} under a policy $\pi$, denoted $v_\pi(s)$, is the expected return when starting in $s$ and following $\pi$ thereafter. For MDPs, we can define $v_\pi$ formally by
+Studying RL methods we have to distinguish between \textit{on-policy methods} and \textit{off-policy methods}.
+On-policy methods attempt to evaluate or improve the policy that is used to make decisions. Off-policy methods evaluate or improve a policy different from that used to generate the data. MC methods can be used for both on-policy and off-policy control, and the general pattern complies with the generalized policy iteration procedure. \\ \\
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+	\hline 
+	&\textbf{On-policy methods}  &\textbf{Off-policy methods}  \\ 
+	\hline \textbf{Basic assumption}
+	& \thead{They attempt to evaluate\\ or improve the policy that\\ is used to make decisions.}  &\thead{We do not need to follow any \\ specific policy; our agent could \\ even behave randomly and \\ despite this it can still  \\ find the optimal policy. }  \\ 
+	\hline 
+\end{tabular}
+\caption{Difference between on-policy and off-policy methods.}
+\end{table} 
+
+\paragraph{Temporal Difference Learning} An important problem faced by RL is the so called \textit{temporal credit assignment problem}. In model-free contexts it is difficult to assess the utility of some action, if the real effects of this particular action can only be perceived much later. One possibility is to wait until the ”end” (e.g. of an episode) and punish or reward specific actions along the path taken. However, this will take a lot of memory and often, with ongoing tasks, it is not known beforehand whether, or when, there will be an ”end”. Instead, one can use similar mechanisms as in value iteration to adjust the estimated value of a state based on the immediate reward and the estimated (discounted) value of the next state. This is generally called \textit{temporal difference learning} which is a general mechanism underlying the model-free methods~\cite{wiering2012reinforcement}. 
+
+We can formally represent this concept modifying equation \ref{eq:2.6} as follow:
 
 \begin{equation}
-  v_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s] = \mathbb{E}[\sum_{k = 0} ^ {\infty} \gamma^k R\textsubscript{t : k : 1} | S_t = s], \forall s \in S
+V(s_t) \leftarrow V(s_t) + \alpha(s_t)(\delta_t + \delta\textsubscript{t+1} + ... + \delta\textsubscript{N-1}) 
 \end{equation}
 
-where $\mathbb{E}[\cdot]$ denotes the expected value of a random variable given that the agent follows policy $\pi$, and \textit{t} is any time step. We call the function $v_\pi$ the \textit{state-value function} for policy $\pi$.
-Similarly, we define the value of taking action \textit{a} in state \textit{s} under a policy $\pi$, denoted $q_\pi(s, a)$, as the expected return starting from \textit{s}, taking the action \textit{a}, and thereafter following policy $\pi$ :
+defining the temporal difference error $\delta_t$ by :
 
 \begin{equation}
-  q_\pi(s,a) = \mathbb{E}_\pi[G_t | S_t = s, A_t = a] = \mathbb{E}_\pi[\sum_{k = 0}^{\infty}\gamma^k R\textsubscript{t + k + 1} |S_t = s, A_t = a]  
-\end{equation}
-
-We call $q_\pi$ the \textit{action-value function} for policy $\pi$. The value functions $v_\pi$ and $q_\pi$ can be estimated from experience.
-
-A fundamental property of value functions used throughout RL is that they satisfy recursive relationships. For any policy $\pi$ and any state \textit{s}, the following consistency condition holds between the value of \textit{s} and the value of its possible successor states:
-
-\begin{equation}
-\begin{split}
-  v_\pi(s) = \mathbb{E}_\pi[G_t | S_t = s] \\
-           = \mathbb{E}_\pi[R\textsubscript{t+1} + \gamma G\textsubscript{t+1} |S_t = s] \\
-           = \sum_{a}\pi(a|s)\sum_{s'}\sum_{r}p(s', r | s, a)[r + \gamma\mathbb{E}_\pi[G\textsubscript{t+1} | S\textsubscript{t+1} = s']] \\
-           = \sum_{a}\pi(a|s)\sum_{s', r} p(s', r | s, a)[r + \gamma v_\pi (s')], \forall s \in S
-\end{split}
+\delta_t = r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}) - V(s_t), \quad t = 0, ..., N-1.
 \end{equation} 
 
-where it is implicit that the actions, \textit{a}, are taken from the set $A(s)$, that the next states, $s'$, are taken from the set \textit{S}, and that the rewards, $r$, are taken from the set \textit{R}. 
+The error $\delta_t$ must be interpreted in each state as a measure of the difference between the current estimation $V(s_t)$ and the correct estimation $r\textsubscript{t+1} + V(s\textsubscript{t+1})$.
 
-Equation (1.8) is the \textit{Bellman equation} for $v_\pi$. It expresses a relationship between the value of a state and the values of its successors states~\cite{SuttonBarto}.
+Like Monte Carlo methods, TD ones performs estimation of action-value functions based on the experience of the agent and can do without a model of the underlying MDP; however, they combine this estimation using local estimation propagation mechanisms coming from dynamic programming, resulting in their incremental properties. Thus TD methods, which are at the heart of most reinforcement learning algorithms, are characterized by this combination of estimation methods with local updates incremental properties~\cite{Sigaud:2010:MDP:1841781}.
 
-\begin{center}
-  \begin{figure}[h!]
-  \includegraphics[width= 12cm, height = 6.5cm]{Bellman_graph}
-    \caption{Think of looking ahead from a state to its possible successor states. Each open circle represents a state and each solid circle represents a state-action pair. Starting from state \textit{s}, the root node at the top, the agent could take any of some set of actions - two are shown in the diagram - based on its policy $\pi$. From each of these, the environment could respond with one of several next states, $s'$, along with a reward, \textit{r}, depending on its dynamics given by the function \textit{p}. The Bellman equation (1.8) averages over all the possibilities, weighting each by its probability of occurring. It states that the value of the start state must equal the discounted value of the expected next state, plus the reward expected along the way.}
-    \label{fig:Bellman_graph}
-  \end{figure}
-\end{center}
-
-\break \break \break
-
-A policy $\pi$ is defined to be better than or equal to a policy $\pi'$ if its expected return is greater than or equal to that of $\pi'$ for all states. There is always a at least one policy that is better than or equal to all other policies. This is the so called \textit{optimal policy}. We have to underline that it is possible that exist more than one optimal policy. We denote all of them by $\pi_*$. They share the same state-value function, called the \textit{optimal state-value function}, denoted $v_*$, and defined as
+\paragraph{Sarsa Algorithm : On-policy TD Control} Knowing the exact value of all states is not always enough to determine what to do. If the agent does not know which action results in reaching any particular state, i.e. if the agent does not have a model of the transition function, knowing $V$ does not help it determine its policy.  To solve this problem, Watkins ~\cite{watkins1992q} introduced the action-value function $Q$, whose knowledge is similar to the knowledge of $V$ when $p$ is known. The action-value function of a fixed policy $\pi$ whose value function is $V^\pi$ is :
 
 \begin{equation}
-  v_*(s) = \max\limits_{\pi} v_\pi(s), \forall s \in S
+	\forall s \in S, a \in A, \quad Q^\pi (s,a) = r(s, a) + \gamma \sum_{s'} p(s' \ s, a) V^\pi (s').
 \end{equation}
 
-Optimal policies also share the same \textit{optimal action-value function}, denoted $q_*$ and defined as
+The value of $Q^\pi(s,a)$ is interpreted as the expected value when starting from $s$, executing $a$ and then following the policy $\pi$ afterwards. We have $V^\pi(x) = Q^\pi(x, \pi(x))$ and the corresponding Bellman equation is :
 
 \begin{equation}
-  q_*(s, a) = \max\limits_{\pi}q_\pi(s, a), \forall s\in S, a\in A(s)
+	\forall s \in S, a \in A \quad Q^*(s, a) = r(s, a) + \gamma \sum_{s'}p(s' | s, a) \max_{b} Q^*(s', b)
 \end{equation}
 
-For the state-action pair $(s, a)$, this function gives the expected return taking action $a$ in state $s$ and thereafter following an optimal policy. Thus, we can write $q_*$ in terms of $v_*$ as follows~\cite{SuttonBarto} :
+Than we have :
 
 \begin{equation}
-  q_*(s, a) = \mathbb{E}[R\textsubscript{t + 1} + \gamma v_*(S\textsubscript{t+1})|S_t = s, A_t = a].
+\forall s \in S, \quad V^*(s) = \max_{a} Q^* (s,a ), \quad \pi^*(s) = \arg\max_{a} Q^*(s,a).
 \end{equation}
+
+The SARSA algorithm works on state-action pairs rather than on states. Its update equation is :
+
+\begin{equation}
+\label{eq:2.12}
+Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha[r\textsubscript{t+1} + \gamma Q(s\textsubscript{t+1}, a\textsubscript{t+1}) - Q(s_t, a_t)].
+\end{equation}
+
+the information necessary to perform such an update is $(s_t, a_t, r\textsubscript{t+1}, s\textsubscript{t+1}, a\textsubscript{t+1})$, hence the name of the algorithm : SARSA. This algorithm suffers from one conceptual drawback: performing the updates as stated above implies knowing in advance what will be the next action $a\textsubscript{t+1}$ for any possible next state $s\textsubscript{t+1}$.  As a result, the learning process is tightly coubled to the current policy (the algorithm is called "on-policy") and this complicates the exploration process. As a result, proving the convergence of SARSA was more difficult than proving the convergence of "off-policy" algorithms such as Q-learning. Empirical studies often demonstrates the better performance of SARSA compared to Q-learning~\cite{Sigaud:2010:MDP:1841781}.
+
+\begin{algorithm}
+	Initialize $Q(s, a)$ arbitrarily\;
+	Repeat the next cycle until $s$ is terminal\;
+	\ForEach{epsiode}{
+	Initalize $s$\;
+	Choose $a$ from $s$ using policy derived from $Q$ (e.g. $\epsilon$-greedy)\;
+	\ForEach{step of episode}{
+		Take action $a$, observer $r$, $s'$\;
+		Choose $a'$ from $s'$ using policy derived from $Q$ (e.g. $\epsilon$-greedy)\;
+		$Q(s,a) \leftarrow Q(s,a) + \alpha[r + \gamma Q(s', a') - Q(s, a)]$ \;
+		$s \leftarrow s'$ \;
+		$a \leftarrow a'$ \;
+	}
+} 
+\caption{SARSA Algorithm : On-policy TD Control}
+\end{algorithm}
+
+\paragraph{Q-learning Algorithm : Off-policy TD Control} The Q-Learning Algorithm can be seen as a simplification of the  algorithm, given that it is no more necessary to determine the action at the next step to calculate updates. Its update equation is :
+
+\begin{equation}
+\label{eq:2.13}
+	Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha[r\textsubscript{t+1} + \gamma \max_{a} Q(s\textsubscript{t+1}, a) - Q(s_t, a_t)]
+\end{equation} 
+
+\begin{algorithm}
+	$\alpha_t$ is the learning rate \;
+	Initialize ($Q_0$)\;
+	\For{$t = 0$ ; $t \leq T\textsubscript{tot} - 1$ ; $t++$}{
+		$s_t \leftarrow {\tt ChooseState}$\;
+		$a_t \leftarrow {\tt ChooseAction}$\;
+		$s\textsubscript{t+1}, r\textsubscript{t+1} \leftarrow {\tt Simulate}(s_t, a_t)$\;
+		update $Q_t$ \;
+		\Begin{
+			$Q\textsubscript{t+1} \leftarrow Q_t$\;
+			$\delta_t \leftarrow r\textsubscript{t+1} + \gamma \max_{b} Q_t (s\textsubscript{t+1}, b) - Q_t(s_t, a_t)$ \;
+			$Q\textsubscript{t+1}(s_t, a_t) \leftarrow Q_t(s_t, a_t) + \alpha_t(s_t, a_t) \delta_t$ \;
+		}
+	}
+\KwRet{Q\textsubscript{Tot}}
+\caption{Q-learning Algorithm ~\cite{Sigaud:2010:MDP:1841781}}
+\end{algorithm}
+
+The main difference between SARSA and Q-Learning lies in the definition of the error term. The $Q(s\textsubscript{t+1}, a\textsubscript{t+1})$ term in the equation \ref{eq:2.12}	is replaced by $\max_{a}Q(s\textsubscript{t+1}, a)$ in equation \ref{eq:2.13}. Updates are based on instantaneously available information. In this algorithm, the $T\textsubscript{tot}$ parameter corresponds to the number of iterations. There is here one learning rate $\alpha_t(s, a)$ for each state-action pair, it decreases at each visit of the corresponding  pair. The {\tt Simulate} function returns a new state and the corresponding reward according to the dynamics of the system. The choice of the current state and of the executed action is performed by functions {\tt ChooseState} and {\tt ChooseAction}. The {\tt Initialize} function initializes the $Q$ function with $Q_0$, which is often initialized with {\tt null} values, whereas more adequate choices can highly improve the performance~\cite{Sigaud:2010:MDP:1841781}.
+
+\paragraph{SARSA($\lambda$)} Previous algorithms only perform one update per time step in the state that the agent is visiting. This update process is particularly slow. Indeed, an agent deprived of any information on the structure of the value function needs at least $n$ trials to propagate the immediate reward of a state to another state that is $n$ transitions away. Before this propagation is achieved, if the initial values are {\tt null}, the agent performs a random walk in the state space, which means that it needs an exponential number of steps as a function of $n$ before reaching the reward "trail". A naive way to solve the problem consists of using a memory of trajectory and to propagate all the information backwards along the performed transitions each time a reward is reached. Such a memory of performed transitions is called an eligibility trace". A problem with this naive approach is that the required memory grows with length of trajectories, which is obviously not feasible in the infinite horizon context. In SARSA($\lambda$) algorithm a more sophisticated approach that addresses the infinite horizon context. \\
+
+As we already saw Q-learning integrates the temporal difference error idea. With the update rule of Q-learning :
+
+\begin{equation}
+	Q\textsubscript{t+1} (s_t, a_t) = Q_t(s_t, a_t) + \alpha_t\{r\textsubscript{t+1} + \gamma V_t(s\textsubscript{t+1}) - Q_t(s_t, a_t)\}
+\end{equation}
+
+for transition $s_t, a_t, s\textsubscript{t+1}, r\textsubscript{t+1}$), and in the case where action $a_t$ executed in state $s_t$ is the optima action for $Q_t$, then the error term is $r\textsubscript{t+1} + \gamma V_t s\textsubscript{t+1} - V_t(s_t)$. For a generic parameter $\lambda \in [0,1]$ we can generalize as follow:
+
+\begin{algorithm}
+	/* $\alpha$ is a learning rate */ \;
+	{\tt Initialize} $Q_0$ \;
+	$z_0 \leftarrow 0$ \;
+	$s_0 \leftarrow$ {\tt ChooseState} \;
+	$a_0 \leftarrow$ {\tt ChooseAction} \;
+	$t \leftarrow 0$ \;
+	\While{$t \leq  T\textsubscript{tot}-1$}{
+		($s_t', r\textsubscript{t+1}$) $\leftarrow$ {\tt Simulate} $(s_t, a_t)$ \;
+		$a_t' \leftarrow$ {\tt ChooseAction} \;
+		update $Q_t$ and $z_t$ \;
+		\Begin{
+			$\delta_t \leftarrow r\textsubscript{t+1} + \gamma Q_t(s_t', a_t') - Q_t(s_t, a_t)$ \;
+			$z_t(s_t, a_t) \leftarrow z_t(s_t, a_t) + 1$ \;
+			\For{$s \in S, a \in A$}{
+				$Q\textsubscript{t+1}(s, a) \leftarrow Q_t(s, a) + \alpha_t(s,a)z_t(s,a)\delta_t$ \;
+				$z\textsubscript{t+1}(s,a) \leftarrow \gamma\lambda z_t(s,a)$
+			}
+		\If{$s_t'$ non absorbing}{
+				$s\textsubscript{t+1} \leftarrow s_t'$ and $a\textsubscript{t+1} \leftarrow a_t'$ \;
+			}
+		\Else{
+				$s\textsubscript{t+1} \leftarrow$ {\tt ChooseState} \;
+				$a\textsubscript{t+1} \leftarrow$ {\tt ChooseAction} \;
+			}
+		}
+	}
+\KwRet{$Q\textsubscript{Tot}$}
+\caption{SARSA ($\lambda$) Algorithm ~\cite{Sigaud:2010:MDP:1841781}} 
+\end{algorithm}
+
+where $z_t(s, a)$ and  is the eligibility trace and \textit{absorbing state} means terminal state.
+
+
+

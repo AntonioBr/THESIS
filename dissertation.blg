@@ -8,39 +8,39 @@ Warning--empty publisher in Mitchell
 Warning--empty publisher in SuttonBarto
 You've used 14 entries,
             2543 wiz_defined-function locations,
-            646 strings with 6394 characters,
-and the built_in function-call counts, 5020 in all, are:
-= -- 482
-> -- 239
-< -- 7
-+ -- 77
-- -- 77
-* -- 318
-:= -- 847
+            648 strings with 6330 characters,
+and the built_in function-call counts, 4985 in all, are:
+= -- 476
+> -- 250
+< -- 5
++ -- 81
+- -- 81
+* -- 325
+:= -- 853
 add.period$ -- 44
 call.type$ -- 14
-change.case$ -- 78
+change.case$ -- 79
 chr.to.int$ -- 14
 cite$ -- 17
-duplicate$ -- 229
-empty$ -- 374
-format.name$ -- 95
-if$ -- 1026
+duplicate$ -- 219
+empty$ -- 369
+format.name$ -- 98
+if$ -- 1008
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 21
 newline$ -- 74
 num.names$ -- 42
-pop$ -- 101
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 99
 quote$ -- 0
-skip$ -- 186
+skip$ -- 176
 stack$ -- 0
-substring$ -- 187
-swap$ -- 32
-text.length$ -- 7
-text.prefix$ -- 5
+substring$ -- 180
+swap$ -- 23
+text.length$ -- 5
+text.prefix$ -- 4
 top$ -- 0
 type$ -- 84
 warning$ -- 3

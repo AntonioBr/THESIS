@@ -26,13 +26,6 @@ Ke~Li and Jitendra Malik.
 \newblock Learning to optimize.
 \newblock {\em CoRR}, abs/1606.01885, 2016.
 
-\bibitem[Mai09]{Maia2009}
-Tiago~V. Maia.
-\newblock Reinforcement learning, conditioning, and the brain: Successes and
-  challenges.
-\newblock {\em Cognitive, Affective {\&} Behavioral Neuroscience}, pages
-  343--364, Dec 2009.
-
 \bibitem[Mit97]{Mitchell}
 Tom~M. Mitchell.
 \newblock {\em Machine Learning}.
@@ -71,6 +64,11 @@ Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan~P. Adams, and Nando de~Freitas.
 \newblock Taking the human out of the loop: {A} review of bayesian
   optimization.
 \newblock {\em Proceedings of the {IEEE}}, 104(1):148--175, 2016.
+
+\bibitem[WD92]{watkins1992q}
+Christopher~JCH Watkins and Peter Dayan.
+\newblock Q-learning.
+\newblock {\em Machine learning}, 8(3-4):279--292, 1992.
 
 \bibitem[WvO12]{wiering2012reinforcement}
 M.~Wiering and M.~van Otterlo.
