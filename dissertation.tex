@@ -6,6 +6,15 @@
 \usepackage{makecell}
 \usepackage[linesnumbered,ruled] {algorithm2e}
 
+\makeatletter
+\DeclareRobustCommand{\textsupsub}[2]{{%
+		\m@th\ensuremath{%
+			^{\mbox{\fontsize\sf@size\z@#1}}%
+			_{\mbox{\fontsize\sf@size\z@#2}}%
+		}%
+}}
+\makeatother
+
 \graphicspath{ {IMAGES/} }
 
 \begin{document}

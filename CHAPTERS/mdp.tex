@@ -122,10 +122,65 @@ V^*(s) = \max_{a \in A} \sum_{s'}T(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s
 
 This expression is called the \textit{Bellman optimality equation}. It states that the value of a state under an optimal policy must be equal to the expected return for the best action in a state~\cite{wiering2012reinforcement}.
 
-\paragraph{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify differences between two key concepts we will commonly find : \textit{value iteration} and \textit{policy iteration}. Policy iteration includes \textit{policy evaluation} and \textit{policy improvement}, and the two are repeated iteratively until policy converges. Value iteration includes finding \textit{optimal value function} and extracting a policy; there is no repetition of those actions because onece the value function is optimal, than the policy should also be optimal, i.e. the policy should converges. Finding optimal value function can also be seen as a combination of policy improvements and truncated policy evaluation. The key step to policy improvements and policy extraction are identical except the former involves a stability check. %% Migliorare
+\paragraph{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts we will recursively find : \textit{value iteration} and \textit{policy iteration}. \\
+
+Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In Value iteration we start with a random value function and then we find a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
+
+\begin{equation}
+	V\textsubscript{k+1}(s) \leftarrow \max_{a} \sum_{s'} T(s, a, s') [R(s, a, s') + \gamma V_k(s')]
+\end{equation}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width= 5cm, height = 5cm]{ValueIterationPolicy.png}
+	\caption{Value Iteration Schema}
+	\label{fig:ValueiterationPolicy}
+\end{figure}
+
+Value iteration has three disadvantages: it is slow ($O(S^2A)$ per iteration), the $\max$ at each state rerely changes, the policy often converges long before the values. \\
+
+Instead, policy iteration computations of Bellman Equation are:
+
+\begin{itemize}
+	\item Evaluation : for a fixed current policy $p$, find values with policy evaluation:
+		\begin{equation}
+			V\textsupsub{$\pi_i$}{$k+1$}(s) \leftarrow \sum_{s'}T(s, \pi_i(s), s')[R(s, \pi_i(s), s') + \gamma V\textsupsub{$\pi_i$}{k}(s')]
+		\end{equation}
+	
+	\item Improvement : for fixed values, get a better policy using policy extraction :
+	
+	\begin{equation}
+		\pi\textsubscript{i+1}(s) = \arg \max_{a} \sum_{s'} T(s, a, s')[R(s, a, s') + \gamma V\textsuperscript{$\pi_i$}(s')]
+	\end{equation}
+\end{itemize}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width= 5cm, height = 5cm]{Policyiteration.png}
+	\caption{Policy Iteration Schema}
+	\label{fig:PolicyIteration}
+\end{figure}
+
+Complexity of policy iteration is $O(S^2)$. \\
+
+Summarizing what said until now we can write: \\ 
+
+In value iteration :
+
+\begin{itemize}
+	\item Every iteration updates both the values and implicitly the policy;
+	\item We don't track the policy, but tacking the $\max$ over actions implicitly recomputes it.
+\end{itemize}
+
+In policy iteration :
+
+\begin{itemize}
+	\item We do several passes that update utilities with fixed policy;
+	\item After the policy is evaluated, a new policy is chosen;
+	\item The new policy will be always better until the end.
+\end{itemize}
 
 \section{Solving MDP}
-
 Now that we have defined MDPs, policies, optimality criteria and value functions, it is time to consider the question of how to solve an MDP computing an optimal policy $\pi^*$. Several dimensions exists along which algorithms have been developed for this purpose. The most important distinction is that between \textit{model-based} and \textit{model-free} algorithms ~\cite{wiering2012reinforcement}.
 \begin{table}[h!]
 	\resizebox{\textwidth}{!}{ 
@@ -362,7 +417,7 @@ for transition $s_t, a_t, s\textsubscript{t+1}, r\textsubscript{t+1}$), and in t
 \caption{SARSA ($\lambda$) Algorithm ~\cite{Sigaud:2010:MDP:1841781}} 
 \end{algorithm}
 
-where $z_t(s, a)$ and  is the eligibility trace and \textit{absorbing state} means terminal state.
+where $z_t(s, a)$ and  is the eligibility trace and \textit{absorbing state} means terminal state~\cite{Sigaud:2010:MDP:1841781}.
 
 
 
