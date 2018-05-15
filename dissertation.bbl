@@ -59,6 +59,13 @@ R.~S. Sutton and A.~G. Barto.
 \newblock {\em Reinforcement Learning : An Introduction}.
 \newblock 2018.
 
+\bibitem[SLA12]{NIPS2012_4522}
+Jasper Snoek, Hugo Larochelle, and Ryan~P Adams.
+\newblock Practical bayesian optimization of machine learning algorithms.
+\newblock In F.~Pereira, C.~J.~C. Burges, L.~Bottou, and K.~Q. Weinberger,
+  editors, {\em Advances in Neural Information Processing Systems 25}, pages
+  2951--2959. Curran Associates, Inc., 2012.
+
 \bibitem[SSW{\etalchar{+}}16]{DBLP:journals/pieee/ShahriariSWAF16}
 Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan~P. Adams, and Nando de~Freitas.
 \newblock Taking the human out of the loop: {A} review of bayesian

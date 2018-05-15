@@ -6,45 +6,45 @@ Database file #1: bibfile.bib.bib
 Warning--empty journal in konstantopoulos2009markov
 Warning--empty publisher in Mitchell
 Warning--empty publisher in SuttonBarto
-You've used 14 entries,
+You've used 15 entries,
             2543 wiz_defined-function locations,
-            648 strings with 6330 characters,
-and the built_in function-call counts, 4985 in all, are:
-= -- 476
-> -- 250
-< -- 5
-+ -- 81
-- -- 81
-* -- 325
-:= -- 853
-add.period$ -- 44
-call.type$ -- 14
-change.case$ -- 79
-chr.to.int$ -- 14
-cite$ -- 17
-duplicate$ -- 219
-empty$ -- 369
-format.name$ -- 98
-if$ -- 1008
+            656 strings with 6620 characters,
+and the built_in function-call counts, 5678 in all, are:
+= -- 546
+> -- 289
+< -- 6
++ -- 94
+- -- 94
+* -- 375
+:= -- 958
+add.period$ -- 48
+call.type$ -- 15
+change.case$ -- 86
+chr.to.int$ -- 15
+cite$ -- 18
+duplicate$ -- 248
+empty$ -- 417
+format.name$ -- 112
+if$ -- 1161
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 74
-num.names$ -- 42
-pop$ -- 99
+missing$ -- 22
+newline$ -- 79
+num.names$ -- 47
+pop$ -- 108
 preamble$ -- 1
-purify$ -- 99
+purify$ -- 107
 quote$ -- 0
-skip$ -- 176
+skip$ -- 202
 stack$ -- 0
-substring$ -- 180
-swap$ -- 23
-text.length$ -- 5
+substring$ -- 227
+swap$ -- 35
+text.length$ -- 6
 text.prefix$ -- 4
 top$ -- 0
-type$ -- 84
+type$ -- 92
 warning$ -- 3
-while$ -- 45
-width$ -- 16
-write$ -- 179
+while$ -- 52
+width$ -- 17
+write$ -- 193
 (There were 3 warnings)

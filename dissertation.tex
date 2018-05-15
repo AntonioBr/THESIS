@@ -6,6 +6,7 @@
 \usepackage{makecell}
 \usepackage[linesnumbered,ruled] {algorithm2e}
 
+
 \makeatletter
 \DeclareRobustCommand{\textsupsub}[2]{{%
 		\m@th\ensuremath{%
@@ -15,12 +16,15 @@
 }}
 \makeatother
 
+\newcommand{\subsup}[3]{{#1}_{\mkern-4mu #2}^{\mkern-4mu #3}}
+
 \graphicspath{ {IMAGES/} }
 
 \begin{document}
 	
 	\input{CHAPTERS/introduction}
 	\input{CHAPTERS/mdp}
+	\input{CHAPTERS/RLapproach}
 
 	\bibliography{bibfile.bib}
 	\bibliographystyle{alpha}
