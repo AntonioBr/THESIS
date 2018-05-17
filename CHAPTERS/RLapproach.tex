@@ -23,3 +23,76 @@ GP is a convenient and powerful prior distribution on functions, which we will t
 	\caption{2-$d$ Bayesian Optimization Process Example[towardsdatascience.com]}
 	\label{fig:BoProcess}
 \end{figure}
+
+\paragraph{An RL Approach} As previously said in this thesis we describe an innovative RL approach to the black-box function optimization problem. Let's assume to dispose of a function $f(x, y)$. In our RL problem :
+
+\begin{itemize}
+	\item \textbf{Agent} : The agent has to maximize a black-box bivariate function. Each function is continuously defined over a specific domain. The agent has to complete its job making exactly $150$ epochs for each one of the $1000$ episodes. In each epoch it has a position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
+	\item \textbf{State} : The state is represented by two lists: the first one contains the last two computed \textit{angles} and the second one contains the correspondent last two \textit{actions}.
+	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $40$ pixels in one of the previously described directions. The resultant effective movement is computed as follow:
+	
+	\begin{algorithm} [h!]
+		/* knowing $pixelX$ and $pixelY$ */\;
+		/* knowing $pixelXRange$ and $pixelYRange$ */ \;
+		/* knowing $function$ */\;
+		
+		\
+		
+		$domain = function.getDomain()$ \;
+		$xRange = domain.maxX - domain.minX$ \;
+		$yRange = domain.maxY - domain.minY$ \;
+		
+		\
+		
+		$xReal = domain.minX + (pixelX * xRange) / pixelXRange$ \;
+		$yReal = domain.minY + (pixelY * yRange) / pixelYRange$ \;
+		
+		\
+		
+		\KwRet{$xReal, yReal$}
+		\caption{From pixels to real values} 
+	\end{algorithm}
+	
+	\item \textbf{Reward} : In this context we have decided to reward every action of the agent because a real terminal state doesn't exist. Cause we are working with a black-box function we cannot select two coordinate $(x, y)$ and a corresponding value function $z$ as a terminal state. The simulation ends after $1000$ episodes are done. We define a $\Delta$ equals to $f(z')$ computed in the \textit{new state} minus $f(z)$ computed in the \textit{old state}:
+	
+	\begin{equation}
+		\Delta = f(z') - f(z)
+	\end{equation} 
+	
+	Our reward at each epoch is equal to $\Delta$.
+\end{itemize}
+
+The movement the agent can make in each epoch can be of two different types : \textit{linear movement} or \textit{parametric movement}. If the movement is linear we compute the angle as follow :
+
+\begin{algorithm}
+	/* knowing $(x, y)$ */ \;
+	/* knowing $(x', y')$*/ \;
+	/* {\tt movementAmount} = $\theta$ */ \;
+	/* {\tt currentMax} = $\max f(x_n, y_n)$ */ \;
+	
+	
+	\
+	
+	$z = f(x, y)$ \;
+	$z' = f(x', y')$\;
+	
+	\
+	
+	$\delta = z' - z$ \;
+	$\beta = \arctan(\dfrac{\delta}{\tt movementAmount})$
+	 
+	 \
+	 
+	 $\Delta = $z'$ - {\tt currentMax} $
+	
+	
+	
+\end{algorithm}
+
+\subsection{Implementation}
+
+\begin{figure} [h!]
+	\includegraphics[width= 16cm, height = 18cm]{RLDiagram.png}
+	\caption{Class diagram of RL black-box optimization tool.}
+	\label{fig:BoProcess}
+\end{figure}
