@@ -53,10 +53,10 @@ GP is a convenient and powerful prior distribution on functions, which we will t
 		\caption{From pixels to real values} 
 	\end{algorithm}
 	
-	\item \textbf{Reward} : In this context we have decided to reward every action of the agent because a real terminal state doesn't exist. Cause we are working with a black-box function we cannot select two coordinate $(x, y)$ and a corresponding value function $z$ as a terminal state. The simulation ends after $1000$ episodes are done. We define a $\Delta$ equals to $f(z')$ computed in the \textit{new state} minus $f(z)$ computed in the \textit{old state}:
+	\item \textbf{Reward} : In this context we have decided to reward every action of the agent because a real terminal state doesn't exist. Cause we are working with a black-box function we cannot select two coordinate $(x, y)$ and a corresponding value function $z$ as a terminal state. The simulation ends after $1000$ episodes are done. We define a $\Delta$ equals to $\max f(z_n)$ minus $f(z)$ computed in the \textit{current state}:
 	
 	\begin{equation}
-		\Delta = f(z') - f(z)
+		\Delta = max f(x_n, y_n) - f(x, y)
 	\end{equation} 
 	
 	Our reward at each epoch is equal to $\Delta$.
@@ -67,7 +67,7 @@ The movement the agent can make in each epoch can be of two different types : \t
 \begin{algorithm}
 	/* knowing $(x, y)$ */ \;
 	/* knowing $(x', y')$*/ \;
-	/* {\tt movementAmount} = $\theta$ */ \;
+	/* {\tt movementAmount} = \textit{M} */ \;
 	/* {\tt currentMax} = $\max f(x_n, y_n)$ */ \;
 	
 	
@@ -78,21 +78,123 @@ The movement the agent can make in each epoch can be of two different types : \t
 	
 	\
 	
-	$\delta = z' - z$ \;
-	$\beta = \arctan(\dfrac{\delta}{\tt movementAmount})$
+	$\delta = ((x'-x),  (y'-y))$ \;
+	$\alpha = \arctan(\dfrac{\delta}{\tt movementAmount})$
 	 
 	 \
 	 
 	 $\Delta = $z'$ - {\tt currentMax} $
-	
-	
+	 
+	 \caption{Angle computation in linear movement case.} 
 	
 \end{algorithm}
 
+We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple 2d case like the one represented in figure ~\ref{fig:LMComputations}.
+
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width= 7cm, height = 7cm]{Triangolo.png}
+	\caption{Linear movement computations.}
+	\label{fig:LMComputations}
+\end{figure}
+
+Let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the represented case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. From trigonometry we know that 
+
+\begin{equation}
+	\tan \alpha = \dfrac{\delta}{\tt movementAmount},
+\end{equation}
+
+so 
+
+\begin{equation}
+	\alpha = \arctan \dfrac{\delta}{movementAmount}
+\end{equation}
+
+If the movement is parametric we want to better approximate the amount of movement over the function. We do this using the following algorithm :
+
+\begin{algorithm}
+	/* knowing $(x, y)$ */ \;
+	/* knowing $(x', y')$*/ \;
+	/* {\tt movementAmount} = \textit{M} */ \;
+	/* {\tt currentMax} = $\max f(x_n, y_n)$ */ \;
+	
+	
+	\
+	
+	$z = f(x, y)$ \;
+	$z' = f(x', y')$\;
+	
+	\
+	
+	$\delta = ((x'-x),  (y'-y))$ \;
+	$\alpha = \arctan(\dfrac{\delta}{\tt movementAmount})$ \;
+	
+	\
+	
+	$hypotenuse = \dfrac{{\tt movementAmount}}{\cos \alpha}$ \;
+	
+	\
+	
+	$movementAmountApprox = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}$
+	
+	$\Delta = $z'$ - {\tt currentMax} $\;
+	
+	\caption{Angle computation in parametric movement case.} 
+	\label{PMAlgo}
+	
+\end{algorithm}
+
+We can easily explain this algorithm looking at figure ~\ref{fig:PMComputations}. 
+
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width= 9cm, height = 9cm]{TRIANGOLO2.png}
+	\caption{Parametric movement computations.}
+	\label{fig:PMComputations}
+\end{figure}
+
+As already previously done, let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. Because of the two dimensions, even in this case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. From trigonometry we know $\alpha$ but we are interested in knowing the real amount of movement done by the agent on the function or, at least, its approximation. We want to know how much is $\overline{AB}$.  From the first theorem of Euclid we know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this we can write the following proportion :
+
+\begin{equation}
+	i : u =  u : AD.
+\end{equation}
+
+So :
+
+\begin{equation}
+	AD = \dfrac{u * u}{i},
+\end{equation}
+
+that is the same of :
+
+\begin{equation}
+	 movementAmountApprox = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}
+\end{equation}
+
+of algorithm ~\ref{PMAlgo}.
+
+The real question regards why select one method instead of the other one. The answer at this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. In addition to this using the parametric approach we could ideally train our agent on a set of specific functions and it should do very good on a generic function using its knowledge about angles, actions and slope. 
+
+Adopting the linear approach the optimization process is slower but less accurate. In addition to this using the linear approach we couldn't abstract from the concept of function.  This means that for every specific function we have to train our agent one more time.
+
 \subsection{Implementation}
+
+In order to formalize and solve our RL problem, we used the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan. BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms.
+
+In order to define specific MDPs, BURLAP offers a set of classes and interfaces (figure ~\ref{fig:UMLBurlap}).
+
+\begin{figure} [h!]
+	\includegraphics[width= 16cm, height = 9cm]{UMLBurlap.png}
+	\caption{UML Digram of the Java interfaces/classes for an MDP definition.}
+	\label{fig:UMLBurlap}
+\end{figure}
+
+A complete documentation for this framework can be find at (...). 
+
+Starting from this features offered by BURLAP, we have extended interfaces and implemented abstract classes in order to modelling the problem described above as shown in figure (..). In our implementation ...
 
 \begin{figure} [h!]
 	\includegraphics[width= 16cm, height = 18cm]{RLDiagram.png}
 	\caption{Class diagram of RL black-box optimization tool.}
-	\label{fig:BoProcess}
+	\label{fig:RLDiagram}
 \end{figure}
