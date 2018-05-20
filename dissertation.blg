@@ -3,48 +3,51 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation.aux
 The style file: alpha.bst
 Database file #1: bibfile.bib.bib
+Warning--to sort, need author or key in MNDWikipedia
+Warning--to sort, need author or key in BayesianOptimizationImage
+Warning--to sort, need author or key in BURLAPSite
 Warning--empty journal in konstantopoulos2009markov
 Warning--empty publisher in Mitchell
 Warning--empty publisher in SuttonBarto
-You've used 15 entries,
+You've used 18 entries,
             2543 wiz_defined-function locations,
-            656 strings with 6620 characters,
-and the built_in function-call counts, 5678 in all, are:
-= -- 546
-> -- 289
+            666 strings with 6990 characters,
+and the built_in function-call counts, 6302 in all, are:
+= -- 609
+> -- 292
 < -- 6
 + -- 94
 - -- 94
-* -- 375
-:= -- 958
-add.period$ -- 48
-call.type$ -- 15
-change.case$ -- 86
-chr.to.int$ -- 15
-cite$ -- 18
-duplicate$ -- 248
-empty$ -- 417
+* -- 405
+:= -- 1021
+add.period$ -- 54
+call.type$ -- 18
+change.case$ -- 95
+chr.to.int$ -- 18
+cite$ -- 27
+duplicate$ -- 278
+empty$ -- 498
 format.name$ -- 112
-if$ -- 1161
+if$ -- 1311
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 22
-newline$ -- 79
+newline$ -- 91
 num.names$ -- 47
-pop$ -- 108
+pop$ -- 147
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 122
 quote$ -- 0
-skip$ -- 202
+skip$ -- 226
 stack$ -- 0
-substring$ -- 227
-swap$ -- 35
+substring$ -- 251
+swap$ -- 38
 text.length$ -- 6
 text.prefix$ -- 4
 top$ -- 0
-type$ -- 92
-warning$ -- 3
+type$ -- 116
+warning$ -- 6
 while$ -- 52
-width$ -- 17
-write$ -- 193
-(There were 3 warnings)
+width$ -- 20
+write$ -- 220
+(There were 6 warnings)

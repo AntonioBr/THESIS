@@ -1,33 +1,64 @@
 \chapter{A Reinforcement Learning Approach to Black-Box Optimization}
 
-One of the principal challenges in optimization practice is how to optimize in absence of an algebraic model of the system to be optimized. This kind of optimization is known as \textit{black-box optimization}. \\
+One of the principal challenges in optimization practice is the possibility to optimize in absence of an algebraic model of the system to be optimized. This kind of optimization is known as \textit{black-box optimization}. \\
 
-A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function for which the analytic form is not known. Nowadays there are lots of mathematical models to solve these type of functions. One of the best known of these methods is the \textit{Bayesian Optimization Model} (BO). \\
-In this chapter we will first explain how BO works and than we will propose an innovative, RL based approach for black-box optimization problem.
+A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function for which the analytic form is not known. Nowadays there are lots of mathematical models to succeed in optimize this kind of functions. One of the best known of these methods is the \textit{Bayesian Optimization Model} (BO). \\
 
-\paragraph{Gaussian Processes} Before starting to speak about BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. The GP approach is a \textit{non-parametric} (we don't have a priori knowledge of how many parameters will be useful for our regression) approach to find a distribution over the possible function $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a stochastic process governs the properties of functions.
-GP is a convenient and powerful prior distribution on functions, which we will take here to be of the form $f : \mathcal{X} \leftarrow \mathbb{R}$. The GP is defined by the property that any finite set of $N$ points $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$ induces a multivariate Gaussian distribution  on $\mathbb{R}^N$. The $n$th of these points is taken to be the function value $f(x_n)$. The support and properties of the resulting distribution on functions are determined by a mean function $m : \mathcal{X} \leftarrow \mathbb{R}$ and a positive definite covariance function $K : \mathcal{X} \times \mathcal{X} \leftarrow \mathbb{R}$ ~\cite{NIPS2012_4522}.
+In this chapter we will first analyse the state of art of the most used black-box optimization model explaining how BO works and than we will propose an innovative, RL based approach to solve the same problem.
+
+\paragraph{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. The GP approach is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for our regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions.
+
+GP is a convenient and powerful prior distribution on functions, which we will take here to be of the form 
+
+\begin{equation}
+	f : \mathcal{X} \leftarrow \mathbb{R}.
+\end{equation}
+
+The GP is defined by the property that any finite set of $N$ points $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$ induces a multivariate Gaussian distribution  on $\mathbb{R}^N$. The $n$th of these points is taken to be the function value $f(x_n)$~\cite{NIPS2012_4522}. The support and properties of the resulting distribution on functions are determined by a mean function 
+
+\begin{equation}
+	m : \mathcal{X} \leftarrow \mathbb{R}
+\end{equation}
+
+and by a positive definite covariance function 
+
+\begin{equation}
+	k : \mathcal{X} \times \mathcal{X} \leftarrow \mathbb{R}.
+\end{equation}
 
 \begin{figure} [h!]
 	\centering
-	\includegraphics[width= \textwidth, height = 9.5cm]{Multivariate_Gaussian.png}
-	\caption{Multivariate Gaussian Distribution [Wikipedia]}
+	\includegraphics[width= \textwidth, height = 8cm]{Multivariate_Gaussian.png}
+	\caption{Multivariate Gaussian Distribution~\cite{MNDWikipedia}}
 	\label{fig:Multivatiate_Gaussian}
 \end{figure}
 
-\paragraph{Acquisition Functions for Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which we denote by $a : \mathcal{X} \leftarrow \mathbb{R}^+$, determines what point in $\mathcal{X}$ should be evaluated next via a proxy optimization $x\textsubscript{next} = \arg\max_{x}a(x)$, where several different functions have been proposed. There are several popular choices of acquisition function. Under the Gaussian process prior, these functions depend on the model solely through its predictive mean function $\mu(x; \{x_n, y_n\})$ and predictive variance function $\sigma^2(x; \{x_n, y_n\})$~\cite{NIPS2012_4522}.
+\paragraph{Acquisition Functions for Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which we denote by
+
+\begin{equation}
+	a : \mathcal{X} \leftarrow \mathbb{R}^+,
+\end{equation}
+
+determines what point in $\mathcal{X}$ should be evaluated next via a proxy optimization
+
+\begin{equation}
+	x\textsubscript{next} = \arg\max_{x}a(x),
+\end{equation}
+
+where several different functions have been proposed. There are several popular choices of acquisition functions. Under the Gaussian process prior, these functions depend on the model solely through its predictive mean function $\mu(x; \{x_n, y_n\})$ and predictive variance function $\sigma^2(x; \{x_n, y_n\})$~\cite{NIPS2012_4522}.
+
 
 \begin{figure} [h!]
 	\centering
-	\includegraphics[width= \textwidth, height = 13cm]{BOProcess.png}
-	\caption{2-$d$ Bayesian Optimization Process Example[towardsdatascience.com]}
+	\includegraphics[width= 10cm, height = 10cm]{BOProcess.png}
+	\caption{2-$d$ Bayesian Optimization Process Example~\cite{BayesianOptimizationImage}}
 	\label{fig:BoProcess}
 \end{figure}
 
-\paragraph{An RL Approach} As previously said in this thesis we describe an innovative RL approach to the black-box function optimization problem. Let's assume to dispose of a function $f(x, y)$. In our RL problem :
+\paragraph{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. Let's assume to dispose of a $3d$-function $f(x, y)$. In this scenario :
 
 \begin{itemize}
-	\item \textbf{Agent} : The agent has to maximize a black-box bivariate function. Each function is continuously defined over a specific domain. The agent has to complete its job making exactly $150$ epochs for each one of the $1000$ episodes. In each epoch it has a position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
+	\item \textbf{Agent} : The agent has to maximize a black-box bivariate function. The function is continuously defined over a specific domain. The agent has to complete its job making exactly $150$ epochs for each one of the $1000$ episodes. In each epoch it has a position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
 	\item \textbf{State} : The state is represented by two lists: the first one contains the last two computed \textit{angles} and the second one contains the correspondent last two \textit{actions}.
 	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $40$ pixels in one of the previously described directions. The resultant effective movement is computed as follow:
 	
@@ -93,7 +124,7 @@ We can explain this algorithm briefly recalling some trigonometry. Let's suppose
 
 \begin{figure} [h!]
 	\centering
-	\includegraphics[width= 7cm, height = 7cm]{Triangolo.png}
+	\includegraphics[width= 10cm, height = 9cm]{Triangolo.png}
 	\caption{Linear movement computations.}
 	\label{fig:LMComputations}
 \end{figure}
@@ -179,7 +210,7 @@ Adopting the linear approach the optimization process is slower but less accurat
 
 \subsection{Implementation}
 
-In order to formalize and solve our RL problem, we used the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan. BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms.
+In order to formalize and solve our RL problem, we used the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan. BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms~\cite{BURLAPSite}. \\
 
 In order to define specific MDPs, BURLAP offers a set of classes and interfaces (figure ~\ref{fig:UMLBurlap}).
 
@@ -189,12 +220,21 @@ In order to define specific MDPs, BURLAP offers a set of classes and interfaces 
 	\label{fig:UMLBurlap}
 \end{figure}
 
-A complete documentation for this framework can be find at (...). 
+The main features offered by BURLAP are :
+	
+\begin{itemize}
+	\item \textbf{State} : implementing this interface we define the state variables of our MDP state space. An instance of this object will specify a single state from the state space~\cite{BURLAPSite} .
+	\item \textbf{Action} : implementing this interface we define a possible action that the agent can select. If our MDP action set is discrete and unparametrized, we may consider using the provided concrete implementation {\tt SimpleAction}, which defines an action entirely by a single string name~\cite{BURLAPSite}.
+	\item \textbf{SampleModel} : implementing this interface we define the model of our MDP. This interface only requires us to implement methods that can sample a transition: spit back out a possible next state and reward given a prior state and action taken~\cite{BURLAPSite}.
+	\item  \textbf{Environment} : An MDP defines the nature of an environment, but ultimately, an agent will want to interact with an actual environment, either through learning or to execute a policy it computed from planning for the MDP. An environment has a specific state of the world that the agent can only modify by using the MDP actions. Implement this interface to provide an environment with which BURLAP agents can interact. If we define the MDP ourself, then we'll probably don't want to implement {\tt Environment} ourself and instead use the provided concrete {\tt SimulatedEnvironment} class, which takes an {\tt SADomain} with a {\tt SampleModel}, and simulates an environment for it~\cite{BURLAPSite}.
+\end{itemize}
 
-Starting from this features offered by BURLAP, we have extended interfaces and implemented abstract classes in order to modelling the problem described above as shown in figure (..). In our implementation ...
+An extended definition of classes and interfaces can be found at \url{http://burlap.cs.brown.edu/doc/index.html}.
+
+Starting from features offered by BURLAP, we have extended interfaces and implemented abstract classes in order to modelling the problem described above as shown in figure ~\ref{fig:RLUMLDiagram}. Because of the previous detailed explanation of choices made to model the problem, a deepened analysis of architectural definition is left to the reader.
 
 \begin{figure} [h!]
-	\includegraphics[width= 16cm, height = 18cm]{RLDiagram.png}
+	\includegraphics[width= 16cm, height = 18.5cm]{RLDiagram.png}
 	\caption{Class diagram of RL black-box optimization tool.}
-	\label{fig:RLDiagram}
+	\label{fig:RLUMLDiagram}
 \end{figure}

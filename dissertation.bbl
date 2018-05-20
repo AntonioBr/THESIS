@@ -6,6 +6,14 @@ Ryan~P. Adams and Oliver Stegle.
 \newblock Gaussian process product models for nonparametric nonstationarity.
 \newblock In {\em ICML}, 2008.
 
+\bibitem[Bay]{BayesianOptimizationImage}
+\url{https://towardsdatascience.com/shallow-understanding-on-bayesian-optimization-324b6c1f7083}.
+\newblock Accessed: {2018-05-20}.
+
+\bibitem[BUR]{BURLAPSite}
+\url{http://burlap.cs.brown.edu/tutorials/bd/p2.html}.
+\newblock Accessed: {2018-05-20}.
+
 \bibitem[HL01]{HillLieb01}
 Frederick~S. Hillier and Gerald~J. Lieberman.
 \newblock {\em Introduction to Operations Research}.
@@ -30,6 +38,10 @@ Ke~Li and Jitendra Malik.
 Tom~M. Mitchell.
 \newblock {\em Machine Learning}.
 \newblock 1997.
+
+\bibitem[MND]{MNDWikipedia}
+\url{https://en.wikipedia.org/wiki/Multivariate_normal_distribution/media/File:Multivariate_Gaussian.png}.
+\newblock Accessed: {2018-05-20}.
 
 \bibitem[NFK06]{Nevmyvaka}
 Yuriy Nevmyvaka, Yi~Feng, and Michael Kearns.
