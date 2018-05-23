@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  20 MAY 2018 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  23 MAY 2018 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -221,18 +221,18 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (./dissertation.aux)
 \openout1 = `dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -551,9 +551,128 @@ LaTeX Warning: Float too large for page by 10.67018pt on input line 240.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./dissertation.bbl [32] [33 <./IMAGES/RLDiagram.png (PNG copy)>] [34
+) (./CHAPTERS/ExperimentalSetting.tex [32] [33 <./IMAGES/RLDiagram.png (PNG cop
+y)>] [34
 
 ]
+Chapter 4.
+[35] <IMAGES/originalHimmelblau.png, id=157, 1358.07375pt x 1003.75pt>
+File: IMAGES/originalHimmelblau.png Graphic file (type png)
+
+<use IMAGES/originalHimmelblau.png>
+Package pdftex.def Info: IMAGES/originalHimmelblau.png used on input line 37.
+(pdftex.def)             Requested size: 398.32808pt x 341.43896pt.
+
+Overfull \hbox (38.32808pt too wide) in paragraph at lines 37--38
+ [][] 
+ []
+
+[36 <./IMAGES/originalHimmelblau.png>]
+<IMAGES/modifiedHimmelblau.png, id=162, 1358.07375pt x 1003.75pt>
+File: IMAGES/modifiedHimmelblau.png Graphic file (type png)
+
+<use IMAGES/modifiedHimmelblau.png>
+Package pdftex.def Info: IMAGES/modifiedHimmelblau.png used on input line 56.
+(pdftex.def)             Requested size: 398.32808pt x 341.43896pt.
+
+Overfull \hbox (38.32808pt too wide) in paragraph at lines 56--57
+ [][] 
+ []
+
+<IMAGES/himmelblau.png, id=163, 301.125pt x 301.125pt>
+File: IMAGES/himmelblau.png Graphic file (type png)
+
+<use IMAGES/himmelblau.png>
+Package pdftex.def Info: IMAGES/himmelblau.png used on input line 65.
+(pdftex.def)             Requested size: 341.4665pt x 284.55542pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37 <./IMAGES/modifiedHimmelblau.png>] [38 <./IMAGES/himmelblau.png>]
+<IMAGES/parabolic.png, id=173, 301.125pt x 301.125pt>
+File: IMAGES/parabolic.png Graphic file (type png)
+
+<use IMAGES/parabolic.png>
+Package pdftex.def Info: IMAGES/parabolic.png used on input line 96.
+(pdftex.def)             Requested size: 284.55542pt x 284.55542pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+<IMAGES/originalBeale.png, id=174, 1358.07375pt x 1003.75pt>
+File: IMAGES/originalBeale.png Graphic file (type png)
+
+<use IMAGES/originalBeale.png>
+Package pdftex.def Info: IMAGES/originalBeale.png used on input line 113.
+(pdftex.def)             Requested size: 426.78009pt x 341.43896pt.
+
+Overfull \hbox (66.78009pt too wide) in paragraph at lines 113--114
+ [][] 
+ []
+
+[39 <./IMAGES/parabolic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[40 <./IMAGES/originalBeale.png>]
+<IMAGES/customizedBeale.png, id=183, 1358.07375pt x 1003.75pt>
+File: IMAGES/customizedBeale.png Graphic file (type png)
+
+<use IMAGES/customizedBeale.png>
+Package pdftex.def Info: IMAGES/customizedBeale.png used on input line 136.
+(pdftex.def)             Requested size: 341.42407pt x 284.52481pt.
+
+<IMAGES/beale.png, id=184, 301.125pt x 301.125pt>
+File: IMAGES/beale.png Graphic file (type png)
+ <use IMAGES/beale.png>
+Package pdftex.def Info: IMAGES/beale.png used on input line 145.
+(pdftex.def)             Requested size: 284.55542pt x 284.55542pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<IMAGES/classicalStyblinski.png, id=185, 1358.07375pt x 1003.75pt>
+File: IMAGES/classicalStyblinski.png Graphic file (type png)
+
+<use IMAGES/classicalStyblinski.png>
+Package pdftex.def Info: IMAGES/classicalStyblinski.png used on input line 160.
+
+(pdftex.def)             Requested size: 412.56445pt x 369.89604pt.
+
+Overfull \hbox (52.56445pt too wide) in paragraph at lines 160--161
+ [][] 
+ []
+
+[41 <./IMAGES/customizedBeale.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<IMAGES/customizedStyblinski.png, id=190, 1358.07375pt x 1003.75pt>
+File: IMAGES/customizedStyblinski.png Graphic file (type png)
+
+<use IMAGES/customizedStyblinski.png>
+Package pdftex.def Info: IMAGES/customizedStyblinski.png used on input line 181
+.
+(pdftex.def)             Requested size: 256.06805pt x 256.06773pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<IMAGES/styblinski.png, id=191, 301.125pt x 301.125pt>
+File: IMAGES/styblinski.png Graphic file (type png)
+
+<use IMAGES/styblinski.png>
+Package pdftex.def Info: IMAGES/styblinski.png used on input line 190.
+(pdftex.def)             Requested size: 142.26852pt x 142.26852pt.
+ [42 <./IMAGES/beale.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./dissertation.bbl [43 <./IMAGES/classicalStyblinski.png>] [44 <./IMAGES/cus
+tomizedStyblinski.png> <./IMAGES/styblinski.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
 []$\OT1/cmtt/m/n/10.95 https : / / towardsdatascience . com /
  []
@@ -582,16 +701,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 $\OT1/cmr/m/n/10.95 .
  []
 
-[35]) [36] (./dissertation.aux) )
+[45
+
+]) [46] (./dissertation.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5012 strings out of 492995
- 68949 string characters out of 6132705
- 146205 words of memory out of 5000000
- 8449 multiletter control sequences out of 15000+600000
+ 5075 strings out of 492995
+ 70738 string characters out of 6132705
+ 146316 words of memory out of 5000000
+ 8499 multiletter control sequences out of 15000+600000
  15064 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,19n,37p,1388b,2160s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -615,10 +736,10 @@ exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (36 pages, 2230994 bytes).
+Output written on dissertation.pdf (46 pages, 4644761 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 278 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
