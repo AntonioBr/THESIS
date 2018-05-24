@@ -166,7 +166,13 @@ If the movement is parametric we want to better approximate the amount of moveme
 	
 	\
 	
-	$movementAmountApprox = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}$
+	$projectionOnHypotenuse = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}$ \;
+	
+	\
+	
+	$realMovementAmount = projectionOnHypotenuse * \cos \alpha$ \;
+	 
+	 \
 	
 	$\Delta = $z'$ - {\tt currentMax} $\;
 	
@@ -187,22 +193,26 @@ We can easily explain this algorithm looking at figure ~\ref{fig:PMComputations}
 As already previously done, let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. Because of the two dimensions, even in this case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. From trigonometry we know $\alpha$ but we are interested in knowing the real amount of movement done by the agent on the function or, at least, its approximation. We want to know how much is $\overline{AB}$.  From the first theorem of Euclid we know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this we can write the following proportion :
 
 \begin{equation}
-	i : u =  u : AD.
+	h : u =  u : AD.
 \end{equation}
 
 So :
 
 \begin{equation}
-	AD = \dfrac{u * u}{i},
+	AD = \dfrac{u * u}{h},
 \end{equation}
 
 that is the same of :
 
 \begin{equation}
-	 movementAmountApprox = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}
+	 pojectionOnHypotenuse = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}
 \end{equation}
 
-of algorithm ~\ref{PMAlgo}.
+of algorithm ~\ref{PMAlgo}. Now we have all elements in order to compute the \textit{real movement amount}. It is simply $\overline{AE}$ segment and it is computed as :
+
+\begin{equation}
+	\overline{AE} = \overline{DA} \cos \alpha
+\end{equation}
 
 The real question regards why select one method instead of the other one. The answer at this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. In addition to this using the parametric approach we could ideally train our agent on a set of specific functions and it should do very good on a generic function using its knowledge about angles, actions and slope. 
 
