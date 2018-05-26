@@ -6,48 +6,49 @@ Database file #1: bibfile.bib.bib
 Warning--to sort, need author or key in MNDWikipedia
 Warning--to sort, need author or key in BayesianOptimizationImage
 Warning--to sort, need author or key in BURLAPSite
+Warning--to sort, need author or key in RGLipschitz
 Warning--empty journal in konstantopoulos2009markov
 Warning--empty publisher in Mitchell
 Warning--empty publisher in SuttonBarto
-You've used 18 entries,
+You've used 19 entries,
             2543 wiz_defined-function locations,
-            666 strings with 6990 characters,
-and the built_in function-call counts, 6302 in all, are:
-= -- 609
-> -- 292
+            670 strings with 7267 characters,
+and the built_in function-call counts, 6510 in all, are:
+= -- 630
+> -- 293
 < -- 6
 + -- 94
 - -- 94
-* -- 405
-:= -- 1021
-add.period$ -- 54
-call.type$ -- 18
-change.case$ -- 95
-chr.to.int$ -- 18
-cite$ -- 27
-duplicate$ -- 278
-empty$ -- 498
+* -- 415
+:= -- 1042
+add.period$ -- 56
+call.type$ -- 19
+change.case$ -- 98
+chr.to.int$ -- 19
+cite$ -- 30
+duplicate$ -- 288
+empty$ -- 525
 format.name$ -- 112
-if$ -- 1311
+if$ -- 1361
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 22
-newline$ -- 91
+newline$ -- 95
 num.names$ -- 47
-pop$ -- 147
+pop$ -- 160
 preamble$ -- 1
-purify$ -- 122
+purify$ -- 127
 quote$ -- 0
-skip$ -- 226
+skip$ -- 234
 stack$ -- 0
-substring$ -- 251
-swap$ -- 38
+substring$ -- 259
+swap$ -- 39
 text.length$ -- 6
 text.prefix$ -- 4
 top$ -- 0
-type$ -- 116
-warning$ -- 6
+type$ -- 124
+warning$ -- 7
 while$ -- 52
-width$ -- 20
-write$ -- 220
-(There were 6 warnings)
+width$ -- 21
+write$ -- 229
+(There were 7 warnings)

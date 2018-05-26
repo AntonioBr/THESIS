@@ -1,12 +1,12 @@
-\chapter{A Reinforcement Learning Approach to Black-Box Optimization}
+\chapter{Black-Box Optimization}
 
-One of the principal challenges in optimization practice is the possibility to optimize in absence of an algebraic model of the system to be optimized. This kind of optimization is known as \textit{black-box optimization}. \\
+One of the most exciting challenges in optimization practice is the possibility to optimize in absence of an algebraic model of the system to be optimized. This kind of optimization is known as \textit{black-box optimization} and it is the subject matter of this dissertation. \\
 
 A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function for which the analytic form is not known. Nowadays there are lots of mathematical models to succeed in optimize this kind of functions. One of the best known of these methods is the \textit{Bayesian Optimization Model} (BO). \\
 
-In this chapter we will first analyse the state of art of the most used black-box optimization model explaining how BO works and than we will propose an innovative, RL based approach to solve the same problem.
+In this chapter we will first analyse how BO works and than we will propose an innovative, Reinforcement Learning based approach to solve the same problem.
 
-\paragraph{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. The GP approach is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for our regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions.
+\paragraph{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. GP is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for the regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions. \\
 
 GP is a convenient and powerful prior distribution on functions, which we will take here to be of the form 
 
@@ -29,7 +29,7 @@ and by a positive definite covariance function
 \begin{figure} [h!]
 	\centering
 	\includegraphics[width= \textwidth, height = 8cm]{Multivariate_Gaussian.png}
-	\caption{Multivariate Gaussian Distribution~\cite{MNDWikipedia}}
+	\caption{Multivariate Gaussian Distribution~\cite{MNDWikipedia}.}
 	\label{fig:Multivatiate_Gaussian}
 \end{figure}
 
@@ -55,45 +55,55 @@ where several different functions have been proposed. There are several popular 
 	\label{fig:BoProcess}
 \end{figure}
 
-\paragraph{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. Let's assume to dispose of a $3d$-function $f(x, y)$. In this scenario :
+\paragraph{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. The process to reach this goal has required about three months of work. We made a lot of attempts. A full, detailed chronology of the development of the method presented in this chapter is described in \textbf{Appendix A}. Here we describe the final product of our efforts. \\
+
+Let's consider the following scenario :
 
 \begin{itemize}
-	\item \textbf{Agent} : The agent has to maximize a black-box bivariate function. The function is continuously defined over a specific domain. The agent has to complete its job making exactly $150$ epochs for each one of the $1000$ episodes. In each epoch it has a position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
+	
+	\item \textbf{Agent} : The Reinforcement Learning agent has to maximize a black-box bivariate function. The function is continuously defined over a specific domain. The function is mapped on a space of $600 \times 600$ pixels. The agent has to complete its job having exactly $100$ epochs for each one of the $150$ episodes. In each epoch the agent has a specific position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
+	
 	\item \textbf{State} : The state is represented by two lists: the first one contains the last two computed \textit{angles} and the second one contains the correspondent last two \textit{actions}.
-	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $40$ pixels in one of the previously described directions. The resultant effective movement is computed as follow:
+	
+	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $40$ pixels in one of the previously described directions. The resultant effective movement over function is computed as shown in algorithm $5$.
 	
 	\begin{algorithm} [h!]
-		/* knowing $pixelX$ and $pixelY$ */\;
-		/* knowing $pixelXRange$ and $pixelYRange$ */ \;
-		/* knowing $function$ */\;
+		/* knowing {\tt pixel\_X} and {\tt pixel\_Y} */\;
+		/* knowing {\tt pixel\_X\_Range} and {\tt pixel\_Y\_Range} */ \;
+		/* knowing the {\tt function} */\;
 		
 		\
 		
-		$domain = function.getDomain()$ \;
-		$xRange = domain.maxX - domain.minX$ \;
-		$yRange = domain.maxY - domain.minY$ \;
+		{\tt domain} = {\tt function.getDomain()} \;
+		{\tt x\_Range} = {\tt domain.max\_X - domain.min\_X} \;
+		{\tt y\_Range} = {\tt domain.max\_Y - domain.min\_Y} \;
 		
 		\
 		
-		$xReal = domain.minX + (pixelX * xRange) / pixelXRange$ \;
-		$yReal = domain.minY + (pixelY * yRange) / pixelYRange$ \;
+		{\tt x\_Real} = {\tt domain.min\_X} + {\tt(pixel\_X * x\_Range) / pixel\_X\_Range} \;
+		{\tt y\_Real} = {\tt domain.min\_Y} + {\tt (pixel\_Y * y\_Range) / pixel\_Y\_Range} \;
 		
 		\
 		
-		\KwRet{$xReal, yReal$}
+		\KwRet{{\tt x\_Real, y\_Real}}
+		\label{algoPixel}
 		\caption{From pixels to real values} 
 	\end{algorithm}
 	
-	\item \textbf{Reward} : In this context we have decided to reward every action of the agent because a real terminal state doesn't exist. Cause we are working with a black-box function we cannot select two coordinate $(x, y)$ and a corresponding value function $z$ as a terminal state. The simulation ends after $1000$ episodes are done. We define a $\Delta$ equals to $\max f(z_n)$ minus $f(z)$ computed in the \textit{current state}:
+	\item \textbf{Reward} : In the context just described, a real terminal state doesn't exist. Cause we are working with black-box functions we cannot specify two coordinates $(x, y)$ and the corresponding value function $z$ as maximum, that is, as the terminal state. For this reason every action of the agent is rewarded. The simulation ends after $1000$ episodes are completed.
+	In each explored state we define a $\Delta$ computed as follow: 
 	
 	\begin{equation}
 		\Delta = max f(x_n, y_n) - f(x, y)
 	\end{equation} 
 	
-	Our reward at each epoch is equal to $\Delta$.
+	where $f(x, y)$ is the value function computed in the  \textit{current state}. Reward at each epoch is equal to $\Delta$.
+	
 \end{itemize}
 
-The movement the agent can make in each epoch can be of two different types : \textit{linear movement} or \textit{parametric movement}. If the movement is linear we compute the angle as follow :
+The nature of the movement the agent can make in each epoch can be of two different types : \textit{linear movement} or \textit{parametric movement}. A linear movement can be thought as a crow flies one. In this case the structure of the function is not really considered. On the other hand, a parametric movement can be thought as a real movement over the function curves. In this case the structure of the function influences the amount of the movement really done. \\
+
+If the movement is linear we compute angles as follow :
 
 \begin{algorithm}
 	/* knowing $(x, y)$ */ \;
@@ -120,7 +130,7 @@ The movement the agent can make in each epoch can be of two different types : \t
 	
 \end{algorithm}
 
-We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple 2d case like the one represented in figure ~\ref{fig:LMComputations}.
+We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple $2d$-case like the one represented in figure ~\ref{fig:LMComputations}.
 
 \begin{figure} [h!]
 	\centering
@@ -129,19 +139,19 @@ We can explain this algorithm briefly recalling some trigonometry. Let's suppose
 	\label{fig:LMComputations}
 \end{figure}
 
-Let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the represented case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. From trigonometry we know that 
+Let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the $2d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can compute $f(x')$. At this time we should know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and $\overline{CB}$ equals to $f(x') - f(x)$ is the $\delta$. From trigonometry 
 
 \begin{equation}
 	\tan \alpha = \dfrac{\delta}{\tt movementAmount},
 \end{equation}
 
-so 
+so we can finally compute the angle $\alpha$ as follow :
 
 \begin{equation}
 	\alpha = \arctan \dfrac{\delta}{movementAmount}
 \end{equation}
 
-If the movement is parametric we want to better approximate the amount of movement over the function. We do this using the following algorithm :
+If the movement is parametric we have to be more specific about the amount of movement over the function. We do this using the following algorithm :
 
 \begin{algorithm}
 	/* knowing $(x, y)$ */ \;
@@ -162,15 +172,15 @@ If the movement is parametric we want to better approximate the amount of moveme
 	
 	\
 	
-	$hypotenuse = \dfrac{{\tt movementAmount}}{\cos \alpha}$ \;
+	${\tt hypotenuse} = \dfrac{{\tt movementAmount}}{\cos \alpha}$ \;
 	
 	\
 	
-	$projectionOnHypotenuse = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}$ \;
+	${\tt projectionOnHypotenuse} = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{{\tt hypotenuse}}$ \;
 	
 	\
 	
-	$realMovementAmount = projectionOnHypotenuse * \cos \alpha$ \;
+	${\tt realMovementAmount} = {\tt projectionOnHypotenuse} * \cos \alpha$ \;
 	 
 	 \
 	
@@ -190,7 +200,7 @@ We can easily explain this algorithm looking at figure ~\ref{fig:PMComputations}
 	\label{fig:PMComputations}
 \end{figure}
 
-As already previously done, let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. Because of the two dimensions, even in this case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. From trigonometry we know $\alpha$ but we are interested in knowing the real amount of movement done by the agent on the function or, at least, its approximation. We want to know how much is $\overline{AB}$.  From the first theorem of Euclid we know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this we can write the following proportion :
+As previously done, let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the $2d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We should now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. Using trigonometry we can compute $\alpha$. Our objective is to know the real amount of movement done by the agent on the function. We want to know how much is $\overline{AE}$.  From the first theorem of Euclid we know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this we can write the following proportion :
 
 \begin{equation}
 	h : u =  u : AD.
@@ -205,24 +215,28 @@ So :
 that is the same of :
 
 \begin{equation}
-	 pojectionOnHypotenuse = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{hypotenuse}
+	 {\tt pojectionOnHypotenuse} = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{{\tt hypotenuse}}
 \end{equation}
 
-of algorithm ~\ref{PMAlgo}. Now we have all elements in order to compute the \textit{real movement amount}. It is simply $\overline{AE}$ segment and it is computed as :
+of algorithm ~\ref{PMAlgo}. Now we have all elements in order to compute the \textit{real movement amount} represented by segment $\overline{AE}$. It is computed as :
 
 \begin{equation}
 	\overline{AE} = \overline{DA} \cos \alpha
 \end{equation}
 
-The real question regards why select one method instead of the other one. The answer at this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. In addition to this using the parametric approach we could ideally train our agent on a set of specific functions and it should do very good on a generic function using its knowledge about angles, actions and slope. 
+Both parametric and linear approach are effective. Therefore the question is why select one method instead of the other one. The answer to this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. This depends on the fact that the real amount of movement depends on the angle so it is lesser each time. 
 
-Adopting the linear approach the optimization process is slower but less accurate. In addition to this using the linear approach we couldn't abstract from the concept of function.  This means that for every specific function we have to train our agent one more time.
+On the other hand using the parametric approach, we could ideally train our agent on a set of specific functions and then it should have very good performances also on a generic, never previously explored, function using its knowledge about angles, actions and slope. 
+
+Adopting the linear approach the optimization process is slower but less accurate. This depends on the fact that the movement is as the crow flies. Using the linear approach we cannot abstract from the concept of function. This means that we have to train our agent for every specific function in order to optimize its. Any change on a specific function, however small, invalidates the previous training.
 
 \subsection{Implementation}
 
-In order to formalize and solve our RL problem, we used the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan. BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms~\cite{BURLAPSite}. \\
+In order to formalize and solve the problem previously described adopting an RL approach, we use the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan of Brown University. \\
 
-In order to define specific MDPs, BURLAP offers a set of classes and interfaces (figure ~\ref{fig:UMLBurlap}).
+BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms~\cite{BURLAPSite}. \\
+
+In order to define customized MDPs, BURLAP offers a set of classes and interfaces (figure ~\ref{fig:UMLBurlap}).
 
 \begin{figure} [h!]
 	\includegraphics[width= 16cm, height = 9cm]{UMLBurlap.png}
@@ -239,12 +253,14 @@ The main features offered by BURLAP are :
 	\item  \textbf{Environment} : An MDP defines the nature of an environment, but ultimately, an agent will want to interact with an actual environment, either through learning or to execute a policy it computed from planning for the MDP. An environment has a specific state of the world that the agent can only modify by using the MDP actions. Implement this interface to provide an environment with which BURLAP agents can interact. If we define the MDP ourself, then we'll probably don't want to implement {\tt Environment} ourself and instead use the provided concrete {\tt SimulatedEnvironment} class, which takes an {\tt SADomain} with a {\tt SampleModel}, and simulates an environment for it~\cite{BURLAPSite}.
 \end{itemize}
 
-An extended definition of classes and interfaces can be found at \url{http://burlap.cs.brown.edu/doc/index.html}.
+An extended definition of classes and interfaces can be found at \url{http://burlap.cs.brown.edu/doc/index.html}. \\
 
-Starting from features offered by BURLAP, we have extended interfaces and implemented abstract classes in order to modelling the problem described above as shown in figure ~\ref{fig:RLUMLDiagram}. Because of the previous detailed explanation of choices made to model the problem, a deepened analysis of architectural definition is left to the reader.
+in order to model the problem described above, starting from features offered by BURLAP, we extend interfaces and implement abstract classes as shown in figure ~\ref{fig:RLUMLDiagram}. \\
+
+Because of the detailed explanation of choices made to model the problem given in the first section of this chapter and in \textbf{Appendix A}, the mere analysis of architectural definition is left to the reader. The full code can be found at (...).
 
 \begin{figure} [h!]
-	\includegraphics[width= 16cm, height = 18.5cm]{RLDiagram.png}
-	\caption{Class diagram of RL black-box optimization tool.}
+	\includegraphics[width= \textwidth , height = 10cm]{RLDiagram}
+	\caption{Class diagram of RL based optimization approach.}
 	\label{fig:RLUMLDiagram}
 \end{figure}

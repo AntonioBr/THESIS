@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  24 MAY 2018 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  26 MAY 2018 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,22 +218,6 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen123
-\captionmargin@=\dimen124
-\captionwidth=\dimen125
-\caption@tempdima=\dimen126
-\caption@indent=\dimen127
-\caption@parindent=\dimen128
-\caption@hangindent=\dimen129
-)
-\c@ContinuedFloat=\count107
-)
 
 LaTeX Warning: Unused global option(s):
     [a4rpaper].
@@ -256,16 +240,16 @@ LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen130
+\scratchcounter=\count107
+\scratchdimen=\dimen123
 \scratchbox=\box36
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen131
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen124
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
@@ -319,9 +303,6 @@ e
 (/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-
 (./CHAPTERS/introduction.tex
 Chapter 1.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-32.def
@@ -456,7 +437,11 @@ File: IMAGES/RL_possibilities_schema.png Graphic file (type png)
 Package pdftex.def Info: IMAGES/RL_possibilities_schema.png used on input line 
 244.
 (pdftex.def)             Requested size: 359.98969pt x 113.8076pt.
- [13 <./IMAGES/RL_possibilities_schema.png>] [14]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14 <./IMAGES/RL_possibilities_schema.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 275--277
 
  []
@@ -471,7 +456,11 @@ Overfull \hbox (4.79861pt too wide) in paragraph at lines 280--287
  [][] 
  []
 
-[15] [16]
+
+Underfull \vbox (badness 2057) has occurred while \output is active []
+
+ [15]
+[16]
 Overfull \hbox (24.54924pt too wide) in paragraph at lines 333--334
 []\OT1/cmr/m/n/10.95 the in-for-ma-tion nec-es-sary to per-form such an up-date
  is $(\OML/cmm/m/it/10.95 s[]; a[]; r[]; s[]; a[]\OT1/cmr/m/n/10.95 )$,
@@ -482,7 +471,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
-[18]) (./CHAPTERS/RLapproach.tex [19] [20]
+[18]) (./CHAPTERS/RLapproach.tex [19] [20] [21] [22
+
+]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -494,118 +485,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[21
 
-] <IMAGES/Multivariate_Gaussian.png, id=103, 1284.8pt x 803.0pt>
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+[23] <IMAGES/Multivariate_Gaussian.png, id=109, 1284.8pt x 803.0pt>
 File: IMAGES/Multivariate_Gaussian.png Graphic file (type png)
 
 <use IMAGES/Multivariate_Gaussian.png>
 Package pdftex.def Info: IMAGES/Multivariate_Gaussian.png used on input line 31
 .
 (pdftex.def)             Requested size: 359.99641pt x 227.61984pt.
-
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 22 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
- []
-
-[22 <./IMAGES/Multivariate_Gaussian.png>]
-<IMAGES/BOProcess.png, id=108, 718.685pt x 713.66624pt>
+ [24 <./IMAGES/Multivariate_Gaussian.png>] <IMAGES/BOProcess.png, id=114, 718.6
+85pt x 713.66624pt>
 File: IMAGES/BOProcess.png Graphic file (type png)
 
 <use IMAGES/BOProcess.png>
 Package pdftex.def Info: IMAGES/BOProcess.png used on input line 53.
 (pdftex.def)             Requested size: 284.52995pt x 284.52492pt.
- [23 <./IMAGES/BOProcess.png>]
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 24 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
  []
 
-[24] <IMAGES/Triangolo.png, id=116, 600.2425pt x 485.815pt>
-File: IMAGES/Triangolo.png Graphic file (type png)
-
-<use IMAGES/Triangolo.png>
-Package pdftex.def Info: IMAGES/Triangolo.png used on input line 127.
-(pdftex.def)             Requested size: 284.53197pt x 256.07227pt.
-
+[25 <./IMAGES/BOProcess.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25] <IMAGES/TRIANGOLO2.png, id=121, 396.48125pt x 446.66875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+[26]
+Underfull \vbox (badness 1205) has occurred while \output is active []
+
+ [27]
+<IMAGES/Triangolo.png, id=126, 600.2425pt x 485.815pt>
+File: IMAGES/Triangolo.png Graphic file (type png)
+
+<use IMAGES/Triangolo.png>
+Package pdftex.def Info: IMAGES/Triangolo.png used on input line 137.
+(pdftex.def)             Requested size: 284.53197pt x 256.07227pt.
+ [28 <./IMAGES/Triangolo.png>]
+<IMAGES/TRIANGOLO2.png, id=131, 396.48125pt x 446.66875pt>
 File: IMAGES/TRIANGOLO2.png Graphic file (type png)
 
 <use IMAGES/TRIANGOLO2.png>
-Package pdftex.def Info: IMAGES/TRIANGOLO2.png used on input line 188.
+Package pdftex.def Info: IMAGES/TRIANGOLO2.png used on input line 198.
 (pdftex.def)             Requested size: 256.0763pt x 256.07599pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 26 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
- []
-
-[26 <./IMAGES/Triangolo.png>] [27]
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 28 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
- []
-
-[28 <./IMAGES/TRIANGOLO2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+[29] [30 <./IMAGES/TRIANGOLO2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
-<IMAGES/UMLBurlap.png, id=133, 1213.53375pt x 521.95pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+<IMAGES/UMLBurlap.png, id=139, 1213.53375pt x 521.95pt>
 File: IMAGES/UMLBurlap.png Graphic file (type png)
 
 <use IMAGES/UMLBurlap.png>
-Package pdftex.def Info: IMAGES/UMLBurlap.png used on input line 228.
+Package pdftex.def Info: IMAGES/UMLBurlap.png used on input line 242.
 (pdftex.def)             Requested size: 455.24069pt x 256.07631pt.
 
-Overfull \hbox (95.24069pt too wide) in paragraph at lines 228--229
+Overfull \hbox (95.24069pt too wide) in paragraph at lines 242--243
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29] <IMAGES/RLDiagram.png, id=137, 4306.0875pt x 3711.8675pt>
+[31] [32 <./IMAGES/UMLBurlap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+<IMAGES/RLDiagram.png, id=148, 1193.45876pt x 554.07pt>
 File: IMAGES/RLDiagram.png Graphic file (type png)
 
 <use IMAGES/RLDiagram.png>
-Package pdftex.def Info: IMAGES/RLDiagram.png used on input line 247.
-(pdftex.def)             Requested size: 455.20784pt x 526.34125pt.
+Package pdftex.def Info: IMAGES/RLDiagram.png used on input line 263.
+(pdftex.def)             Requested size: 359.98894pt x 284.52493pt.
+) (./CHAPTERS/ExperimentalSetting.tex [33 <./IMAGES/RLDiagram.png>] [34
 
-Overfull \hbox (95.20784pt too wide) in paragraph at lines 247--248
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 8.541pt on input line 250.
-
-
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 30 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
- []
-
-[30 <./IMAGES/UMLBurlap.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./CHAPTERS/ExperimentalSetting.tex [31]
-Overfull \hbox (136.82416pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/10.95 32 \OT1/cmr/m/sl/10.95 CHAPTER 3.  A REINFORCEMENT LEARNING 
-APPROACH TO BLACK-BOX OPTIMIZATION
- []
-
-[32 <./IMAGES/RLDiagram.png (PNG copy)>]
+]
 Chapter 4.
-<IMAGES/originalHimmelblau.png, id=149, 1358.07375pt x 1003.75pt>
+<IMAGES/originalHimmelblau.png, id=156, 1358.07375pt x 1003.75pt>
 File: IMAGES/originalHimmelblau.png Graphic file (type png)
 
 <use IMAGES/originalHimmelblau.png>
@@ -619,10 +597,8 @@ Overfull \hbox (38.32808pt too wide) in paragraph at lines 26--27
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[33
-
-] [34 <./IMAGES/originalHimmelblau.png>]
-<IMAGES/modifiedHimmelblau.png, id=157, 1358.07375pt x 1003.75pt>
+[35] [36 <./IMAGES/originalHimmelblau.png>]
+<IMAGES/modifiedHimmelblau.png, id=164, 1358.07375pt x 1003.75pt>
 File: IMAGES/modifiedHimmelblau.png Graphic file (type png)
 
 <use IMAGES/modifiedHimmelblau.png>
@@ -633,7 +609,7 @@ Overfull \hbox (38.32808pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-[35 <./IMAGES/modifiedHimmelblau.png>]
+[37 <./IMAGES/modifiedHimmelblau.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
@@ -643,7 +619,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-<IMAGES/himmelblau.png, id=162, 301.125pt x 301.125pt>
+<IMAGES/himmelblau.png, id=170, 301.125pt x 301.125pt>
 File: IMAGES/himmelblau.png Graphic file (type png)
 
 <use IMAGES/himmelblau.png>
@@ -660,7 +636,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-<IMAGES/originalParaboloid.png, id=163, 1358.07375pt x 1003.75pt>
+<IMAGES/originalParaboloid.png, id=171, 1358.07375pt x 1003.75pt>
 File: IMAGES/originalParaboloid.png Graphic file (type png)
 
 <use IMAGES/originalParaboloid.png>
@@ -679,11 +655,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[36 <./IMAGES/himmelblau.png>]
+[38 <./IMAGES/himmelblau.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37 <./IMAGES/originalParaboloid.png>]
-<IMAGES/customizedParaboloid.png, id=173, 1358.07375pt x 1003.75pt>
+ [39 <./IMAGES/originalParaboloid.png>]
+<IMAGES/customizedParaboloid.png, id=180, 1358.07375pt x 1003.75pt>
 File: IMAGES/customizedParaboloid.png Graphic file (type png)
 
 <use IMAGES/customizedParaboloid.png>
@@ -695,18 +671,18 @@ Overfull \hbox (38.32808pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
-[38 <./IMAGES/customizedParaboloid.png>]
-<IMAGES/parabolic.png, id=178, 301.125pt x 301.125pt>
+[40 <./IMAGES/customizedParaboloid.png>]
+<IMAGES/parabolic.png, id=185, 301.125pt x 301.125pt>
 File: IMAGES/parabolic.png Graphic file (type png)
 
 <use IMAGES/parabolic.png>
 Package pdftex.def Info: IMAGES/parabolic.png used on input line 118.
 (pdftex.def)             Requested size: 256.09988pt x 256.09988pt.
 
-Underfull \vbox (badness 5667) has occurred while \output is active []
+Underfull \vbox (badness 5119) has occurred while \output is active []
 
- [39 <./IMAGES/parabolic.png>]
-<IMAGES/originalBeale.png, id=183, 1358.07375pt x 1003.75pt>
+ [41 <./IMAGES/parabolic.png>]
+<IMAGES/originalBeale.png, id=190, 1358.07375pt x 1003.75pt>
 File: IMAGES/originalBeale.png Graphic file (type png)
 
 <use IMAGES/originalBeale.png>
@@ -725,8 +701,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./IMAGES/originalBeale.png>]
-<IMAGES/customizedBeale.png, id=188, 1358.07375pt x 1003.75pt>
+ [42 <./IMAGES/originalBeale.png>]
+<IMAGES/customizedBeale.png, id=195, 1358.07375pt x 1003.75pt>
 File: IMAGES/customizedBeale.png Graphic file (type png)
 
 <use IMAGES/customizedBeale.png>
@@ -742,14 +718,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[41 <./IMAGES/customizedBeale.png>]
-<IMAGES/beale.png, id=193, 301.125pt x 301.125pt>
+[43 <./IMAGES/customizedBeale.png>]
+<IMAGES/beale.png, id=201, 301.125pt x 301.125pt>
 File: IMAGES/beale.png Graphic file (type png)
  <use IMAGES/beale.png>
 Package pdftex.def Info: IMAGES/beale.png used on input line 167.
 (pdftex.def)             Requested size: 256.09988pt x 256.09988pt.
 
-<IMAGES/classicalStyblinski.png, id=194, 1358.07375pt x 1003.75pt>
+<IMAGES/classicalStyblinski.png, id=202, 1358.07375pt x 1003.75pt>
 File: IMAGES/classicalStyblinski.png Graphic file (type png)
 
 <use IMAGES/classicalStyblinski.png>
@@ -769,8 +745,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-[42 <./IMAGES/beale.png>]
-<IMAGES/customizedStyblinski.png, id=199, 1358.07375pt x 1003.75pt>
+[44 <./IMAGES/beale.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45 <./IMAGES/classicalStyblinski.png>]
+<IMAGES/customizedStyblinski.png, id=211, 1358.07375pt x 1003.75pt>
 File: IMAGES/customizedStyblinski.png Graphic file (type png)
 
 <use IMAGES/customizedStyblinski.png>
@@ -782,17 +761,54 @@ Overfull \hbox (38.32808pt too wide) in paragraph at lines 201--202
  [][] 
  []
 
-[43 <./IMAGES/classicalStyblinski.png>]
-<IMAGES/styblinski.png, id=205, 301.125pt x 301.125pt>
+[46 <./IMAGES/customizedStyblinski.png>]
+<IMAGES/styblinski.png, id=216, 301.125pt x 301.125pt>
 File: IMAGES/styblinski.png Graphic file (type png)
 
 <use IMAGES/styblinski.png>
 Package pdftex.def Info: IMAGES/styblinski.png used on input line 218.
 (pdftex.def)             Requested size: 256.09988pt x 256.09988pt.
- [44 <./IMAGES/customizedStyblinski.png>])
-(./dissertation.bbl [45 <./IMAGES/styblinski.png>] [46
+) (./CHAPTERS/Appendix1.tex [47 <./IMAGES/styblinski.png>] [48
 
 ]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+[49] <IMAGES/2xy.png, id=228, 808.01875pt x 682.55pt>
+File: IMAGES/2xy.png Graphic file (type png)
+ <use IMAGES/2xy.png>
+Package pdftex.def Info: IMAGES/2xy.png used on input line 29.
+(pdftex.def)             Requested size: 227.61226pt x 256.0806pt.
+
+<IMAGES/xsin(y).png, id=229, 828.09375pt x 618.31pt>
+File: IMAGES/xsin(y).png Graphic file (type png)
+ <use IMAGES/xsin(y).png>
+Package pdftex.def Info: IMAGES/xsin(y).png used on input line 36.
+(pdftex.def)             Requested size: 227.61908pt x 256.0844pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50 <./IMAGES/2xy.png>] [51 <./IMAGES/xsin(y).png>]
+Overfull \hbox (4.21674pt too wide) in paragraph at lines 47--48
+ \OT1/cmr/bx/n/10.95 Fourth Step[] \OT1/cmr/m/n/10.95 In the fourth step we im-
+proved per-for-mance ob-tained through
+ []
+
+[52] [53] <IMAGES/Lipschitz-constant.png, id=245, 169.96834pt x 104.05542pt>
+File: IMAGES/Lipschitz-constant.png Graphic file (type png)
+
+<use IMAGES/Lipschitz-constant.png>
+Package pdftex.def Info: IMAGES/Lipschitz-constant.png used on input line 107.
+(pdftex.def)             Requested size: 360.064pt x 227.63971pt.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-34.def
+File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
+))
+(./dissertation.bbl [54 <./IMAGES/Lipschitz-constant.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
 []$\OT1/cmtt/m/n/10.95 https : / / towardsdatascience . com /
  []
@@ -821,19 +837,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 $\OT1/cmr/m/n/10.95 .
  []
 
-[47]) [48] (./dissertation.aux) )
+[55
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+[]$\OT1/cmtt/m/n/10.95 https : / / www . researchgate . net / figure /
+ []
+
+
+Overfull \hbox (194.42758pt too wide) in paragraph at lines 65--67
+\OT1/cmtt/m/n/10.95 A-[]Lipschitz-[]function-[]with-[]Lipschitz-[]constant-[]L-
+[]f-[]is-[]the-[]minimal-[]value-[]achieved-[]so-[]far _
+ []
+
+
+Overfull \hbox (300.19432pt too wide) in paragraph at lines 65--67
+\OT1/cmtt/m/n/10.95 fig1 _ 220238231 ? _sg = bhV9tku _ tUmE4wbF5AODpuPzvQlL76Vj
+vECHF0CIixD17aTzJgA28Cv3KKgz6uPvdPqJy2IZJkvGJDES-[]t8SHg$\OT1/cmr/m/n/10.95 .
+ []
+
+) [56] (./dissertation.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6157 strings out of 492995
- 90551 string characters out of 6132705
- 166398 words of memory out of 5000000
- 9572 multiletter control sequences out of 15000+600000
- 15417 words of font info for 58 fonts, out of 8000000 for 9000
+ 5675 strings out of 492995
+ 77921 string characters out of 6132705
+ 149592 words of memory out of 5000000
+ 9087 multiletter control sequences out of 15000+600000
+ 15585 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,19n,39p,1388b,2939s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,19n,37p,1374b,2319s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
@@ -855,10 +890,10 @@ xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (48 pages, 5553550 bytes).
+Output written on dissertation.pdf (56 pages, 5725815 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
+ 325 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
