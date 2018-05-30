@@ -209,9 +209,7 @@ and we picked it up of $5000$ units in order to has as less as possible negative
 f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + (y^4 - 16 * y^2 + 5 * y)) + 5000
 \end{equation}
 
-This customized function has its global maximum in $f(x, y) = 5156.6638$.
-
-In order to represent this function using Java Graphical Environment we mapped its in a space of $600 \times 600$ pixels and we properly rotated its. The resulting contour plot is the one represented in figure ~\ref{fig:ContourStyblinskiFunction}.
+This customized function has its global maximum in $f(x, y) = 5156.6638$. In order to represent this function using Java Graphical Environment we mapped its in a space of $600 \times 600$ pixels and we properly rotated its. The resulting contour plot is the one represented in figure ~\ref{fig:ContourStyblinskiFunction}.
 
 \begin{figure}[h!]
 	\centering
@@ -221,20 +219,86 @@ In order to represent this function using Java Graphical Environment we mapped i
 \end{figure}
 
 
-\rotatebox{270}{
-\begin{tabular}
-	{l l l l l} \hline Name & Formula & Domain & Optimal \textit{f} & Sketch \\
-	\hline Himmelblau & \vtop{\hbox{\strut $f(x, y) = - ((x^2 + y -11)^2+$}\hbox{\strut $+(x + y^2 - 7)^2) + 2500$}} & $x, y \in [-5;+5]$ & $2500$ & \parbox[c]{1em}{
-		\includegraphics[width=1.7in]{modifiedHimmelblau}} \\
-	Sphere & $f(x, y) = -(x^2 + y^2) + 3560$ &$x, y \in [-10;+10]$ & $3560$ & \parbox[c]{1em}{
-		\includegraphics[width=1.7in]{customizedParaboloid}} \\
-	Beale & \vtop{\hbox{\strut $f(x, y) = - ((1.5 - x + xy)^2 + ) $}\hbox{\strut $+ (2.25-x+xy^2)^2 + $}\hbox{\strut $+ (2.625 -x+xy^3)^2) + 2000 $}} &$x, y \in [-3;3]$ & $1000$ & \parbox[c]{1em}{
-		\includegraphics[width=1.7in]{customizedBeale}} \\
-	Styblinski-Tang & \vtop{\hbox{\strut $f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + $}\hbox{\strut $(y^4 - 16 * y^2 + 5 * y)) + 5000$}} &$x, y \in [-5;+5]$ & $5156.6638$ & \parbox[c]{1em}{
-		\includegraphics[width=1.7in]{customizedStyblinski}} \\
-	\hline
-\end{tabular}
-}
+
+	
+\begin{sidewaystable}
+	\centering
+	\caption{Objective Functions'  Summary Table}
+	\begin{tabular}
+		{l l l l l} \hline Name & Formula & Domain & Optimal \textit{f} & Sketch \\
+		\hline Himmelblau & \vtop{\hbox{\strut $f(x, y) = - ((x^2 + y -11)^2+$}\hbox{\strut $+(x + y^2 - 7)^2) + 2500$}} & $x, y \in [-5;+5]$ & $2500$ & \parbox[c]{1em}{
+			\includegraphics[width=1.7in]{modifiedHimmelblau}} \\
+		Sphere & $f(x, y) = -(x^2 + y^2) + 3560$ &$x, y \in [-10;+10]$ & $3560$ & \parbox[c]{1em}{
+			\includegraphics[width=1.7in]{customizedParaboloid}} \\
+		Beale & \vtop{\hbox{\strut $f(x, y) = - ((1.5 - x + xy)^2 + ) $}\hbox{\strut $+ (2.25-x+xy^2)^2 + $}\hbox{\strut $+ (2.625 -x+xy^3)^2) + 2000 $}} &$x, y \in [-3;3]$ & $1000$ & \parbox[c]{1em}{
+			\includegraphics[width=1.7in]{customizedBeale}} \\
+		Styblinski-Tang & \vtop{\hbox{\strut $f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + $}\hbox{\strut $(y^4 - 16 * y^2 + 5 * y)) + 5000$}} &$x, y \in [-5;+5]$ & $5156.6638$ & \parbox[c]{1em}{
+			\includegraphics[width=1.7in]{customizedStyblinski}} \\
+		\hline
+	\end{tabular}
+\end{sidewaystable}
+
+\pagebreak
+
+\paragraph{Algorithm Configuration} The RL algorithm employed in the described tests is the {\tt SARSA($\lambda$)} algorithm. Two different configurations are chosen to conduct tests. Both of them are summarized in the following table.
+
+\begin{table} [h!]
+	\centering	
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline 
+		& $\lambda$  & $\epsilon$ & qInit & Learning Rate  & Episodes  & Epochs \\ 
+		\hline Configuration $1$
+		& $0.1$ & $0.1$ & $0$ & $1$  & $150$ & $100$  \\ 
+		\hline Configuration $2$
+		& $0.1$ & $0.1$ & $5$ & $1$  & $150$ & $100$  \\ 
+		\hline
+	\end{tabular} 
+\end{table}
+
+In both configurations we used a low $\lambda$ value. The reason is simple. Typically we should use lower learning rates when we have a higher value of $\lambda$. However, in this case, we decide to use the highest possible learning rate. The logical consequence to this choice is to decrease the $\lambda$ value. \\
+
+Also the $\epsilon$ value is equal in both configurations. An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represent a random choice having absolutely no relations with the previous history. \\ 
+
+The number of episodes and epochs is the same for both configurations. Our goal is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an higher cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. Note that in addition to training episodes we also have a greedy one. In this case the $\epsilon$ value and the \textit{learning rate} parameter are equals to $0$. Instead, the number of epochs is still the same.  \\
+
+The only difference between the two configurations is the value of the \textit{qInit}. Since SARSA is an iterative algorithm, it implicitly assumes an initial condition before the first update occurs. Initial action values can be used as a simple way of encouraging exploration. Setting the \textit{qInit} to a value higher than $0$ we introduce a sort of \textit{optimism}. This optimism encourages action-value methods to explore. Whichever actions are initially selected, the reward is less than the starting estimates; the learner switches to other actions, being "disappointed" with the rewards it is receiving. The result is that all actions are tried several times before the value estimates converge. We call this technique for encouraging exploration \textit{optimistic initial values}. We regard it as a simple trick that can be quite effective on stationary problems, but it is far from being a generally useful approach to encouraging exploration. For example, it is not well suited to non-stationary problems because its drive for exploration is inherently temporary. If the task changes, creating a renewed need for exploration, this method cannot help. Indeed, any method that focuses on the initial state in any special way is unlikely to help with the general non-stationary case. The beginning of time occurs only once, and thus we should not focus on it too much. This criticism applies as well to the sample-average methods, which also treat the beginning of time as a special event, averaging all subsequent rewards with equal weights. Nevertheless, all of these methods are very simple, and one of them or some simple combination of them is often adequate in practice ~\cite{SuttonBarto}.
+
+\section{Human Case}
+
+The test conducted on humans affects a cross-section of thirty people. In the selection process of test subjects we considered the following three parameters with corresponding bounds :
+
+\begin{itemize}
+	\item \textbf{Sex} $\in \{Male, Female\}$
+	\item \textbf{Age} $\in [4, 52]$
+	\item \textbf{Calculus Knowledge} $\in \{Null, Basic, Advanced\}$ 
+\end{itemize}  
+
+Each of the test subjects was placed in front of a personal computer. The following rules have been proposed for individuals over the age of seven:
+
+	
+\begin{itemize}
+	\item \textit{You will be offered four different levels}.
+	\item \textit{The first three levels will need to be repeated three times}.
+	\item \textit{The last level can be executed only once}.
+	\item \textit{Look carefully at the legend before starting the experiment}.
+	\item \textit{At each click you will receive a score with a colour associated with it}.
+	\item \textit{The goal is to make as many points as possible with 15 clicks available for each game}.
+	\item \textit{No further explanation will be provided}.
+\end{itemize}
+
+
+After that a chromatic scale indicating how positive the reward was for each click was proposed.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics{scala.png}
+	\caption{Chromatic Scale.}
+	\label{fig:Cromatic Scale}
+\end{figure}
+
+A white screen (with a specific hidden function) of $600 \times 600$ pixels with which to interact according to the rules previously listed was finally proposed . For those under the age of seven the selected approach was different. The rules have been explained to them verbally. At each interaction with the environment, in addition to the colour, they were verbally encouraged or discouraged.
+
+
 
 
 
