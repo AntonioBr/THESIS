@@ -240,28 +240,47 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 
 \pagebreak
 
-\paragraph{Algorithm Configuration} The RL algorithm employed in the described tests is the {\tt SARSA($\lambda$)} algorithm. Two different configurations are chosen to conduct tests. Both of them are summarized in the following table.
+\paragraph{Algorithm Configuration} The employed RL algorithm is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
 
 \begin{table} [h!]
 	\centering	
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline 
-		& $\lambda$  & $\epsilon$ & qInit & Learning Rate  & Episodes  & Epochs \\ 
+		& \textbf{$\lambda$}  & \textbf{$\epsilon$} & \textbf{qInit} & \textbf{Learning Rate}  & \textbf{Episodes}  & \textbf{Epochs} \\ 
 		\hline Configuration $1$
 		& $0.1$ & $0.1$ & $0$ & $1$  & $150$ & $100$  \\ 
-		\hline Configuration $2$
-		& $0.1$ & $0.1$ & $5$ & $1$  & $150$ & $100$  \\ 
 		\hline
-	\end{tabular} 
+	\end{tabular}
+\caption{Configuration Table}
+\label{ConfigurationTable}
 \end{table}
 
-In both configurations we used a low $\lambda$ value. The reason is simple. Typically we should use lower learning rates when we have a higher value of $\lambda$. However, in this case, we decide to use the highest possible learning rate. The logical consequence to this choice is to decrease the $\lambda$ value. \\
+\begin{table} [h!]
+	\centering	
+	\begin{tabular}{|c|c|}
+		\hline \textbf{Declination}
+		& \textbf{Type of search} \\ 
+		\hline Declination 1
+		&  Linear, not random search\\ 
+		\hline Declination 2
+		& Linear, random search \\ 
+		\hline Declination 3
+		& Parametric, not random search \\ 
+		\hline Declination 4
+		&  Parametric, random search\\ 
+		\hline 
+	\end{tabular} 
+\caption{Declination table}
+\label{DeclinationTable}
+\end{table}
 
-Also the $\epsilon$ value is equal in both configurations. An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represent a random choice having absolutely no relations with the previous history. \\ 
+In the proposed configuration we use a low $\lambda$ value. Typically we should use lower learning rates when we have a higher value of $\lambda$. However, in this case, we decide to use the highest possible learning rate. The logical consequence to this choice is to decrease the $\lambda$ value. \\
 
-The number of episodes and epochs is the same for both configurations. Our goal is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an higher cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. Note that in addition to training episodes we also have a greedy one. In this case the $\epsilon$ value and the \textit{learning rate} parameter are equals to $0$. Instead, the number of epochs is still the same.  \\
+An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represent a random choice having absolutely no relations with the previous history. \\ 
 
-The only difference between the two configurations is the value of the \textit{qInit}. Since SARSA is an iterative algorithm, it implicitly assumes an initial condition before the first update occurs. Initial action values can be used as a simple way of encouraging exploration. Setting the \textit{qInit} to a value higher than $0$ we introduce a sort of \textit{optimism}. This optimism encourages action-value methods to explore. Whichever actions are initially selected, the reward is less than the starting estimates; the learner switches to other actions, being "disappointed" with the rewards it is receiving. The result is that all actions are tried several times before the value estimates converge. We call this technique for encouraging exploration \textit{optimistic initial values}. We regard it as a simple trick that can be quite effective on stationary problems, but it is far from being a generally useful approach to encouraging exploration. For example, it is not well suited to non-stationary problems because its drive for exploration is inherently temporary. If the task changes, creating a renewed need for exploration, this method cannot help. Indeed, any method that focuses on the initial state in any special way is unlikely to help with the general non-stationary case. The beginning of time occurs only once, and thus we should not focus on it too much. This criticism applies as well to the sample-average methods, which also treat the beginning of time as a special event, averaging all subsequent rewards with equal weights. Nevertheless, all of these methods are very simple, and one of them or some simple combination of them is often adequate in practice ~\cite{SuttonBarto}.
+Speaking about the number of episodes and epochs, we have to say that our goal is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an higher cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. Note that in addition to training episodes we also have a greedy one. In this case the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs is left unchanged.  \\
+
+Each declination of {\tt SARSA(\textit{$\lambda$})} is a combination of search techniques described in the previous chapter. In case of random search we use the BURLAP {\tt RandomFactory} class. {\tt RandomFactory} allows us to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
 
 \section{Human Case}
 

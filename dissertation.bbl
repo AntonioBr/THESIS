@@ -14,6 +14,13 @@ Ryan~P. Adams and Oliver Stegle.
 \url{http://burlap.cs.brown.edu/tutorials/bd/p2.html}.
 \newblock Accessed: {2018-05-20}.
 
+\bibitem[HBdF11]{Hoffman:2011:PAB:3020548.3020587}
+Matthew Hoffman, Eric Brochu, and Nando de~Freitas.
+\newblock Portfolio allocation for bayesian optimization.
+\newblock In {\em Proceedings of the Twenty-Seventh Conference on Uncertainty
+  in Artificial Intelligence}, UAI'11, pages 327--336, Arlington, Virginia,
+  United States, 2011. AUAI Press.
+
 \bibitem[HL01]{HillLieb01}
 Frederick~S. Hillier and Gerald~J. Lieberman.
 \newblock {\em Introduction to Operations Research}.

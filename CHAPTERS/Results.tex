@@ -1,0 +1,284 @@
+\chapter{Results}
+
+This chapter is divided into three sections. In the first section we analyse results obtained from the experiment described in the first section of the previous chapter. For each function we compare results obtained applying the four different configurations of {\tt SARSA($\lambda$)} :
+
+\begin{itemize}
+	\item Linear, not random search.
+	\item Linear, random search.
+	\item Parametric, not random search.
+	\item Parametric, random search.
+\end{itemize}
+
+We employ four different plots for three different metrics. The first one measures the \textit{Euclidean distance} \footnote{In mathematics, the Euclidean distance is is the "ordinary" straight-line distance between two points in an Euclidean space. It is computed as follow: 
+	
+	\begin{equation}
+		Euclidean\_distance = \sqrt{(x^* - x^+)^2 + (y^* - y^+)^2}
+	\end{equation}
+	
+Note that this performance metric is evaluated on the true function values but this information is not available to the optimization methods. 
+
+} of point $(x^+, y^+)$ at epoch \textit{e} of greedy episode from point $(x^*, y^*)$, the maximum. The second one measures the proximity in percentage between the current value function and the optimal one in the greedy episode. The third one represents the \textit{gap metrics}\footnote{This metrics measures how effective each method is at finding the global maximum.
+
+\begin{equation}
+G_t = \dfrac{f(x^+, y^+) - f(x_1, y_1)}{f(x^* y^*) - f(x_1, y_1)}
+\end{equation}
+
+Where $x^+$ is the incumbent or best function sample found up to epoch \textit{e}. The gap $G_t$ will therefore be a number between $0$ (indicating no improvement over the initial sample) and $1$ (if the incumbent is the maximum). Note that this performance metric is evaluated on the true function values but this information is not available to the optimization methods.~\cite{Hoffman:2011:PAB:3020548.3020587}
+
+}. The last one is the density plot. This plot is fundamental in order to understand the previous ones. 
+
+%%% TODO: Description of the remaining two sections
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfigure[]{%
+			\label{fig:HimmelblauDifference}
+			\includegraphics[width=0.4\textwidth]{HimmelblauDifference}
+		}
+		\subfigure[]{%
+			\label{fig:HimmelblauValueFunction}
+			\includegraphics[width=0.4\textwidth]{HimmelblauValueFunction}
+		}\\
+		\subfigure[]{%
+			\label{fig:HimmelblauGap}
+			\includegraphics[width=0.4\textwidth]{HimmelblauGap}
+		}		
+	\end{center}
+	\caption{
+		Himmelblau' s Function.
+	}
+	\label{fig:HimmelblauResults}
+\end{figure}
+
+\paragraph{Himmelblau' s Function} Plot (a) of figure \ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Euclidean distance metric}. 
+
+Looking at the {\tt linear, not random} declination's performance, we notice a starting high Euclidean difference between the agent's position and the global maximum. It decreases until epoch $5$. Starting from this epoch, a recurrent pattern starts to be developed. This behaviour depends on the fact that once the agent has achieved a good position compared to the maximum, it has to continue to make movements until the terminal state is achieved. Each movement implies a reward. The agent selects a set of movements that maximizes the reward and systematically repeats them. The stability just described is also proved by the fact that the standard deviation of the current declination is the lowest of the set with a value of $25.3$ (table $5.1$).
+
+{\tt Linear, random} declination has a greater instability compared to the {\tt linear, not random} one. In the first fifty epochs the \textit{Euclidean distance} from the global maximum is constantly higher but then it starts to stabilize. Starting from the fiftieth epoch it develops a recurrent pattern and achieves best results. With an Euclidean distance mean of $71.6$ pixels from the maximum, it has the best performance of the set (table $5.1$).
+
+The {\tt parametric, not random} declination seems has worst performances of the declinations' set. It is unable to minimize the Euclidean distance from the global maximum and it is highly unstable. Looking at table $5.1$ we note that the current declination as highest values in all statistic measures.
+
+Finally, the {\tt parametric, random} declination selects a starting point near to the global maximum but it is unable to maintain a low Euclidean distance from it until epoch seventy. Starting from this epoch it develops a recurrent pattern similar to one previously described. Despite of this we can say that its performances are worse compared to the first two ones.
+
+Slower convergence of linear declinations compared to parametric ones depends on the fact that in the first case, as already explained in chapter $3$, greater movements are done at each epoch and a lower training time is required to achieve the maximum. The amount of parametric movements are strictly conditioned by the function's shape.  If this represents an obstacle to a fast convergence, however it is an incentive to an higher precision. \\
+
+\begin{table} [h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+	\begin{tabular}{c| ccccccc}
+		\hline \textbf{Himmelblau' s Function}
+		& \textbf{Mean-ED} & \textbf{Standard deviation - ED}  &\textbf{Median-ED} \\ 
+		\hline Linear not Random
+		& $77.7$ &\cellcolor{red!25}$25.3$ & $82.5$  \\ 
+		\hline Linear Random
+		& \cellcolor{red!25}$71.6$ & $52.2$ & \cellcolor{red!25} $51.4$ \\ 
+		\hline Parametric not Random
+		& $158.6$ & $71.3$ & $141.7$ \\ 
+		\hline Parametric Random
+		& $105.5$ & $56.0$ & $93.8$ \\ 
+		\hline 
+	\end{tabular}
+}
+\label{HimmelblauTabEuclidean}
+\caption{Euclidean Metric's Performances}
+\end{table}
+
+Plot (b) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Percentage of Value Function' s Proximity metric}.
+
+All declinations, except for the {\tt linear, random} one, start with an high level of value function' s proximity to the maximum. It depends on the function's shape. 
+
+Once it has achieved a good enough proximal point to the maximum, the {\tt linear, not random} declination maintains always the same proximity level developing a recurrent pattern. The level of proximity achieved by this declination is in mean the best of the set. It is proved by the lowest mean of value function's proximity to maximum. The highly stability of the current declination is proved by the lowest standard deviation of the set (table $5.2$). 
+
+The {\tt linear, random} declination starts from a point not very close to the maximum in terms of value function. Its great instability reveals an inadequate training space. It starts to stabilize starting from the fiftieth epoch. Its starting instability is proved by the highest standard deviation of the set (table $5.2$).
+
+The {\tt parametric, not random} declination reveals a general stability. The growth of proximity is slower then the corresponding linear declination because of the reduced amount of movement depending on the function's shape. 
+
+Finally, the {\tt parametric, random} declination, as the corresponding linear declination, shows an initial instability. In general performances are more stable than the linear corresponding ones because of the lower amount of movement done at each epoch. Starting from the sixty-fifth epoch the proximity slowly grows and stabilizes. \\
+
+\begin{table} [h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+	\begin{tabular}{c| ccccccc} 
+		\hline \textbf{Himmelblau' s Function}
+		& \textbf{Mean- P} & \textbf{Standard deviation - P}  &\textbf{Median- P} \\ 
+		\hline Linear not Random
+		& \cellcolor{green!25}$98.5$ & \cellcolor{green!25}$0.96$ & $98.3$  \\ 
+		\hline Linear Random
+		& $96.8$ & $4.0$ & \cellcolor{green!25}$98.6$ \\ 
+		\hline Parametric not Random
+		& $97.4$ & $1.2$ & $97.44$ \\ 
+		\hline Parametric Random
+		& $97.3$ & $1.6$ & $97.41$ \\ 
+		\hline 
+	\end{tabular}
+}
+\label{HimmelblauTabProximity}
+\caption{Value Function' s Proximity.} 
+\end{table}
+
+Plot (c) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained using the \textit{gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt linear, random} one. However we must not be fooled by this representation. This does not means that once found the maximum the algorithm remains permanently near its. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfigure[]{%
+			\label{fig:ParabolicDifference}
+			\includegraphics[width=0.4\textwidth]{ParabolicEuclidean}
+		}
+		\subfigure[]{%
+			\label{fig:ParabolicValueFunction}
+			\includegraphics[width=0.4\textwidth]{SphereValueFunction}
+		}\\
+		\subfigure[]{%
+			\label{fig:ParabolicGap}
+			\includegraphics[width=0.4\textwidth]{ParabolicGap}
+		} \\
+		
+	\end{center}
+	\caption{
+		Sphere Function.
+	}
+	\label{fig:ParabolicResults}
+\end{figure}
+
+
+\paragraph{Sphere Function} Before starting to analyse performances of different declinations of {\tt SARSA($\lambda$)} algorithm in maximizing the Sphere function, it is important to underline that the starting point for the current function in non random declinations is $(0, 0)$. The reason for this choice is that $f(300, 300)$ is itself the maximum of the function. \\
+
+Plot (a) of figure ~\ref{fig:ParabolicResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Euclidean distance metric}. Looking at the {\tt linear, not random} declination we notice a constant, high Euclidean difference between the agent's position and the global maximum. This distance never decreases and still from the first epochs it develops a recurrent pattern. The inefficiency of the algorithm's declination depends on an inadequate training space. The relationship between explored states and total possible states does not permit the agent to develop an efficient policy. Bad performance's results of the current declination are proved also by the high mean in this metric (table $5.3$). On the other hand the great stability of this declination is underlined by the lowest standard deviation reported in table $5.3$.
+
+{\tt Linear, random} declination starts from a point relatively close to the maximum, but, one more time, the inadequate training space prevents its to develop a rally optimal policy. This declination is the less efficient one with a mean Euclidean distance from the maximum of $328.9$ pixels.
+
+Better performances can be registered looking at parametric declinations of the algorithm. The {\tt parametric, not random} declination starts with a physiological high Euclidean difference from the maximum. It rapidly decrease until the thirty-fifth epoch and then it has another soft increase. Starting from the fifty-fifth epoch a recurrent pattern starts to be developed. Despite of the fact that this declination is the most unstable one with a standard deviation of $67.9$ (table $5.3$), it has one of the lowest mean Euclidean distance from the maximum. 
+
+The {\tt parametric, random} declination of {\tt SARSA($\lambda$)} algorithm has the best performance of the set. After a starting, considerable instability it reaches an Euclidean difference of around fifty pixels. The good performance is also proved by the fact that the mean Euclidean distance from the maximum of $185$ pixels. \\
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+	\begin{tabular}{c| ccccccc} 
+		\hline \textbf{Sphere Function}
+		& \textbf{Mean-ED} & \textbf{Standard deviation - ED}  &\textbf{Median-ED} \\ 
+		\hline Linear not Random
+		& $293.2$ &\cellcolor{red!25} $25.6$ & $300.7$  \\ 
+		\hline Linear Random
+		& $328.9$ & $56.3$ & $350.9$ \\ 
+		\hline Parametric not Random
+		& $190.7$ & $67.9$ &\cellcolor{red!25} $172.5$ \\ 
+		\hline Parametric Random
+		& \cellcolor{red!25} $185.3$ & $58.0$ & $184.3$ \\ 
+		\hline 
+	\end{tabular} 
+}
+\label{ParabolicTabEuclidean}
+\caption{Euclidean Metric's Performances}
+\end{table}
+
+Plot (b) of figure ~\ref{fig:ParabolicResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Percentage of Value Function' s Proximity metric}. 
+
+The {\tt linear, not random} declination starts from a proximity of about $97.5\%$ from the maximum. It is completely unable to improve this percentage. Already starting from the first epochs it develops a recurrent pattern. This behaviour allows its to have the lowest standard deviation of the declinations' set (table $5.4$). Unfortunately the value function's proximity mean is the second lowest one. 
+ 
+The {\tt linear, random} declination starts from a very high value function's proximity level. Because of an inadequate training space it decrease until the twentieth epoch. Starting from this epoch it stars to stabilize. Effects of this behaviour on the average value's function proximity to the maximum and on average standard deviation are vary bad.
+ 
+The {\tt parametric, not random} declination is the most unstable one. It starts with a low value function's proximity level and slowly grows achieving peaks of about $100\%$. Starting from the fiftieth epoch it stabilizes developing a recurrent pattern. The initial high instability has effects on average value function's proximity variance making its the highest one.
+ 
+The {\tt parametric, random} declination of {\tt SARSA($\lambda$)} algorithm is the most efficient one. It starts with a value function's proximity level of about $97\%$ and slowly grows first stabilizing around $99\%$ and than growing more achieving peaks of $99.8\%$. Looking at table $5.4$ we can notice that the average value function's proximity is the highest one with a level of $98.8\%$.
+ 
+In this case we observe that parametric declinations do better than linear ones. In particular the random starting position allows the agent to develop a better policy. The main reason of the failure of non random declinations is the reduced training space compared to the distance between the starting point and the maximum.
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+	\begin{tabular}{c| ccccccc} 
+		\hline \textbf{Sphere Function}
+		& \textbf{Mean- P} & \textbf{Standard deviation - P}  &\textbf{Median- P} \\ 
+		\hline Linear not Random
+		& $97.3$ & \cellcolor{green!25}$0.49$ & $97.2$  \\ 
+		\hline Linear Random
+		& $95.5$ & $0.92$ & $96.2$ \\ 
+		\hline Parametric not Random
+		& $98.7$ & $0.98$ & \cellcolor{green!25}$99.1$ \\ 
+		\hline Parametric Random
+		& \cellcolor{green!25}$98.8$ & $0.72$ & $98.9$ \\ 
+		\hline 
+	\end{tabular} 
+}
+\label{ParabolicTabProximity}
+\caption{Value Function' s Proximity.} 
+\end{table}
+
+Plot (c) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained using the \textit{gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt parametric, not random} one. This is completely coherent with what said in the last paragraph.
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfigure[]{%
+			\label{fig:BealeDifference}
+			\includegraphics[width=0.4\textwidth]{BealeDifference}
+		}
+		\subfigure[]{%
+			\label{fig:BealeValueFunction}
+			\includegraphics[width=0.4\textwidth]{BealeValueFunction}
+		}\\
+		\subfigure[]{%
+			\label{fig:BealeGap}
+			\includegraphics[width=0.4\textwidth]{BealeGap}
+		} \\
+		
+	\end{center}
+	\caption{
+		Beale Function.
+	}
+	\label{fig:BealeResults}
+\end{figure}
+
+\paragraph{Beale Function} Giving an overview to figure \ref{fig:BealeResults} we can see that Beale Function represents the case in which {\tt SARSA($\lambda$)} algorithm' s declinations do worst. 
+
+Plot (a) of figure \ref{fig:BealeResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Euclidean distance metric}. Looking at the {\tt linear, not random} declination we notice a growing performance' s worsening until tenth epoch. Starting from epoch ten it starts to stabilize developing a recurrent pattern. Using this declination, the average Euclidean distance to maximum is $462.4$ pixels.
+
+{\tt Linear, random} declination seems to be the one which performs better. Its average Euclidean distance from the maximum is $201.6$ pixels and its standard deviation is the lowest of the set with a value of $15.4$. This means that it has a relatively good stability. Looking at plot (a) we can easily prove what just said. The current declination starts from a point relatively near to the maximum and never departs from its developing a recurrent pattern.
+
+Looking at {\tt parametric, not random} declination of  {\tt SARSA($\lambda$)} algorithm we not an higher instability. In the very first epochs the distance between the starting point and the maximum slowly decreases, but starting from epoch thirty it starts to messily increase achieving a level near to $350$ pixels. This high instability is reflected also in the high level of standard deviation.
+
+{\tt Parametric, random} declination combines instability and inaccuracy. It starts from a distance of about $300$ pixels and messily increase this distance. Its performance is the worst one with an average euclidean distance of $402.99$ pixels and a standard deviation of $66.6$.
+
+Generally speaking we can say that those bad performance are the result of an inadequate training time and of a particular function's shape. In addition to this, as already explained, parametric declinations do worst than corresponding ones because of the reduced amount of movement at each epoch. The relatively better performance of {\tt linear, random} declination depends on the possibility to select a starting point closer to the maximum. 
+
+\begin{table}[h!]
+\centering
+\resizebox{\linewidth}{!} {
+	\begin{tabular}{c| ccccccc} 
+		\hline \textbf{Beale Function}
+		& \textbf{Mean-ED} & \textbf{Standard deviation - ED}  &\textbf{Median-ED} \\ 
+		\hline Linear not Random
+		& $462.4$ & $25.7$ & $453.1$  \\ 
+		\hline Linear Random
+		& \cellcolor{red!25}$201.6$ & \cellcolor{red!25}$15.4$ & \cellcolor{red!25}$199.0$ \\ 
+		\hline Parametric not Random
+		& $329.8$ & $62.7$ & $335.3$ \\ 
+		\hline Parametric Random
+		& $402.99$ & $66.6$ & $430.3$ \\ 
+		\hline 
+	\end{tabular} 
+}
+\label{BealeTabEuclidean}
+\caption{Euclidean Metric's Performances}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+		\begin{tabular}{c| ccccccc} 
+			\hline \textbf{Beale Function}
+			& \textbf{Mean- P} & \textbf{Standard deviation - P}  &\textbf{Median- P} \\ 
+			\hline Linear not Random
+			& $97.25$ & \cellcolor{green!25}$0.70$ & $97.37$  \\ 
+			\hline Linear Random
+			& $54.26$ & $13.89$ & \cellcolor{green!25}$61.95$ \\ 
+			\hline Parametric not Random
+			& \cellcolor{green!25}$99.06$ & $0.81$ & $99.38$ \\ 
+			\hline Parametric Random
+			& $98.88$ & $0.798$ & $99.12$ \\ 
+			\hline 
+		\end{tabular} 
+}
+	\label{BealeTabProximity}
+	\caption{Value Function' s Proximity.} 
+\end{table}
