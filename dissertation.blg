@@ -6,13 +6,13 @@ Database file #1: bibfile.bib.bib
 Warning--to sort, need author or key in MNDWikipedia
 Warning--to sort, need author or key in BayesianOptimizationImage
 Warning--to sort, need author or key in BURLAPSite
-Warning--to sort, need author or key in RGLipschitz
+Warning--to sort, need author or key in Lipschitz
 Warning--empty journal in konstantopoulos2009markov
 Warning--empty publisher in Mitchell
 Warning--empty publisher in SuttonBarto
 You've used 20 entries,
             2543 wiz_defined-function locations,
-            680 strings with 7381 characters,
+            680 strings with 7402 characters,
 and the built_in function-call counts, 7099 in all, are:
 = -- 696
 > -- 318

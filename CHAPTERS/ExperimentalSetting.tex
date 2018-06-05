@@ -6,11 +6,11 @@ The current chapter is divided into two sections. In the first one we will descr
 
 \paragraph{Test Functions}
 
-As already explained, the experiment described in this work is about maximize black-box functions adopting an RL based approach. The first important choice is about selecting suitable \textit{test functions}. In applied mathematics, test functions, also known as \textit{artificial landscapes}, are useful to evaluate characteristics of optimization algorithms. We have chosen four test functions for this work:
+The experiment described in this work is about maximize black-box functions adopting an RL based approach. The first important choice is about selecting suitable \textit{test functions}. In applied mathematics, test functions, also known as \textit{artificial landscapes}, are useful to evaluate characteristics of optimization algorithms. We have chosen four test functions for this work:
 
 \begin{itemize}
 	\item Himmelblau' s Function;
-	\item Paraboloid of Revolution;
+	\item Sphere Function;
 	\item Beale Function;
 	\item Styblinski-Tang' s Revised Function.	
 \end{itemize}
@@ -20,13 +20,6 @@ As already explained, the experiment described in this work is about maximize bl
 \begin{equation}
 	f(x, y) = (x^2 + y -11)^2 + (x + y^2 - 7)^2
 \end{equation}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width= 14cm, height = 14cm]{originalHimmelblau.png}
-	\caption{Original Himmelblau' s Function.}
-	\label{fig:OriginalHimmelblauFunction}
-\end{figure}
 
 It has four local minima :
 
@@ -41,7 +34,7 @@ The function can be defined on any input domain but it is usually evaluated on $
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 14cm, height = 14cm]{modifiedHimmelblau.png}
+	\includegraphics[width= 12cm, height = 12cm]{modifiedHimmelblau.png}
 	\caption{Customized Himmelblau' s Function.}
 	\label{fig:CustomizedHimmelblauFunction}
 \end{figure}
@@ -58,13 +51,13 @@ and we picked it up of $2500$ units in order to have as less as possible negativ
 f(x, y) = -(x^2 + y -11)^2 + (x + y^2 - 7)^2 + 2500
 \end{equation}
 
-This function has its global maximum in $f(x, y) = 2500$. \\
+This function has its global maximum in $f(x, y) = 2500$. 
 
 In order to represent this customized version of Himmelblau' s Function using Java Graphical Environment, we mapped it in a space of $600 \times 600$ pixels and we properly rotated it. The resulting contour plot is the one represented in figure ~\ref{fig:ContourPlotCustomizedHimmelblauFunction}. \\
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 9cm, height = 9cm]{himmelblau.png}
+	\includegraphics[width= 7cm, height = 7cm]{himmelblau.png}
 	\caption{Contour plot of customized version of Himmelblau' s Function.}
 	\label{fig:ContourPlotCustomizedHimmelblauFunction}
 \end{figure}
@@ -77,22 +70,13 @@ The original function is defined by:
 f(x, y) = (x^2 + y^2) 
 \end{equation}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width= 14cm, height = 14cm]{originalParaboloid.png}
-	\caption{Original Paraboloid of Revolution.}
-	\label{fig:OriginalParaboloidOfRevolution}
-\end{figure}
-
-It has a global minimum in $f(x, y) = 0$. \\
+It has a global minimum in $f(x, y) = 0$.
 
 The function can be defined on any input domain but it is usually evaluated on $x \in [-10, 10]$ and $y \in [-10, 10]$. 
 
-\pagebreak
-
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 14cm, height = 14cm]{customizedParaboloid.png}
+	\includegraphics[width= 12cm, height = 12cm]{customizedParaboloid.png}
 	\caption{Customized Paraboloid of Revolution.}
 	\label{fig:CustomizedParaboloidOfRevolution}
 \end{figure}
@@ -115,7 +99,7 @@ In order to represent this customized version of Paraboloid of Revolution functi
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 9cm, height = 9cm]{parabolic.png}
+	\includegraphics[width= 7cm, height = 7cm]{parabolic.png}
 	\caption{Contour plot of customized Parabolic Function.}
 	\label{fig:ContourPlotCustomizedParabolicFunction}
 \end{figure}
@@ -125,15 +109,6 @@ In order to represent this customized version of Paraboloid of Revolution functi
 \begin{equation}
 f(x, y) = (1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2
 \end{equation}
-
-\break
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width= 14cm, height = 14cm]{originalBeale.png}
-	\caption{Original Beale Function.}
-	\label{fig:OriginalBealeFunction}
-\end{figure}
 
 The function can be defined on any input domain but it is usually evaluated on $x \in [-3, 3]$ and $y \in [-3, 3]$. \\
 
@@ -147,7 +122,7 @@ f(x, y) = -((1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2)
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 14cm, height = 14cm]{customizedBeale.png}
+	\includegraphics[width= 12cm, height = 12cm]{customizedBeale.png}
 	\caption{Customized Beale Function.}
 	\label{fig:CustomizedBealeFunction}
 \end{figure}
@@ -164,7 +139,7 @@ In order to represent this function using Java Graphical Environment we mapped i
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 9cm, height = 9cm]{beale.png}
+	\includegraphics[width= 7cm, height = 7cm]{beale.png}
 	\caption{Contour plot of customized Beale Function.}
 	\label{fig:ContourPlotCustomizedBealeFunction}
 \end{figure}
@@ -181,13 +156,6 @@ In this thesis we consider the bivariate version of the original function multip
 f(x, y) = (x^4 - 16x^2 + 5x) + (y^4 - 16y^2 + 5y).
 \end{equation}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width= 14cm, height = 14cm]{classicalStyblinski.png}
-	\caption{Original Styblinski Function.}
-	\label{fig:OriginalStyblinskiFunction}
-\end{figure}
-
 The function can be defined on any input domain but it is usually evaluated on $x \in [-5, 5]$ and $y \in [-5, 5]$. \\
 
 In this thesis our aim is to maximize. In order to do this we inverted the function as
@@ -198,7 +166,7 @@ f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + (y^4 - 16 * y^2 + 5 * y))
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 14cm, height = 14cm]{customizedStyblinski.png}
+	\includegraphics[width= 12cm, height = 12cm]{customizedStyblinski.png}
 	\caption{Customized Styblinski Function.}
 	\label{fig:CustomizedStyblinskiFunction}
 \end{figure}
@@ -211,17 +179,16 @@ f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + (y^4 - 16 * y^2 + 5 * y)) + 5000
 
 This customized function has its global maximum in $f(x, y) = 5156.6638$. In order to represent this function using Java Graphical Environment we mapped its in a space of $600 \times 600$ pixels and we properly rotated its. The resulting contour plot is the one represented in figure ~\ref{fig:ContourStyblinskiFunction}.
 
+\pagebreak
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 9cm, height = 9cm]{styblinski.png}
+	\includegraphics[width= 7cm, height = 7cm]{styblinski.png}
 	\caption{Contour plot of customized Styblinski Function.}
 	\label{fig:ContourStyblinskiFunction}
 \end{figure}
-
-
-
 	
-\begin{sidewaystable}
+\begin{sidewaystable} 
 	\centering
 	\caption{Objective Functions'  Summary Table}
 	\begin{tabular}
@@ -237,8 +204,6 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 		\hline
 	\end{tabular}
 \end{sidewaystable}
-
-\pagebreak
 
 \paragraph{Algorithm Configuration} The employed RL algorithm is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
 

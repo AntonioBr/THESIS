@@ -36,6 +36,10 @@ Takis Konstantopoulos.
 \newblock Markov chains and random walks.
 \newblock 2009.
 
+\bibitem[Lip]{Lipschitz}
+\url{https://www.eee.hku.hk/~msang/Numerical_Lipschitz.pdf}.
+\newblock Accessed: {2018-06-05}.
+
 \bibitem[LM16]{LiMalik}
 Ke~Li and Jitendra Malik.
 \newblock Learning to optimize.
@@ -67,10 +71,6 @@ M.~Puterman.
 \newblock {\em Markov Decision Processes: Discrete Stochastic Dynamic
   Programming}.
 \newblock John Wiley and Sons, 1994.
-
-\bibitem[RGL]{RGLipschitz}
-\url{https://www.researchgate.net}.
-\newblock Accessed: {2018-05-26}.
 
 \bibitem[SB10]{Sigaud:2010:MDP:1841781}
 Olivier Sigaud and Olivier Buffet.

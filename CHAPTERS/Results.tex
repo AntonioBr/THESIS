@@ -239,7 +239,7 @@ Looking at {\tt parametric, not random} declination of  {\tt SARSA($\lambda$)} a
 
 {\tt Parametric, random} declination combines instability and inaccuracy. It starts from a distance of about $300$ pixels and messily increase this distance. Its performance is the worst one with an average euclidean distance of $402.99$ pixels and a standard deviation of $66.6$.
 
-Generally speaking we can say that those bad performance are the result of an inadequate training time and of a particular function's shape. In addition to this, as already explained, parametric declinations do worst than corresponding ones because of the reduced amount of movement at each epoch. The relatively better performance of {\tt linear, random} declination depends on the possibility to select a starting point closer to the maximum. 
+Generally speaking we can say that those bad performance are the result of an inadequate training time and of a particular function's shape. In addition to this, as already explained, parametric declinations do worst than corresponding ones because of the reduced amount of movement at each epoch. The relatively better performance of {\tt linear, random} declination depends on the possibility to select a starting point closer to the maximum. \\
 
 \begin{table}[h!]
 \centering
@@ -262,6 +262,8 @@ Generally speaking we can say that those bad performance are the result of an in
 \caption{Euclidean Metric's Performances}
 \end{table}
 
+Looking at plot (b) of figure \ref{fig:BealeResults} it could seems to be an inconsistency with what said until now. Only {\tt linear, random} configuration makes an highly swinging performance varying between a percentage of value function' s proximity of about $75\%$ to a percentage of $30\%$. All other declinations makes performance around $100\%$ of value function' s proximity. Even looking at table $5.6$ this impression is proved by the high standard deviation of {\tt linear, random} configuration and by the high average of value function' s proximity of all other declinations. However we must not allow ourselves to be deceived. These apparently good performances depends on the function' s shape that is very flat. 
+
 \begin{table}[h!]
 	\centering
 	\resizebox{\linewidth}{!} {
@@ -282,3 +284,81 @@ Generally speaking we can say that those bad performance are the result of an in
 	\label{BealeTabProximity}
 	\caption{Value Function' s Proximity.} 
 \end{table}
+
+Deception can also be revealed by observing plot (c) of figure \ref{fig:BealeResults}. The relatively best performing declination is the {\tt parametric, not random} one which achieves an effectiveness in finding the maximum of about $0.8$ out of $1.0$. The worst performing one is the {\tt linear, not random} declination with a constant \textit{gap value} equals to $0$.
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfigure[]{%
+			\label{fig:StyblinskiDifference}
+			\includegraphics[width=0.4\textwidth]{StyblinskiDifference}
+		}
+		\subfigure[]{%
+			\label{fig:StyblinskiValueFunction}
+			\includegraphics[width=0.4\textwidth]{StyblinskiValueFunction}
+		}\\
+		\subfigure[]{%
+			\label{fig:StyblinskiGap}
+			\includegraphics[width=0.4\textwidth]{StyblinskiGap}
+		} \\
+		
+	\end{center}
+	\caption{
+		Styblinski Function.
+	}
+	\label{fig:StyblinskiResults}
+\end{figure}
+
+\paragraph{Styblinski-Tang Function} Plot (a) of figure \ref{fig:StyblinskiResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Euclidean distance metric}. 
+
+Looking at the {\tt linear, not random} declination's performance, the Euclidean difference between the agent's position and the global maximum is about $200$ pixels. It decreases until epoch $20$. Staring from the twentieth epoch it starts to stabilize around a level of about $40$ pixels from the maximum. In less than twenty epochs the Euclidean distance from the maximum is about the $20\%$ of the starting one. The current declination reveals a also a great stability. With an average Euclidean distance of $43.63$ pixels and a standard deviation of $41.05$, the {\tt linear, not random} declination is the best of the set (table $5.7$).
+
+A decisively worse performance is given by the {\tt linear, random} declination. It starts with an Euclidean distance from the maximum of about $360$ pixels and messily decreases until achieving level $180$ pixels. The noise just described is also proved by the highest average Euclidean distance and by the highest standard deviation of the set (table $5.7$).
+
+Last two, parametric declinations give us the possibility, for the first time to really see behaviour of parametric declination. Starting from about the fiftieth epoch, {\tt parametric, not random} movement starts to imperceptibly increase. This lower amount of movement compared to the non parametric movements depends on the definition of the parametric movement itself. The same behaviour can be seen in {\tt parametric, random} declination starting from epoch $75$. This declination performs better then the {\tt parametric, not random} one in the first epochs but it performs worse in the last ones. With an average Euclidean distance from the maximum of $75.26$ pixels, and with an average standard deviation of $37.34$, the {\tt parametric, random} declinations is generally better than the {\tt parametric, not random} one.
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+		\begin{tabular}{c| ccccccc} 
+			\hline \textbf{Styblinski-Tang Function}
+			& \textbf{Mean-ED} & \textbf{Standard deviation - ED}  &\textbf{Median-ED} \\ 
+			\hline Linear not Random
+			& \cellcolor{red!25}$43.63$ & \cellcolor{red!25}$41.05$ & \cellcolor{red!25}$29.53$  \\ 
+			\hline Linear Random
+			& $330.16$ & $95.39$ & $319.56$ \\ 
+			\hline Parametric not Random
+			& $91.79$ & $42.24$ & $85.48$ \\ 
+			\hline Parametric Random
+			& $75.26$ & $37.34$ & $66.42$ \\ 
+			\hline 
+		\end{tabular} 
+	}
+	\label{StyblinskiTabEuclidean}
+	\caption{Euclidean Metric's Performances}
+\end{table}
+
+The performance just described is also proved by the percentage of value function' s proximity to the maximum. With an average mean of $99.63\%$ of precision, and a standard deviation of $0.57$, the {\tt linear, not random} declination is the best of the set. General good performances are also made by all other declinations except for the {\tt linear, random} one. Looking at plot (b) of figure \ref{fig:StyblinskiResults} we can notice an high instability of this last declination especially until epoch fifty. It than starts to stabilize varying between a proximity of $97\%$ and $99\%$.
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\linewidth}{!} {
+		\begin{tabular}{c| ccccccc} 
+			\hline \textbf{Styblinski-Tang Function}
+			& \textbf{Mean- P} & \textbf{Standard deviation - P}  &\textbf{Median- P} \\ 
+			\hline Linear not Random
+			& \cellcolor{green!25}$99.63$ & \cellcolor{green!25}$0.57$ & \cellcolor{green!25}$99.83$  \\ 
+			\hline Linear Random
+			& $97.73$ & $1.46$ & $98.22$ \\ 
+			\hline Parametric not Random
+			& $98.61$ & $0.66$ & $98.54$ \\ 
+			\hline Parametric Random
+			& $98.90$ & $0.74$ & $99.12$ \\ 
+			\hline 
+		\end{tabular} 
+	}
+	\label{StyblinskiTabProximity}
+	\caption{Value Function' s Proximity.} 
+\end{table}
+
+Looking at the third plot we must once again be careful not to let ourselves be drawn. As we have said up to this moment, the best performances are given by the {\tt linear, not random} configuration. Looking at the current chart we notice that the best performance seems to be that of the {\tt parametric, not random} declination. This result obviously depends on the fact that around the thirty-ninth epoch it reaches the maximum for then decisively distance itself from it. This behaviour is again due to the absence of an adequate training space. This lack prevents the development of an optimal policy.
