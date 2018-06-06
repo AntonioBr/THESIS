@@ -243,9 +243,9 @@ In the proposed configuration we use a low $\lambda$ value. Typically we should 
 
 An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represent a random choice having absolutely no relations with the previous history. \\ 
 
-Speaking about the number of episodes and epochs, we have to say that our goal is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an higher cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. Note that in addition to training episodes we also have a greedy one. In this case the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs is left unchanged.  \\
+Speaking about the number of episodes and epochs, we have to say that our goal is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an high cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requisites, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. Note that in addition to the $150$ training episodes we also have a greedy one. In the last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs is left unchanged.  \\
 
-Each declination of {\tt SARSA(\textit{$\lambda$})} is a combination of search techniques described in the previous chapter. In case of random search we use the BURLAP {\tt RandomFactory} class. {\tt RandomFactory} allows us to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
+Each declination of {\tt SARSA(\textit{$\lambda$})} corresponds to one combination of search techniques described in the previous chapter. In the implementation of random search we use the BURLAP {\tt RandomFactory} class. {\tt RandomFactory} allows us to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
 
 \section{Human Case}
 

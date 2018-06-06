@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  5 JUN 2018 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  6 JUN 2018 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,11 +828,16 @@ Package pdftex.def Info: IMAGES/scala.png used on input line 278.
 )
 (./CHAPTERS/Results.tex [46 <./IMAGES/scala.png>]
 Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+
+ []
+
 <IMAGES/HimmelblauDifference.png, id=212, 462.528pt x 346.896pt>
 File: IMAGES/HimmelblauDifference.png Graphic file (type png)
 
 <use IMAGES/HimmelblauDifference.png>
-Package pdftex.def Info: IMAGES/HimmelblauDifference.png used on input line 37.
+Package pdftex.def Info: IMAGES/HimmelblauDifference.png used on input line 46.
 
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
@@ -841,46 +846,50 @@ File: IMAGES/HimmelblauValueFunction.png Graphic file (type png)
 
 <use IMAGES/HimmelblauValueFunction.png>
 Package pdftex.def Info: IMAGES/HimmelblauValueFunction.png used on input line 
-41.
+50.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
 <IMAGES/HimmelblauGap.png, id=214, 2409.0pt x 2409.0pt>
 File: IMAGES/HimmelblauGap.png Graphic file (type png)
 
 <use IMAGES/HimmelblauGap.png>
-Package pdftex.def Info: IMAGES/HimmelblauGap.png used on input line 45.
+Package pdftex.def Info: IMAGES/HimmelblauGap.png used on input line 54.
 (pdftex.def)             Requested size: 143.9978pt x 143.98239pt.
  [47
 
-] [48 <./IMAGES/HimmelblauDifference.png> <./IMAGES/HimmelblauValueFunction.png
-> <./IMAGES/HimmelblauGap.png>]
-Overfull \hbox (1.95428pt too wide) in paragraph at lines 59--60
-[]\OT1/cmr/m/n/10.95 The \OT1/cmtt/m/n/10.95 parametric, not random \OT1/cmr/m/
-n/10.95 dec-li-na-tion seems has worst per-for-mances
- []
+]
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49 <./IMAGES/HimmelblauDifference.png> <./IMAGES/HimmelblauValueFunction.png> 
+<./IMAGES/HimmelblauGap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <IMAGES/ParabolicEuclidean.png, id=230, 462.528pt x 346.896pt>
 File: IMAGES/ParabolicEuclidean.png Graphic file (type png)
 
 <use IMAGES/ParabolicEuclidean.png>
-Package pdftex.def Info: IMAGES/ParabolicEuclidean.png used on input line 126.
+Package pdftex.def Info: IMAGES/ParabolicEuclidean.png used on input line 135.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
 <IMAGES/SphereValueFunction.png, id=231, 462.528pt x 346.896pt>
 File: IMAGES/SphereValueFunction.png Graphic file (type png)
 
 <use IMAGES/SphereValueFunction.png>
-Package pdftex.def Info: IMAGES/SphereValueFunction.png used on input line 130.
+Package pdftex.def Info: IMAGES/SphereValueFunction.png used on input line 139.
 
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
@@ -888,56 +897,68 @@ Package pdftex.def Info: IMAGES/SphereValueFunction.png used on input line 130.
 File: IMAGES/ParabolicGap.png Graphic file (type png)
 
 <use IMAGES/ParabolicGap.png>
-Package pdftex.def Info: IMAGES/ParabolicGap.png used on input line 134.
+Package pdftex.def Info: IMAGES/ParabolicGap.png used on input line 143.
 (pdftex.def)             Requested size: 143.9978pt x 143.98239pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-[50] [51 <./IMAGES/ParabolicEuclidean.png> <./IMAGES/SphereValueFunction.png> <
-./IMAGES/ParabolicGap.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+Underfull \vbox (badness 3049) has occurred while \output is active []
+
+ [50]
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
+ [51 <./IMAGES/ParabolicEuclidean.png> <./IMAGES/SphereValueFunction.png> <./IM
+AGES/ParabolicGap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[52] <IMAGES/BealeDifference.png, id=245, 462.528pt x 346.896pt>
+
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [52]
+Overfull \hbox (1.95462pt too wide) in paragraph at lines 186--187
+[]\OT1/cmr/m/n/10.95 The \OT1/cmtt/m/n/10.95 linear, not random \OT1/cmr/m/n/10
+.95 dec-li-na-tion starts from a value func-tion's prox-
+ []
+
+[53] <IMAGES/BealeDifference.png, id=248, 462.528pt x 346.896pt>
 File: IMAGES/BealeDifference.png Graphic file (type png)
 
 <use IMAGES/BealeDifference.png>
-Package pdftex.def Info: IMAGES/BealeDifference.png used on input line 215.
+Package pdftex.def Info: IMAGES/BealeDifference.png used on input line 224.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/BealeValueFunction.png, id=246, 462.528pt x 346.896pt>
+<IMAGES/BealeValueFunction.png, id=249, 462.528pt x 346.896pt>
 File: IMAGES/BealeValueFunction.png Graphic file (type png)
 
 <use IMAGES/BealeValueFunction.png>
-Package pdftex.def Info: IMAGES/BealeValueFunction.png used on input line 219.
+Package pdftex.def Info: IMAGES/BealeValueFunction.png used on input line 228.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/BealeGap.png, id=247, 2409.0pt x 2409.0pt>
+<IMAGES/BealeGap.png, id=250, 2409.0pt x 2409.0pt>
 File: IMAGES/BealeGap.png Graphic file (type png)
  <use IMAGES/BealeGap.png>
-Package pdftex.def Info: IMAGES/BealeGap.png used on input line 223.
+Package pdftex.def Info: IMAGES/BealeGap.png used on input line 232.
 (pdftex.def)             Requested size: 143.9978pt x 143.98239pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[53]
-Overfull \hbox (0.31139pt too wide) in paragraph at lines 238--239
+[54 <./IMAGES/BealeDifference.png> <./IMAGES/BealeValueFunction.png> <./IMAGES/
+BealeGap.png>]
+Overfull \hbox (0.31139pt too wide) in paragraph at lines 247--248
 []\OT1/cmr/m/n/10.95 Looking at \OT1/cmtt/m/n/10.95 parametric, not random \OT1
 /cmr/m/n/10.95 dec-li-na-tion of \OT1/cmtt/m/n/10.95 SARSA($\OML/cmm/m/it/10.95
  ^^U$\OT1/cmtt/m/n/10.95 ) \OT1/cmr/m/n/10.95 al-go-rithm
  []
 
-[54 <./IMAGES/BealeDifference.png> <./IMAGES/BealeValueFunction.png> <./IMAGES/
-BealeGap.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
@@ -945,7 +966,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--243
 File: IMAGES/StyblinskiDifference.png Graphic file (type png)
 
 <use IMAGES/StyblinskiDifference.png>
-Package pdftex.def Info: IMAGES/StyblinskiDifference.png used on input line 295
+Package pdftex.def Info: IMAGES/StyblinskiDifference.png used on input line 304
 .
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
@@ -954,49 +975,53 @@ File: IMAGES/StyblinskiValueFunction.png Graphic file (type png)
 
 <use IMAGES/StyblinskiValueFunction.png>
 Package pdftex.def Info: IMAGES/StyblinskiValueFunction.png used on input line 
-299.
+308.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
 <IMAGES/StyblinskiGap.png, id=263, 2409.0pt x 2409.0pt>
 File: IMAGES/StyblinskiGap.png Graphic file (type png)
 
 <use IMAGES/StyblinskiGap.png>
-Package pdftex.def Info: IMAGES/StyblinskiGap.png used on input line 303.
+Package pdftex.def Info: IMAGES/StyblinskiGap.png used on input line 312.
 (pdftex.def)             Requested size: 143.9978pt x 143.98239pt.
- [56 <./IMAGES/StyblinskiDifference.png> <./IMAGES/StyblinskiValueFunction.png>
- <./IMAGES/StyblinskiGap.png>]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./CHAPTERS/Appendix1.tex [57] [58]
+[56]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57 <./IMAGES/StyblinskiDifference.png> <./IMAGES/StyblinskiValueFunction.png> 
+<./IMAGES/StyblinskiGap.png>]) (./CHAPTERS/Appendix1.tex [58] [59] [60
+
+]
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-[59
-
-] <IMAGES/2xy.png, id=279, 808.01875pt x 682.55pt>
+[61] <IMAGES/2xy.png, id=286, 808.01875pt x 682.55pt>
 File: IMAGES/2xy.png Graphic file (type png)
  <use IMAGES/2xy.png>
 Package pdftex.def Info: IMAGES/2xy.png used on input line 32.
 (pdftex.def)             Requested size: 143.9978pt x 121.63516pt.
 
-<IMAGES/xsin(y).png, id=280, 828.09375pt x 618.31pt>
+<IMAGES/xsin(y).png, id=287, 828.09375pt x 618.31pt>
 File: IMAGES/xsin(y).png Graphic file (type png)
  <use IMAGES/xsin(y).png>
 Package pdftex.def Info: IMAGES/xsin(y).png used on input line 36.
 (pdftex.def)             Requested size: 143.9978pt x 107.51714pt.
 
-[60 <./IMAGES/2xy.png> <./IMAGES/xsin(y).png>] [61] [62] [63]
-<IMAGES/Lipschitz.png, id=296, 454.69875pt x 603.25375pt>
+[62 <./IMAGES/2xy.png> <./IMAGES/xsin(y).png>] [63] [64] [65]
+<IMAGES/Lipschitz.png, id=302, 454.69875pt x 603.25375pt>
 File: IMAGES/Lipschitz.png Graphic file (type png)
 
 <use IMAGES/Lipschitz.png>
 Package pdftex.def Info: IMAGES/Lipschitz.png used on input line 115.
 (pdftex.def)             Requested size: 284.53291pt x 284.52342pt.
-) (./dissertation.bbl [64 <./IMAGES/Lipschitz.png>]
+) (./dissertation.bbl [66 <./IMAGES/Lipschitz.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
 []$\OT1/cmtt/m/n/10.95 https : / / towardsdatascience . com /
  []
@@ -1031,18 +1056,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 $\OT1/cmr/m/n/10.95 .
  []
 
-[65
+[67
 
-]) [66] (./dissertation.aux) )
+]) [68] (./dissertation.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6307 strings out of 492995
- 89052 string characters out of 6132705
- 171316 words of memory out of 5000000
- 9667 multiletter control sequences out of 15000+600000
+ 6310 strings out of 492995
+ 89092 string characters out of 6132705
+ 169960 words of memory out of 5000000
+ 9670 multiletter control sequences out of 15000+600000
  15920 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,20n,39p,1374b,3307s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1069,10 +1094,10 @@ exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
 ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (66 pages, 6478386 bytes).
+Output written on dissertation.pdf (68 pages, 6483775 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
+ 389 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
