@@ -14,6 +14,11 @@ Ryan~P. Adams and Oliver Stegle.
 \url{http://burlap.cs.brown.edu/tutorials/bd/p2.html}.
 \newblock Accessed: {2018-05-20}.
 
+\bibitem[Dea08]{Dayan08connectionsbetween}
+Peter Dayan and et~al.
+\newblock Connections between computational and neurobiological perspectives on
+  decision making -- decision theory, . . ., 2008.
+
 \bibitem[HBdF11]{Hoffman:2011:PAB:3020548.3020587}
 Matthew Hoffman, Eric Brochu, and Nando de~Freitas.
 \newblock Portfolio allocation for bayesian optimization.
@@ -71,6 +76,11 @@ M.~Puterman.
 \newblock {\em Markov Decision Processes: Discrete Stochastic Dynamic
   Programming}.
 \newblock John Wiley and Sons, 1994.
+
+\bibitem[Roy16]{SisRoy}
+Sisir Roy.
+\newblock {\em Decision Making and Modelling in Cognitive Science}.
+\newblock Springer, 2016.
 
 \bibitem[SB10]{Sigaud:2010:MDP:1841781}
 Olivier Sigaud and Olivier Buffet.

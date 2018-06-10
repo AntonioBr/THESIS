@@ -1,0 +1,59 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {chapter}{\numberline {2}Background}{5}
+\contentsline {section}{\numberline {2.1}Markov Decision Process}{5}
+\contentsline {paragraph}{Markov Decision Process}{5}
+\contentsline {paragraph}{States}{6}
+\contentsline {paragraph}{Actions}{6}
+\contentsline {paragraph}{Time Steps}{6}
+\contentsline {paragraph}{Transition Probability}{6}
+\contentsline {paragraph}{Reward Function}{6}
+\contentsline {paragraph}{Policy}{7}
+\contentsline {paragraph}{Discount Factor}{9}
+\contentsline {paragraph}{Bellman Equation}{10}
+\contentsline {paragraph}{Value Iteration vs Policy Iteration}{11}
+\contentsline {section}{\numberline {2.2}Solving MDP}{13}
+\contentsline {subsection}{\numberline {2.2.1}Dynamic Programming}{13}
+\contentsline {subsection}{\numberline {2.2.2}Reinforcement Learning}{14}
+\contentsline {paragraph}{Monte Carlo Methods}{17}
+\contentsline {paragraph}{Temporal Difference Learning}{18}
+\contentsline {paragraph}{Sarsa Algorithm : On-policy TD Control}{19}
+\contentsline {paragraph}{Q-learning Algorithm : Off-policy TD Control}{20}
+\contentsline {paragraph}{SARSA($\lambda $)}{20}
+\contentsline {chapter}{\numberline {3}Black-Box Optimization}{25}
+\contentsline {paragraph}{Gaussian Processes}{25}
+\contentsline {paragraph}{Acquisition Functions for Bayesian Optimization}{26}
+\contentsline {paragraph}{An RL Approach To Black-Box Optimization}{28}
+\contentsline {subsection}{\numberline {3.0.1}Implementation}{33}
+\contentsline {subsection}{\numberline {3.0.2}Humans in the Loop}{36}
+\contentsline {chapter}{\numberline {4}Experimental Setting}{37}
+\contentsline {section}{\numberline {4.1}Benchmark}{37}
+\contentsline {paragraph}{Test Functions}{37}
+\contentsline {subparagraph}{Himmelblau' s Function}{37}
+\contentsline {subparagraph}{Paraboloid of Revolution}{39}
+\contentsline {subparagraph}{Beale Function}{41}
+\contentsline {subparagraph}{Styblinski-Tang Revised Function}{43}
+\contentsline {paragraph}{Algorithm Configuration}{45}
+\contentsline {section}{\numberline {4.2}Human Case}{47}
+\contentsline {chapter}{\numberline {5}Results}{49}
+\contentsline {paragraph}{Himmelblau' s Function}{50}
+\contentsline {paragraph}{Sphere Function}{53}
+\contentsline {paragraph}{Beale Function}{56}
+\contentsline {paragraph}{Styblinski-Tang Function}{58}
+\contentsline {chapter}{\numberline {6}Appendix A}{63}
+\contentsline {paragraph}{First Step}{63}
+\contentsline {paragraph}{Second Step}{64}
+\contentsline {paragraph}{Third Step}{65}
+\contentsline {paragraph}{Fourth Step}{65}
+\contentsline {paragraph}{Fifth Step}{65}
+\contentsline {paragraph}{Sixth Step}{66}
+\contentsline {paragraph}{Seventh Step}{66}
+\contentsline {paragraph}{Eighth Step}{66}
+\contentsline {paragraph}{Ninth Step}{67}
+\contentsline {paragraph}{Tenth Step}{67}

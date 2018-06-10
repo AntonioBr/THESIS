@@ -264,3 +264,16 @@ Because of the detailed explanation of choices made to model the problem given i
 	\caption{Class diagram of RL based optimization approach.}
 	\label{fig:RLUMLDiagram}
 \end{figure}
+
+\subsection{Humans in the Loop} Decision making is a core competence for animals and humans acting and surviving in environments they only partially comprehend, gaining rewards and punishments for their troubles \cite{Dayan08connectionsbetween}.
+Results of a given action depend not only on the ability to anticipate the amount of the outcome, but also on sensory stimuli. The information about the selection of a certain action in a context of uncertainty is fed by not only the outside world but also from previously learned experience or inherited instincts \cite{SisRoy}.
+This argument was deeply analysed from lots of perspectives. In this work we will consider the problem from mathematical and statistical points of view. \\  
+
+Applying prior knowledge to decision making is absolutely needed to develop a theory of inference. Typically, it has been found that the Bayesian models of inference are useful in solving such problems involve probabilistic frameworks. The basic question, addressed by the Bayesian framework is to find out the way how one updates beliefs and achieves the result, makes inferences, and applies the observed data. The basic idea of Bayesian statistics is that the probabilities in this framework are interpreted as rational, conditional measures of uncertainty and loosely resemble the word probability in ordinary language. Basically, Bayesian decision theory is based on two basic tenets:
+
+\begin{itemize}
+	\item Decision maker’s choice or preferences are affected by new information through its effect on his rather beliefs than his taste.
+	\item Decision maker’s posterior beliefs represented by posterior probabilities are obtained by updating the prior probabilities (representing his prior beliefs) based on Bayes’ theorem.
+\end{itemize}
+
+Starting from these assumptions and completing them through the use of maths presented in the opening of the current chapter, in the next sections, we will compare the behaviour of an RL agent and the humans' one in trying to complete a same job showing results obtained conducting a specifically experiment explained in the next chapter.
