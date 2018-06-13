@@ -2,9 +2,9 @@
 
 \section{Markov Decision Process}
 
-Markov Decision Processes (MDPs) are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate responses, but also subsequent situations. Hence an MDP can be described as a controlled \textit{Markov chain}\footnote{A sequence of random variables $X_0, X_1, . . .$ with values in a countable set $S$ is a \textit{Markov chain} if at any time $n$, the future states (or values) $X\textsubscript{n+1}, X\textsubscript{n+2}, . . .$ depend on the history $X_0, . . . , X_n$ only through the present state $X_n$~\cite{konstantopoulos2009markov} .}, where the control is given at each step by the chosen action. In this chapter we will present the structure of an MDP and many techniques to solve its.
+Markov Decision Processes (MDPs) are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate responses, but also subsequent situations. Hence an MDP can be described as a controlled \textit{Markov chain}\footnote{A sequence of random variables $X_0, X_1, . . . $ with values in a countable set $S$ is a \textit{Markov chain} if at any time $n$, the future states (or values) $X\textsubscript{n+1}, X\textsubscript{n+2}, . . .$ depend on the history $X_0, . . . , X_n$ only through the present state $X_n$ \cite{konstantopoulos2009markov}.}, where the control is given at each step by the chosen action. In this chapter we will present the structure of an MDP and many techniques to solve its.
 
-\paragraph{Markov Decision Process} Markov decision processes are defined as controlled stochastic processes satisfying the \textit{Markov property}\footnote{A stochastic process has the \textit{Markov property} if the probabilistic behaviour of the chain in the future depends only on its present value and discards its past behaviour.} and assigning reward values to state transitions~\cite{Put94}.  Formally, they are described by the 5-tuple ($S$, $A$, $T$, $p$, $r$) where:
+\subsection{Definition} Markov decision processes are defined as controlled stochastic processes satisfying the \textit{Markov property}\footnote{A stochastic process has the \textit{Markov property} if the probabilistic behaviour of the chain in the future depends only on its present value and discards its past behaviour.} and assigning reward values to state transitions~\cite{Put94}.  Formally, they are described by the $5$-tuple ($S$, $A$, $T$, $p()$, $R()$) where:
 
 \begin{itemize}
 	\item $S$ is the state space in which the process’ evolution takes place;
@@ -18,15 +18,15 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 
 \paragraph{Actions} The set of actions $A$ is defined as the finite set $\{a_1, . . . ,a_K\}$ where the size of the action space is $K$, i.e. $|A| = K$. Actions can be used to control the system state. The set of actions that can be applied in some particular state $s \in S$, is denoted $A(s)$, where $A(s) \subseteq A$. In more structured representations the fact that some actions are not applicable in some states, is modelled by a precondition function : $S$ × $A→{true,false}$, stating whether action $a \in A$ is applicable in state $s \in S$~\cite{wiering2012reinforcement}.
 
-\paragraph{Time Steps} The set of time steps $T$ is defined as the finite set $\{t_1, . . . ,t_M\}$ where the size of the action space is $M$, i.e. $|T| = M$. Speaking about time we have to distinguish between \textit{epochs} and \textit{episodes}. An episode is made of a fixed number $Z$ of epochs. An epoch is the smallest time unit in an MDP.
+\paragraph{Time Steps} The set of time steps $T$ is defined as the finite set $\{t_1, . . . ,t_M\}$ where the size of the action space is $M$, i.e. $|T| = M$. Speaking about time a distinction between \textit{epochs} and \textit{episodes} has to be made. An episode consists of a fixed number of epochs. An epoch is the smallest time unit in an MDP.
 
-\paragraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in matrix form where we write $P_a$ the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ are said to be stochastic matrices. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov decision processes. If we write $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. We can resume this concept through the following equation :
+\paragraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in a matrix form where $P_a$ is the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ is said to be stochastic. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov Decision Processes. If we write $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. This concept can be easily resumed through the following equation :
 
 \begin{equation}
 	\forall h_t, a_t, s\textsubscript{t+1} \quad P(s\textsubscript{t+1} | h_t, a_t) = P(s\textsubscript{t+1} | s_t, a_t) = p(s\textsubscript{t+1} | s_t, a_t)
 \end{equation}
 
-\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the rewards we set up truly indicate what we want accomplished. If we reward the achievement of subgoals , then the agent might find a way to achieve them without achieving the real goal. Reward signal is our way of communicating the agent \textit{what} we want to achieve, not \textit{how} it achieved~\cite{SuttonBarto}.
+\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the reward we set up truly indicate the goal that has to be accomplished. If the achievement of sub-goals is rewarded, then the agent might find a way to achieve them without achieving the real goal. Reward signal is the way of communicating the agent \textit{what} goal to achieve, not \textit{how} the goal has to be achieved~\cite{SuttonBarto}.
 
 \begin{figure}[h!]
 	\centering
@@ -35,21 +35,21 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 	\label{fig:MDP}
 \end{figure}
 
-Markov decision processes allow us to model the state evolution dynamics of a stochastic system when this system is controlled by an agent choosing and applying the actions $a_t$ at every time step $t$. The procedure of choosing such actions is called an action policy, or strategy, and is written as $\pi$~\cite{Sigaud:2010:MDP:1841781} .
+Markov decision processes allow to model the state evolution dynamics of a stochastic system when this system is controlled by an agent choosing and applying the actions $a_t$ at every time step $t$. The procedure of choosing such actions is called an action policy, or strategy, and is written as $\pi$~\cite{Sigaud:2010:MDP:1841781}.
 
-\paragraph{Policy} Formally, given an MDP $\bigl\langle S, A, p(), r() \bigr\rangle$, a policy is a computable function that outputs for each state $s \in S$ an action $a \in A(s)$~\cite{wiering2012reinforcement} A policy can decide deterministically upon the action to apply or can define a probability deistribution over the possible applicable actions. Then, a policy can be based on the whole history $h_t$ (history-dependent policy) or can only consider the current state $s_t$. Thus, we can obtain four main families policies, as shown in table \ref{table:T1}.
+\paragraph{Policy} Formally, given an MDP $\bigl\langle S, A, p(), R() \bigr\rangle$, a policy is a computable function that outputs for each state $s \in S$ an action $a \in A(s)$~\cite{wiering2012reinforcement}. A policy can decide deterministically upon the action to apply or can define a probability distribution over the possible applicable actions. Then, a policy can be based on the whole history $h_t$ (history-dependent policy) or can only consider the current state $s_t$. Thus, four main families of policies can be defined (\ref{table:T1}).
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|c|c|}
-	\hline Policy $\pi_t$
-	&Deterministic &Stochastic  \\
-	\hline 
+	\hline \textbf{Policy $\pi_t$}
+	&\textbf{Deterministic} & \textbf{Stochastic}  \\ 
+	\hline
 	\hline Markov 
 	&$s_t \rightarrow a_t$  &$a_t, s_t \rightarrow [0, 1]$ \\ 
-	\hline History-dependent
+	 \hline History-dependent
 	&$h_t \rightarrow a_t$  &$h_t, s_t \rightarrow [0,1]$  \\ 
-	\hline 
+	\hline
 \end{tabular}
 \caption{Different policy families for MDPs~\cite{Sigaud:2010:MDP:1841781}}
 \label{table:T1}
@@ -59,12 +59,12 @@ For a deterministic policy, $\pi_t (s_t)$ or $\pi_t (h_t)$ defines the chosen ac
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 9cm, height = 7cm]{Policies_schema.png}
+	\includegraphics[width= 9cm, height = 8.5cm]{Policies_schema.png}
 	\caption{Relationship between the different sets of policies~\cite{Sigaud:2010:MDP:1841781}.}
 	\label{fig:Policies_schema}
 \end{figure}
 
-Application of a policy to an MDP is done in the following way. As shown in figure \ref{fig:Policy_application_schema} each time an agent performs an action $a\textsubscript{t}$ in a state $s\textsubscript{t}$, it receives a real-valued reward $t\textsubscript{t}$ that indicates the immediate value of this state-action transition. This produces a sequence of states $s\textsubscript{i}$, actions $a\textsubscript{i}$, and immediate rewards $r\textsubscript{i}$ as shown in the figure. The agent's task is to learn a control policy, $\{\pi : S \longrightarrow A\}$, that maximizes the expected sum of these rewards, with future rewards discounted exponentially by their delay~\cite{Mitchell}.
+As shown in figure \ref{fig:Policy_application_schema} each time an agent performs an action $a\textsubscript{t}$ in a state $s\textsubscript{t}$, it receives a real-valued reward $r\textsubscript{t}$ that indicates the immediate value of this state-action transition. This produces a sequence of states $s\textsubscript{i}$, actions $a\textsubscript{i}$, and immediate rewards $r\textsubscript{i}$ as shown in the figure. The agent's task is to learn a control policy, $\{\pi : S \longrightarrow A\}$, that maximizes the expected sum of these rewards, with future rewards discounted exponentially by their delay~\cite{Mitchell}.
 
 \begin{figure}[h!]
 	\centering
@@ -72,8 +72,8 @@ Application of a policy to an MDP is done in the following way. As shown in figu
 	\caption{Policy application schema~\cite{SuttonBarto}.}
 	\label{fig:Policy_application_schema}
 \end{figure}
-
-As already said the goal of learning in an MDP is to gather rewards. There are several ways of taking into account the future in how to behave now. There are basically three models of optimality in the MDP, which are sufficient to cover most of the approaches in the literature :
+ 
+As previously said, the final goal of an optimal policy is to gather the greatest reward possible. In MDPs, there are several ways of taking into account the future in the current behaviour but there are basically three models of optimality which are sufficient to cover most of the approaches in the literature :
 
 \begin{figure}[h!]
 \begin{equation*}
@@ -91,13 +91,13 @@ A \textit{discount factor} $\gamma$, with $0 \leq \gamma \leq 1$ is used for thi
 needed or can equivalently be set to $1$. If $\gamma = 0$ the agent is said to be myopic, which means that it is only concerned about immediate rewards.
 The last optimality model is \textit{average-reward} model, maximizing the long-run \textit{average-reward}. Sometimes this is called the \textit{gain optimal} policy and in the limit, it is equal to the infinite-horizon discounted model~\cite{wiering2012reinforcement}
 
-\paragraph{Bellman Equation} The concept of \textit{value function} is the link between optimality criteria and policies. Most learning algorithms for MDPs compute optimal policies by learning value functions. The value of a state $s$ under policy $\pi$, denoted $V^\pi (s)$ is the expected return when starting in $s$ and following $\pi$ thereafter. Using the infinite-horizon, discounted model :
+\subsection {Bellman Equation} The concept of \textit{value function} is the link between optimality criteria and policies. Most learning algorithms for MDPs compute optimal policies by learning value functions. The value of a state $s$ under policy $\pi$, denoted $V^\pi (s)$ is the expected return when starting in $s$ and following $\pi$ thereafter. Using the infinite-horizon, discounted model :
 
 \begin{equation}
-	V^\pi (s) = E_\pi \{\sum_{k = 0}^{\infty} \gamma^k t\textsubscript{t+k} | s_t = s\}
+	V^\pi (s) = E_\pi \{\sum_{k = 0}^{\infty} \gamma^k r\textsubscript{t+k} | s_t = s\}
 \end{equation}
 
-A similar state-action value function : $Q : S$ x $A \rightarrow \mathbb{R}$ can be defined as the expected return starting from state $s$. taking action $a$ and thereafter following policy $\pi$ :
+A similar state-action value function : $Q : S$ x $A \rightarrow \mathbb{R}$ can be defined as the expected return starting from state $s$, taking action $a$ and thereafter following policy $\pi$ :
 
 \begin{equation} \label{eq:2.2}
 	Q^\pi (s,a) = E_\pi\{\sum_{k = 0}^{\infty} \gamma^k r\textsubscript{t+k} | s_t = s, a_t = a\}
@@ -109,7 +109,7 @@ For any policy $\pi$ and any state $s$ the expression \ref{eq:2.2} can recursive
 \begin{split}
 	V^\pi (s) = E_\pi\{r_t + \gamma\textsubscript{t+1} + \gamma^2 r\textsubscript{t+2} + ... | s_t = t\} \\
 	= E_\pi \{r_t + \gamma V^\pi(s\textsubscript{t+1}) | s_t = s\} \\
-	\sum_{s'}T(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s'))
+	\sum_{s'}p(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s'))
 \end{split}	
 \end{equation}
 
@@ -117,17 +117,17 @@ It denotes that the expected value of state is defined in terms of immediate rew
 
 \begin{equation} 
 \label{eq:2.5}
-V^*(s) = \max_{a \in A} \sum_{s'}T(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s'))
+V^*(s) = \max_{a \in A} \sum_{s'}p(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s'))
 \end{equation}
 
 This expression is called the \textit{Bellman optimality equation}. It states that the value of a state under an optimal policy must be equal to the expected return for the best action in a state~\cite{wiering2012reinforcement}.
 
-\paragraph{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts we will recursively find : \textit{value iteration} and \textit{policy iteration}. \\
+\subsection{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts we will recursively find : \textit{value iteration} and \textit{policy iteration}. \\
 
-Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In Value iteration we start with a random value function and then we find a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
+Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In value iteration we start with a random value function and then we find a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
 
 \begin{equation}
-	V\textsubscript{k+1}(s) \leftarrow \max_{a} \sum_{s'} T(s, a, s') [R(s, a, s') + \gamma V_k(s')]
+	V\textsubscript{k+1}(s) \leftarrow \max_{a} \sum_{s'} p(s, a, s') [R(s, a, s') + \gamma V_k(s')]
 \end{equation}
 
 \begin{figure}[h!]
@@ -137,20 +137,20 @@ Both value iteration and policy iteration compute the same thing (all optimal va
 	\label{fig:ValueiterationPolicy}
 \end{figure}
 
-Value iteration has three disadvantages: it is slow ($O(S^2A)$ per iteration), the $\max$ at each state rerely changes, the policy often converges long before the values. \\
+Value iteration has three disadvantages: it is slow ($O(S^2A)$ per iteration), the $\max$ at each state rarely changes, the policy often converges long before the values (figure \ref{fig:ValueiterationPolicy}). \\
 
 Instead, policy iteration computations of Bellman Equation are:
 
 \begin{itemize}
 	\item Evaluation : for a fixed current policy $p$, find values with policy evaluation:
 		\begin{equation}
-			V\textsupsub{$\pi_i$}{$k+1$}(s) \leftarrow \sum_{s'}T(s, \pi_i(s), s')[R(s, \pi_i(s), s') + \gamma V\textsupsub{$\pi_i$}{k}(s')]
+			V\textsupsub{$\pi_i$}{$k+1$}(s) \leftarrow \sum_{s'}p(s, \pi_i(s), s')[R(s, \pi_i(s), s') + \gamma V\textsupsub{$\pi_i$}{k}(s')]
 		\end{equation}
 	
 	\item Improvement : for fixed values, get a better policy using policy extraction :
 	
 	\begin{equation}
-		\pi\textsubscript{i+1}(s) = \arg \max_{a} \sum_{s'} T(s, a, s')[R(s, a, s') + \gamma V\textsuperscript{$\pi_i$}(s')]
+		\pi\textsubscript{i+1}(s) = \arg \max_{a} \sum_{s'} p(s, a, s')[R(s, a, s') + \gamma V\textsuperscript{$\pi_i$}(s')]
 	\end{equation}
 \end{itemize}
 
@@ -169,24 +169,26 @@ In value iteration :
 
 \begin{itemize}
 	\item Every iteration updates both the values and implicitly the policy;
-	\item We don't track the policy, but tacking the $\max$ over actions implicitly recomputes it.
+	\item The policy is not tracked, but tacking the $\max$ over actions implicitly recomputes it.
 \end{itemize}
 
 In policy iteration :
 
 \begin{itemize}
-	\item We do several passes that update utilities with fixed policy;
+	\item Several passes that update utilities with fixed policy are made;
 	\item After the policy is evaluated, a new policy is chosen;
 	\item The new policy will be always better until the end.
 \end{itemize}
 
 \section{Solving MDP}
-Now that we have defined MDPs, policies, optimality criteria and value functions, it is time to consider the question of how to solve an MDP computing an optimal policy $\pi^*$. Several dimensions exists along which algorithms have been developed for this purpose. The most important distinction is that between \textit{model-based} and \textit{model-free} algorithms ~\cite{wiering2012reinforcement}.
+Now that the concepts of MDP, policy, optimality criteria and value function, have been formally defined, it is time to consider the question of how to solve an MDP computing an optimal policy $\pi^*$. Several dimensions exists along which algorithms have been developed for this purpose. The most important distinction is that between \textit{model-based} and \textit{model-free} algorithms ~\cite{wiering2012reinforcement}.
+
 \begin{table}[h!]
 	\resizebox{\textwidth}{!}{ 
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|c|| c|c|}
 			\hline 
 			&\textbf{Model-based algorithms}  &\textbf{Model-free algorithms}  \\ 
+			\hline
 			\hline \textbf{General name} 
 			&DP  &RL  \\ 
 			\hline \textbf{Basic assumption} 
@@ -201,16 +203,14 @@ Now that we have defined MDPs, policies, optimality criteria and value functions
 	\caption{Main differences between model-based and model-free algorithms.}
 \end{table}
 
-\subsection{Dynamic Programming} The term Dynamic Programming (DP) refers to a class of algorithms that is able to compute optimal policies in the presence of a perfect model of the environment described as a Markov Decision Process. These algorithms are known as \textit{planning algorithms}. In planning, the idea is that we are given some description of a starting state or states; a goal state or states; and some set of possible actions that the agent can take; we want to find the sequence of actions that get us from the start state to the goal state. We search through a tree that is the sequences of actions that we can take, and we try to find a nice short plan. In so doing two of the possible planning algorithms are {\tt BFS algorithm} and {\tt DFS algorithm}. \\
+\subsection{Dynamic Programming} The term Dynamic Programming (DP) refers to a class of algorithms that is able to compute optimal policies in the presence of a perfect model of the environment described as a Markov Decision Process. These algorithms are known as \textit{planning algorithms}. In planning, the idea is that some description of a starting state or states, a goal state or states, and some set of possible actions that the agent can take are given. The objective is to search through a tree that is the sequences of actions that can be taken, and try to find a nice short plan. In so doing two of the possible planning algorithms are {\tt BFS algorithm} and {\tt DFS algorithm}. \\
 
-The method of Dynamic Programming systematically records solutions for all sub-problems of increasing lengths. Using this programming paradigm the optimal policy is defined through the step-by-step definition of optimal sub-policies. According to Bellman optimality principle, all optimal sub-policies of an optimal policy are optimal sub-policies. DP algorithms are obtained by turning Bellman equations into update rules for improving approximations of the desired value functions.
+The method of Dynamic Programming systematically records solutions for all sub-problems of increasing lengths. Using this programming paradigm the optimal policy is constructed through the step-by-step definition of optimal sub-policies. According to Bellman optimality principle, all optimal sub-policies of an optimal policy are optimal sub-policies. DP algorithms are obtained by turning Bellman equations into update rules for improving approximations of the desired value functions.
 
-
-Studying DP we can distinguish two different main methods. \textit{Policy evaluation} refers to the typically iterative computation of the value functions for a given policy. \textit{Policy improvement} refers to the computation of an improved policy given the value function for that policy. Either of these can be used to reliably compute optimal policies and value functions for finite MDPs given complete knowledge of the MDP.
+Studying DP it is possible to distinguish two different main methods. \textit{Policy evaluation} refers to the typically iterative computation of the value functions for a given policy. \textit{Policy improvement} refers to the computation of an improved policy given the value function for that policy. Either of these can be used to reliably compute optimal policies and value functions for finite MDPs given complete knowledge of the MDP.
 
 
 Classical DP methods operate in sweeps through the state set, performing an \textit{expected update} operation on each state. Each such operation updates the value of one state based on the values of all possible successor states and their probabilities of occurring. Expected updates are closely related to Bellman equations: they are little more than these equations turned into assignment statements. When the updates no longer result in any changes in value, convergence has occurred to values that satisfy the corresponding Bellman equation~\cite{SuttonBarto}. \\
-
 
 The assumption that a model is available will be hard to ensure for many applications, however DP algorithms are very relevant because they define fundamental computational mechanism which are also used when no model is available. 
 
@@ -236,18 +236,24 @@ In RL the learner must select an action to take in each time step: every choice 
 	\caption{A general algorithm for online RL~\cite{wiering2012reinforcement}}
 \end{algorithm}
 
-Studying RL, one of the first problems we have to face with is the distinction between \textit{direct} and \textit{indirect} Reinforcement Learning. We will explain the difference between these two approaches in figure \ref{fig:RL_possibilities_schema}.
+Studying RL, one of the main aspect is the distinction between \textit{direct} and \textit{indirect} Reinforcement Learning. The difference between these two approaches is shown in figure \ref{tab:RL_possibilities_schema}. \\
 
+\begin{table}[h!]
+	\resizebox{\textwidth}{!}{ 
+		\begin{tabular}{|c|| c|c|}
+			\hline 
+			&\textbf{Model-based/Indirect}  &\textbf{Model-free/Direct}  \\ 
+			\hline
+			\hline \textbf{Basic Assumption} 
+			& \thead{First of all it is necessary \\ to learn the transition and \\ reward model from interaction \\ with the environment. After that, when \\ the model is (approximately or sufficiently) \\ correct, all the DP methods previously described \\ can be applied. } & \thead{It is possible to estimate \\ values of functions, without even \\ estimating the model of the MDP.}  \\ 
+			\hline 
+		\end{tabular} 
+	}
+	\caption{RL's approaches classification.}
+	\label{tab:RL_possibilities_schema}
+\end{table}
 
-\begin{figure} [h!]
-		\centering
-		\includegraphics[width= \textwidth, height = 4cm]{RL_possibilities_schema.png}
-		\caption{RL's approaches classification.}
-		\label{fig:RL_possibilities_schema}
-\end{figure}
-
-
-RL is different both from \textit{supervised learning} and from \textit{unsupervised learning}. It is not a sample of learning from a training set of labelled examples provided by a knowledgeable external supervisor (\textit{supervised learning}) and it is not a sample of searching and finding structure hidden in a collection of unlabelled data (\textit{unsupervised learning}). More specifically we can say that RL can be distinguished from other forms of learning based on the following characteristics :
+RL is different both from \textit{supervised learning} and from \textit{unsupervised learning}. It is not a sample of learning from a training set of labelled examples provided by a knowledgeable external supervisor (\textit{supervised learning}) and it is not a sample of searching and finding structure hidden in a collection of unlabelled data (\textit{unsupervised learning}). More specifically RL can be distinguished from other forms of learning based on the following characteristics :
 
 \begin{itemize}
 	\item Reinforcement Learning deals with temporal sequences. In contrast with non-supervised learning problems where the order in which the examples are presented is not relevant, the choice of an action at a given time step will have consequences on the examples that are received at a subsequent time steps~\cite{Sigaud:2010:MDP:1841781}.
@@ -256,7 +262,7 @@ RL is different both from \textit{supervised learning} and from \textit{unsuperv
 
 According to what just said, one of the challenges that arise in RL, and not in other kind of learning, is the trade-off between \textit{exploration} and \textit{exploitation}. To obtain an higher reward, an RL agent must prefer actions that it has tried in the past and found to be effective in producing reward. In order to discover such actions, it has to try actions that it has not selected before. The agent \textit{exploits} what it has already experienced in order to obtain reward, but it has also to \textit{explore} in order to eventually make better action selections in the future~\cite{SuttonBarto}. In other words \textit{exploitation} consists of doing again actions which have proven fruitful in the past, whereas \textit{exploration} consists of trying new actions, looking for a larger cumulated reward, but eventually leading to a worse performance. Dealing with the exploration/exploitation trade-off consists of determining how the agent should explore to get as fast as possible a policy that is optimal or close enough to the optimum. The most basic exploration strategy is the $\epsilon$-greedy policy, i.e. the learner takes its current best action with probability $(1-\epsilon)$ and a (randomly selected) other action with probability $\epsilon$. ~\cite{Sigaud:2010:MDP:1841781}. 
 
-\paragraph{Monte Carlo Methods} Monte Carlo Methods (MC)  represent a first instance of model-free RL's algorithms. They are one way solving the Reinforcement Learning problem based on averaging sample returns.
+\subsection{Monte Carlo Methods} Monte Carlo Methods (MC)  represent a first instance of model-free RL's algorithms. They are one way solving the Reinforcement Learning problem based on averaging sample returns.
 
 The Monte Carlo approach consists of performing a large number of trajectories from all states $s$ in $S$, and estimating $V(s)$ as an average of the cumulated rewards observed along these trajectories. In each trial, the agent records its transitions and rewards, and updates the estimates of the value of the  encountered states according to a discounted reward scheme. The value of each state then converges to $V^\pi (s)$ for each $s$ if the agent follows policy $\pi$.
 
@@ -273,7 +279,7 @@ A distinction can be made between \textit{every-visit} MC, which averages over a
 converge to $V^\pi$ for the current policy $\pi$ over time~\cite{wiering2012reinforcement} .
 
 Studying RL methods we have to distinguish between \textit{on-policy methods} and \textit{off-policy methods}.
-On-policy methods attempt to evaluate or improve the policy that is used to make decisions. Off-policy methods evaluate or improve a policy different from that used to generate the data. MC methods can be used for both on-policy and off-policy control, and the general pattern complies with the generalized policy iteration procedure. \\ \\
+On-policy methods attempt to evaluate or improve the policy that is used to make decisions. Off-policy methods evaluate or improve a policy different from that used to generate the data. MC methods can be used for both on-policy and off-policy control, and the general pattern complies with the generalized policy iteration procedure. 
 
 \begin{table}
 \centering
@@ -281,40 +287,56 @@ On-policy methods attempt to evaluate or improve the policy that is used to make
 	\hline 
 	&\textbf{On-policy methods}  &\textbf{Off-policy methods}  \\ 
 	\hline \textbf{Basic assumption}
-	& \thead{They attempt to evaluate\\ or improve the policy that\\ is used to make decisions.}  &\thead{We do not need to follow any \\ specific policy; our agent could \\ even behave randomly and \\ despite this it can still  \\ find the optimal policy. }  \\ 
+	& \thead{They attempt to evaluate\\ or improve the policy that\\ is used to make decisions.}  &\thead{No specific policy \\ is required to be followed; \\ the agent could \\ even behave randomly and \\ despite this it can still  \\ find the optimal policy. }  \\ 
 	\hline 
 \end{tabular}
 \caption{Difference between on-policy and off-policy methods.}
 \end{table} 
 
-\paragraph{Temporal Difference Learning} An important problem faced by RL is the so called \textit{temporal credit assignment problem}. In model-free contexts it is difficult to assess the utility of some action, if the real effects of this particular action can only be perceived much later. One possibility is to wait until the ”end” (e.g. of an episode) and punish or reward specific actions along the path taken. However, this will take a lot of memory and often, with ongoing tasks, it is not known beforehand whether, or when, there will be an ”end”. Instead, one can use similar mechanisms as in value iteration to adjust the estimated value of a state based on the immediate reward and the estimated (discounted) value of the next state. This is generally called \textit{temporal difference learning} which is a general mechanism underlying the model-free methods~\cite{wiering2012reinforcement}. 
+\subsection{Temporal Difference Learning} An important problem faced by RL is the so called \textit{temporal credit assignment problem}. In model-free contexts it is difficult to assess the utility of some action, if the real effects of this particular action can only be perceived much later. One possibility is to wait until the ”end” (e.g. of an episode) and punish or reward specific actions along the path taken. However, this will take a lot of memory and often, with ongoing tasks, it is not known beforehand whether, or when, there will be an ”end”. Instead, one can use similar mechanisms as in value iteration to adjust the estimated value of a state based on the immediate reward and the estimated (discounted) value of the next state. This is generally called \textit{temporal difference learning} which is a general mechanism underlying the model-free methods~\cite{wiering2012reinforcement}. \\ 
 
-We can formally represent this concept modifying equation \ref{eq:2.6} as follow:
+The basic temporal difference algorithm is $TD(0)$. This algorithm relies on a comparison between the actually received reward and the reward expected from the previous estimations.
+
+If the estimated values $V(s_t)$ and $V(s\textsubscript{t+1})$ in states $s_t$ and $s\textsubscript{t+1}$ were exact, we would have 
 
 \begin{equation}
-V(s_t) \leftarrow V(s_t) + \alpha(s_t)(\delta_t + \delta\textsubscript{t+1} + ... + \delta\textsubscript{N-1}) 
+	V(s_t) = r\textsubscript{t+1} + \gamma r\textsubscript{t+2} + \gamma^2 r\textsubscript{t+3} + ...,
 \end{equation}
 
-defining the temporal difference error $\delta_t$ by :
+\begin{equation}
+	V(s\textsubscript{t+1}) = r\textsubscript{t+2} + \gamma r\textsubscript{t+3} + \gamma^2r\textsubscript{t+4} + ... .
+\end{equation}
+
+Thus we would have 
 
 \begin{equation}
-\delta_t = r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}) - V(s_t), \quad t = 0, ..., N-1.
-\end{equation} 
+	V(s_t) = r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}).
+\end{equation}
 
-The error $\delta_t$ must be interpreted in each state as a measure of the difference between the current estimation $V(s_t)$ and the correct estimation $r\textsubscript{t+1} + V(s\textsubscript{t+1})$.
-
-Like Monte Carlo methods, TD ones performs estimation of action-value functions based on the experience of the agent and can do without a model of the underlying MDP; however, they combine this estimation using local estimation propagation mechanisms coming from dynamic programming, resulting in their incremental properties. Thus TD methods, which are at the heart of most reinforcement learning algorithms, are characterized by this combination of estimation methods with local updates incremental properties~\cite{Sigaud:2010:MDP:1841781}.
-
-\paragraph{Sarsa Algorithm : On-policy TD Control} Knowing the exact value of all states is not always enough to determine what to do. If the agent does not know which action results in reaching any particular state, i.e. if the agent does not have a model of the transition function, knowing $V$ does not help it determine its policy.  To solve this problem, Watkins ~\cite{watkins1992q} introduced the action-value function $Q$, whose knowledge is similar to the knowledge of $V$ when $p$ is known. The action-value function of a fixed policy $\pi$ whose value function is $V^\pi$ is :
+The temporal difference error
 
 \begin{equation}
-	\forall s \in S, a \in A, \quad Q^\pi (s,a) = r(s, a) + \gamma \sum_{s'} p(s' \ s, a) V^\pi (s').
+	\delta_t = r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}) - V(s_t)
+\end{equation}
+
+measures the error between the current estimation $V(s_t)$ and the corrected estimation $r\textsubscript{t+1} + V(s\textsubscript{t+1})$. The temporal difference method consists of correcting this error little by little by modifying $V()$ according to a Windrow-Hoff equation :
+
+\begin{equation}
+	V(s_t) \leftarrow V(s_t) + \alpha[r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}) - V(s_t)] = V(s_t) + \alpha \delta_t .
+\end{equation}
+
+Like Monte Carlo methods, TD ones perform estimation of action-value functions based on the experience of the agent and can do it without a model of the underlying MDP; however, they combine this estimation using local estimation propagation mechanisms coming from dynamic programming, resulting in their incremental properties. Thus TD methods, which are at the heart of most reinforcement learning algorithms, are characterized by this combination of estimation methods with local updates incremental properties~\cite{Sigaud:2010:MDP:1841781}.
+
+\subsection{Sarsa Algorithm : On-policy TD Control} Knowing the exact value of all states is not always enough to determine what to do. If the agent does not know which action results in reaching any particular state, i.e. if the agent does not have a model of the transition function, knowing $V$ does not help it determine its policy.  To solve this problem, Watkins ~\cite{watkins1992q} introduced the action-value function $Q$, whose knowledge is similar to the knowledge of $V$ when $p$ is known. The action-value function of a fixed policy $\pi$ whose value function is $V^\pi$ is :
+
+\begin{equation}
+	\forall s \in S, a \in A, \quad Q^\pi (s,a) = R(s, a) + \gamma \sum_{s'} p(s' \ s, a) V^\pi (s').
 \end{equation}
 
 The value of $Q^\pi(s,a)$ is interpreted as the expected value when starting from $s$, executing $a$ and then following the policy $\pi$ afterwards. We have $V^\pi(x) = Q^\pi(x, \pi(x))$ and the corresponding Bellman equation is :
 
 \begin{equation}
-	\forall s \in S, a \in A \quad Q^*(s, a) = r(s, a) + \gamma \sum_{s'}p(s' | s, a) \max_{b} Q^*(s', b)
+	\forall s \in S, a \in A \quad Q^*(s, a) = R(s, a) + \gamma \sum_{s'}p(s' | s, a) \max_{b} Q^*(s', b)
 \end{equation}
 
 Than we have :
@@ -330,7 +352,7 @@ The SARSA algorithm works on state-action pairs rather than on states. Its updat
 Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha[r\textsubscript{t+1} + \gamma Q(s\textsubscript{t+1}, a\textsubscript{t+1}) - Q(s_t, a_t)].
 \end{equation}
 
-the information necessary to perform such an update is $(s_t, a_t, r\textsubscript{t+1}, s\textsubscript{t+1}, a\textsubscript{t+1})$, hence the name of the algorithm : SARSA. This algorithm suffers from one conceptual drawback: performing the updates as stated above implies knowing in advance what will be the next action $a\textsubscript{t+1}$ for any possible next state $s\textsubscript{t+1}$.  As a result, the learning process is tightly coubled to the current policy (the algorithm is called "on-policy") and this complicates the exploration process. As a result, proving the convergence of SARSA was more difficult than proving the convergence of "off-policy" algorithms such as Q-learning. Empirical studies often demonstrates the better performance of SARSA compared to Q-learning~\cite{Sigaud:2010:MDP:1841781}.
+the information necessary to perform such an update is $(s_t, a_t, r\textsubscript{t+1}, s\textsubscript{t+1}, a\textsubscript{t+1})$, hence the name of the algorithm : SARSA. This algorithm suffers from one conceptual drawback: performing the updates as stated above implies knowing in advance what will be the next action $a\textsubscript{t+1}$ for any possible next state $s\textsubscript{t+1}$.  As a result, the learning process is tightly coupled to the current policy (the algorithm is called "on-policy") and this complicates the exploration process. As a result, proving the convergence of SARSA was more difficult than proving the convergence of "off-policy" algorithms such as Q-learning. Empirical studies often demonstrates the better performance of SARSA compared to Q-learning~\cite{Sigaud:2010:MDP:1841781}.
 
 \begin{algorithm}
 	Initialize $Q(s, a)$ arbitrarily\;
@@ -349,7 +371,7 @@ the information necessary to perform such an update is $(s_t, a_t, r\textsubscri
 \caption{SARSA Algorithm : On-policy TD Control}
 \end{algorithm}
 
-\paragraph{Q-learning Algorithm : Off-policy TD Control} The Q-Learning Algorithm can be seen as a simplification of the  algorithm, given that it is no more necessary to determine the action at the next step to calculate updates. Its update equation is :
+\subsection{Q-learning Algorithm : Off-policy TD Control} The Q-Learning Algorithm can be seen as a simplification of the  algorithm, given that it is no more necessary to determine the action at the next step to calculate updates. Its update equation is :
 
 \begin{equation}
 \label{eq:2.13}
@@ -376,15 +398,24 @@ the information necessary to perform such an update is $(s_t, a_t, r\textsubscri
 
 The main difference between SARSA and Q-Learning lies in the definition of the error term. The $Q(s\textsubscript{t+1}, a\textsubscript{t+1})$ term in the equation \ref{eq:2.12}	is replaced by $\max_{a}Q(s\textsubscript{t+1}, a)$ in equation \ref{eq:2.13}. Updates are based on instantaneously available information. In this algorithm, the $T\textsubscript{tot}$ parameter corresponds to the number of iterations. There is here one learning rate $\alpha_t(s, a)$ for each state-action pair, it decreases at each visit of the corresponding  pair. The {\tt Simulate} function returns a new state and the corresponding reward according to the dynamics of the system. The choice of the current state and of the executed action is performed by functions {\tt ChooseState} and {\tt ChooseAction}. The {\tt Initialize} function initializes the $Q$ function with $Q_0$, which is often initialized with {\tt null} values, whereas more adequate choices can highly improve the performance~\cite{Sigaud:2010:MDP:1841781}.
 
-\paragraph{SARSA($\lambda$)} Previous algorithms only perform one update per time step in the state that the agent is visiting. This update process is particularly slow. Indeed, an agent deprived of any information on the structure of the value function needs at least $n$ trials to propagate the immediate reward of a state to another state that is $n$ transitions away. Before this propagation is achieved, if the initial values are {\tt null}, the agent performs a random walk in the state space, which means that it needs an exponential number of steps as a function of $n$ before reaching the reward "trail". A naive way to solve the problem consists of using a memory of trajectory and to propagate all the information backwards along the performed transitions each time a reward is reached. Such a memory of performed transitions is called an eligibility trace". A problem with this naive approach is that the required memory grows with length of trajectories, which is obviously not feasible in the infinite horizon context. In SARSA($\lambda$) algorithm a more sophisticated approach that addresses the infinite horizon context. \\
+\subsection{SARSA($\lambda$)} Previous algorithms only perform one update per time step in the state that the agent is visiting. This update process is particularly slow. Indeed, an agent deprived of any information on the structure of the value function needs at least $n$ trials to propagate the immediate reward of a state to another state that is $n$ transitions away. Before this propagation is achieved, if the initial values are {\tt null}, the agent performs a random walk in the state space, which means that it needs an exponential number of steps as a function of $n$ before reaching the reward "trail" (figure \ref{fig:NonLambda}).
 
-As we already saw Q-learning integrates the temporal difference error idea. With the update rule of Q-learning :
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width= 10cm, height = 5cm]{NonLambda}
+	\caption{Q-learning : first and second trial. It can be seen that, all values being initially {\tt null}, the propagation of {\tt non-null} values does not starts until the agent finds the reward source for the first time, and only progress once per trial~\cite{Sigaud:2010:MDP:1841781}.}
+	\label{fig:NonLambda}
+\end{figure}
+
+A naive way to solve the problem consists of using a memory of trajectory and to propagate all the information backwards along the performed transitions each time a reward is reached. Such a memory of performed transitions is called an ''eligibility trace''. A problem with this naive approach is that the required memory grows with length of trajectories, which is obviously not feasible in the infinite horizon context. In SARSA($\lambda$) algorithm a more sophisticated approach that addresses the infinite horizon context is used. \\
+
+As already saw, Q-learning integrates the temporal difference error idea. With the update rule of Q-learning :
 
 \begin{equation}
 	Q\textsubscript{t+1} (s_t, a_t) = Q_t(s_t, a_t) + \alpha_t\{r\textsubscript{t+1} + \gamma V_t(s\textsubscript{t+1}) - Q_t(s_t, a_t)\}
 \end{equation}
 
-for transition $s_t, a_t, s\textsubscript{t+1}, r\textsubscript{t+1}$), and in the case where action $a_t$ executed in state $s_t$ is the optima action for $Q_t$, then the error term is $r\textsubscript{t+1} + \gamma V_t s\textsubscript{t+1} - V_t(s_t)$. For a generic parameter $\lambda \in [0,1]$ we can generalize as follow:
+for transition ($s_t, a_t, s\textsubscript{t+1}, r\textsubscript{t+1}$), and in the case where action $a_t$ executed in state $s_t$ is the optima action for $Q_t$, then the error term is $r\textsubscript{t+1} + \gamma V_t s\textsubscript{t+1} - V_t(s_t)$. For a generic parameter $\lambda \in [0,1]$ it can be generalized as shown in algorithm \ref{SarsaLambdaAlgo}.
 
 \begin{algorithm}
 	/* $\alpha$ is a learning rate */ \;
@@ -414,10 +445,19 @@ for transition $s_t, a_t, s\textsubscript{t+1}, r\textsubscript{t+1}$), and in t
 		}
 	}
 \KwRet{$Q\textsubscript{Tot}$}
-\caption{SARSA ($\lambda$) Algorithm ~\cite{Sigaud:2010:MDP:1841781}} 
+\caption{SARSA ($\lambda$) Algorithm \cite{Sigaud:2010:MDP:1841781}}
+\label{SarsaLambdaAlgo} 
 \end{algorithm}
 
-where $z_t(s, a)$ and  is the eligibility trace and \textit{absorbing state} means terminal state~\cite{Sigaud:2010:MDP:1841781}.
+Here $z_t(s, a)$  is the eligibility trace and \textit{absorbing state} is the terminal state~\cite{Sigaud:2010:MDP:1841781}. The eligibility trace represents a short-term memory vector, \textbf{z\textsubscript{t}} $\in \mathbb{R}^d$, that parallels the long-term weight vector \textbf{w\textsubscript{t}} $\in \mathbb{R}^d$. The rough idea is that when a component of \textbf{w\textsubscript{t}} participates in producing an estimated value, then the  corresponding component of \textbf{z\textsubscript{t}} is bumped up and then begins to fade away. Learning will then occur in that component of \textbf{w\textsubscript{t}} if a non-zero TD error occurs before the trace falls back to zero. The trace-decay parameter $\lambda \in [0, 1]$ determines the rates at which the trace falls \cite{SuttonBarto}. Roughly speaking eligibility trace is a parameter used to control the “memory” of the algorithm, associated to a given state, enabling the assignment of more credit, i.e., higher trace, to the states and actions performed closer to the end of the episode.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width= 12cm, height = 5cm]{SarsaLambdaTD}
+	\caption{Grid-world example of the speed up of policy learning due to the use of eligibility traces.}
+	\label{fig:SarsaLambdaTD}
+\end{figure}
+
+The effect of the $\lambda$ value is still poorly understood and tuning optimally its value for a given problem is still an open empirical problem \cite{Sigaud:2010:MDP:1841781}.
 
 

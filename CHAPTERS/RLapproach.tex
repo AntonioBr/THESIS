@@ -6,7 +6,7 @@ A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function 
 
 In this chapter we will first analyse how BO works and than we will propose an innovative, Reinforcement Learning based approach to solve the same problem.
 
-\paragraph{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. GP is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for the regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions. \\
+\subsection{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. GP is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for the regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions. \\
 
 GP is a convenient and powerful prior distribution on functions, which we will take here to be of the form 
 
@@ -33,7 +33,7 @@ and by a positive definite covariance function
 	\label{fig:Multivatiate_Gaussian}
 \end{figure}
 
-\paragraph{Acquisition Functions for Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which we denote by
+\subsection{Acquisition Functions for Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which we denote by
 
 \begin{equation}
 	a : \mathcal{X} \leftarrow \mathbb{R}^+,
@@ -55,7 +55,7 @@ where several different functions have been proposed. There are several popular 
 	\label{fig:BoProcess}
 \end{figure}
 
-\paragraph{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. The process to reach this goal has required about three months of work. We made a lot of attempts. A full, detailed chronology of the development of the method presented in this chapter is described in \textbf{Appendix A}. Here we describe the final product of our efforts. \\
+\subsection{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. The process to reach this goal has required about three months of work. We made a lot of attempts. A full, detailed chronology of the development of the method presented in this chapter is described in \textbf{Appendix A}. Here we describe the final product of our efforts. \\
 
 Let's consider the following scenario :
 
@@ -265,15 +265,13 @@ Because of the detailed explanation of choices made to model the problem given i
 	\label{fig:RLUMLDiagram}
 \end{figure}
 
-\subsection{Humans in the Loop} Decision making is a core competence for animals and humans acting and surviving in environments they only partially comprehend, gaining rewards and punishments for their troubles \cite{Dayan08connectionsbetween}.
-Results of a given action depend not only on the ability to anticipate the amount of the outcome, but also on sensory stimuli. The information about the selection of a certain action in a context of uncertainty is fed by not only the outside world but also from previously learned experience or inherited instincts \cite{SisRoy}.
-This argument was deeply analysed from lots of perspectives. In this work we will consider the problem from mathematical and statistical points of view. \\  
+\subsection{Humans in the Loop} Every time we get into a rental car, we have to learn how hard to press the gas pedal for a given amount of
+acceleration. Solving this problem requires learning a relationship between two continuous variables. Over the past 50 years, several studies of \textit{function learning} have shed light on how people come to understand continuous relationships (Carroll 1963; Brehmer 1971; 1974; Koh and Meyer 1991; Busemeyer et al. 1997; DeLosh et al. 1997; Kalish et al. 2004; McDaniel and Busemeyer 2005). It has become clear that people can learn and recall a wide variety of relationships,
+but demonstrate certain systematic biases that tell
+us about the mental representations and implicit assumptions that humans employ when solving function learning problems. Several models have been developed to understand the cognitive mechanisms behind function learning. These
+models tend to fall into two different theoretical camps. The first includes \textit{rule-based} theories (e.g., Carroll, 1963, Brehmer, 1974, Koh and Meyer, 1991), which suggest that people learn an explicit function from a given family, such as polynomials (Carroll 1963; McDaniel and Busemeyer 2005) or power-law functions (Koh and Meyer 1991). This approach attributes rich representations to human learners, but has traditionally given limited treatment to how such representations could be acquired. A second approach includes \textit{similarity-based} theories (e.g., DeLosh et al., 1997, Busemeyer et al., 1997), which focus on the idea that people learn by forming associations: if $x$ is used to predict $y$, observations with similar $x$ values should also have similar $y$ values. Most recently, hybrids of these two approaches have been proposed (e.g., Kalish et al., 2004, McDaniel and Busemeyer, 2005), with an associative learning process that acts on explicitly represented functions. Almost all past research on computational models of function learning has been oriented towards understanding the psychological processes that underlie human performance, or the steps by which people update and deploy
+their mental representations of continuous relationships \cite{Lucas2015}. In this thesis, we take a different approach, presenting a rational analysis of function learning. \\
 
-Applying prior knowledge to decision making is absolutely needed to develop a theory of inference. Typically, it has been found that the Bayesian models of inference are useful in solving such problems involve probabilistic frameworks. The basic question, addressed by the Bayesian framework is to find out the way how one updates beliefs and achieves the result, makes inferences, and applies the observed data. The basic idea of Bayesian statistics is that the probabilities in this framework are interpreted as rational, conditional measures of uncertainty and loosely resemble the word probability in ordinary language. Basically, Bayesian decision theory is based on two basic tenets:
+We have seen that Gaussian process regression is a powerful tool to model, explore, and exploit unknown functions. However, Gaussian process regression might also be applied in a different, more psychological context, namely as a model of human cognition in general and function learning in particular. Recently, Lucas, Giffiths, Williams, and Kalish (2015) have proposed also use Gaussian process regression as a rational model of function learning that can explain various effects within the literature of human function learning. Within and exploration-exploitation context, Borji and Itti (2013) and Wu, Schultz, Speekenbrink, Nelson, and Meder (2017) showed that Gaussian process-based optimization can explain how participants actively search for the best output when trying to optimize $1-d$ functions \cite{Schulz095190}.\\
 
-\begin{itemize}
-	\item Decision maker’s choice or preferences are affected by new information through its effect on his rather beliefs than his taste.
-	\item Decision maker’s posterior beliefs represented by posterior probabilities are obtained by updating the prior probabilities (representing his prior beliefs) based on Bayes’ theorem.
-\end{itemize}
-
-Starting from these assumptions and completing them through the use of maths presented in the opening of the current chapter, in the next sections, we will compare the behaviour of an RL agent and the humans' one in trying to complete a same job showing results obtained conducting a specifically experiment explained in the next chapter.
+In the next chapters, starting from those studies on $1d$ function learning, and using the previously cited mathematical tools, we will present an experiment about $2d$ function learning. We will finally compare human learning performances to RL agent's ones.
