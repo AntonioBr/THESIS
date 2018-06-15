@@ -2,13 +2,13 @@
 
 One of the most exciting challenges in optimization practice is the possibility to optimize in absence of an algebraic model of the system to be optimized. This kind of optimization is known as \textit{black-box optimization} and it is the subject matter of this dissertation. \\
 
-A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function for which the analytic form is not known. Nowadays there are lots of mathematical models to succeed in optimize this kind of functions. One of the best known of these methods is the \textit{Bayesian Optimization Model} (BO). \\
+A black-box function $f(x) : \mathbb{R}^n \rightarrow \mathbb{R}$ is a function for which the analytic form is not known. Nowadays there are lots of mathematical models to succeed in optimize this kind of functions. One of the best known of these methods is the \textit{Bayesian Optimization Model} (BO) applied to \textit{Gaussian Processes} (GPs). \\
 
-In this chapter we will first analyse how BO works and than we will propose an innovative, Reinforcement Learning based approach to solve the same problem.
+In this chapter the BO model will be analysed and then an innovative, Reinforcement Learning  based approach to solve the same problem will be proposed.
 
-\subsection{Gaussian Processes} Before introducing BO we have to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. GP is a \textit{non-parametric} approach (we don't have a priori knowledge of how many parameters will be useful for the regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions. \\
+\subsection{Gaussian Processes} Before introducing BO it is necessary to describe what \textit{Gaussian Processes} (GPs) are. GPs are an alternative approach to regression problems. GP is a \textit{non-parametric} approach (there is not a priori knowledge of how many parameters will be useful for the regression) to find a distribution over the possible functions $f(x)$ that are consistent with observed data. A GP is a generalization of the Gaussian probability distribution. Whereas a probability distribution describes random variables which are scalars or vectors (for multivariate distributions), a \textit{stochastic process} governs the properties of functions. \\
 
-GP is a convenient and powerful prior distribution on functions, which we will take here to be of the form 
+GP is a convenient and powerful prior distribution on functions, which will be taken here to be of the form 
 
 \begin{equation}
 	f : \mathcal{X} \leftarrow \mathbb{R}.
@@ -45,7 +45,7 @@ determines what point in $\mathcal{X}$ should be evaluated next via a proxy opti
 	x\textsubscript{next} = \arg\max_{x}a(x),
 \end{equation}
 
-where several different functions have been proposed. There are several popular choices of acquisition functions. Under the Gaussian process prior, these functions depend on the model solely through its predictive mean function $\mu(x; \{x_n, y_n\})$ and predictive variance function $\sigma^2(x; \{x_n, y_n\})$~\cite{NIPS2012_4522}.
+where several different functions have been proposed. There are several popular choices of acquisition functions. Under the Gaussian process prior, those functions depend on the model solely through its predictive mean function $\mu(x; \{x_n, y_n\})$ and predictive variance function $\sigma^2(x; \{x_n, y_n\})$~\cite{NIPS2012_4522}.
 
 
 \begin{figure} [h!]
@@ -55,17 +55,17 @@ where several different functions have been proposed. There are several popular 
 	\label{fig:BoProcess}
 \end{figure}
 
-\subsection{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL approach to the black-box function optimization problem. The process to reach this goal has required about three months of work. We made a lot of attempts. A full, detailed chronology of the development of the method presented in this chapter is described in \textbf{Appendix A}. Here we describe the final product of our efforts. \\
+\subsection{An RL Approach To Black-Box Optimization} As previously said, the aim of this thesis is to describe an innovative RL based approach to the black-box function optimization problem. The process to reach this goal has required about three months of work. A lot of attempts have been made. A full, detailed chronology of the development of the method presented in this chapter is described in \textbf{Appendix A}. Here the final product of all efforts is described. \\
 
 Let's consider the following scenario :
 
 \begin{itemize}
 	
-	\item \textbf{Agent} : The Reinforcement Learning agent has to maximize a black-box bivariate function. The function is continuously defined over a specific domain. The function is mapped on a space of $600 \times 600$ pixels. The agent has to complete its job having exactly $100$ epochs for each one of the $150$ episodes. In each epoch the agent has a specific position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
+	\item \textbf{Agent} : The Reinforcement Learning agent has to maximize a black-box bivariate function. The function is continuously defined over a specific domain. The function is mapped on a space of $X \times Y$ pixels. The agent has to complete its job having exactly $e$ epochs for each one of the $E$ episodes. In each epoch the agent has a specific position in space described through the two coordinates $(x, y)$. Each time the agent makes an action the angle between $(x, y)$ and $(x', y')$ and the value of the function $f(x', y')$ are computed.
 	
 	\item \textbf{State} : The state is represented by two lists: the first one contains the last two computed \textit{angles} and the second one contains the correspondent last two \textit{actions}.
 	
-	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $40$ pixels in one of the previously described directions. The resultant effective movement over function is computed as shown in algorithm $5$.
+	\item \textbf{Actions} : In each epoch the agent can make one of four different actions : \textit{move north}, \textit{move  south}, \textit{move east}, \textit{move west}. Each time the agent moves itself of $p$ pixels in one of the previously described directions. The resultant effective movement over function is computed as shown in algorithm \ref{algoPixel}.
 	
 	\begin{algorithm} [h!]
 		/* knowing {\tt pixel\_X} and {\tt pixel\_Y} */\;
@@ -86,15 +86,15 @@ Let's consider the following scenario :
 		\
 		
 		\KwRet{{\tt x\_Real, y\_Real}}
-		\label{algoPixel}
 		\caption{From pixels to real values} 
+		\label{algoPixel}
 	\end{algorithm}
 	
-	\item \textbf{Reward} : In the context just described, a real terminal state doesn't exist. Cause we are working with black-box functions we cannot specify two coordinates $(x, y)$ and the corresponding value function $z$ as maximum, that is, as the terminal state. For this reason every action of the agent is rewarded. The simulation ends after $150$ episodes are completed.
-	In each explored state we define a $\Delta$ computed as follow: 
+	\item \textbf{Reward} : In the context just described, a real terminal state doesn't exist. Cause black-box functions are considered, it is not possible to specify two coordinates $(x, y)$ and the corresponding value function $z$ as maximum, that is, as the terminal state. For this reason every action of the agent is rewarded. The simulation ends after the $E$ episodes are completed.
+	In each explored state a $\Delta$ computed as follow is defined: 
 	
 	\begin{equation}
-		\Delta = max f(x_n, y_n) - f(x, y)
+		\Delta = f(x, y) - {\tt currentMax}
 	\end{equation} 
 	
 	where $f(x, y)$ is the value function computed in the  \textit{current state}. Reward at each epoch is equal to $\Delta$.
@@ -130,7 +130,7 @@ If the movement is linear we compute angles as follow :
 	
 \end{algorithm}
 
-We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple $2d$-case like the one represented in figure ~\ref{fig:LMComputations}.
+We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple $1d$-case like the one represented in figure ~\ref{fig:LMComputations}.
 
 \begin{figure} [h!]
 	\centering
@@ -139,19 +139,19 @@ We can explain this algorithm briefly recalling some trigonometry. Let's suppose
 	\label{fig:LMComputations}
 \end{figure}
 
-Let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the $2d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can compute $f(x')$. At this time we should know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and $\overline{CB}$ equals to $f(x') - f(x)$ is the $\delta$. From trigonometry 
+Let's suppose that the starting point of the RL agent at epoch $e_i$ is the point \textit{A} with coordinates $(x, y)$. In the $2d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch $e\textsubscript{i+1}$ is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, it is possible to compute $f(x')$. At this time point \textit{C} with coordinates $(x', f(x'))$ should be known. \textit{u} is the {\tt movement amount} and $\overline{CB}$ equals to $f(x') - f(x)$ is the $\delta$. From trigonometry 
 
 \begin{equation}
 	\tan \alpha = \dfrac{\delta}{\tt movementAmount},
 \end{equation}
 
-so we can finally compute the angle $\alpha$ as follow :
+so it is finally possible to compute the angle $\alpha$ as follow :
 
 \begin{equation}
 	\alpha = \arctan \dfrac{\delta}{movementAmount}
 \end{equation}
 
-If the movement is parametric we have to be more specific about the amount of movement over the function. We do this using the following algorithm :
+If the movement is parametric it is necessary to be more specific about the amount of movement over the function. This can be done using the following algorithm :
 
 \begin{algorithm}
 	/* knowing $(x, y)$ */ \;
@@ -191,7 +191,7 @@ If the movement is parametric we have to be more specific about the amount of mo
 	
 \end{algorithm}
 
-We can easily explain this algorithm looking at figure ~\ref{fig:PMComputations}. 
+This algorithm can be easily understood looking at figure ~\ref{fig:PMComputations}. 
 
 \begin{figure} [h!]
 	\centering
@@ -200,7 +200,7 @@ We can easily explain this algorithm looking at figure ~\ref{fig:PMComputations}
 	\label{fig:PMComputations}
 \end{figure}
 
-As previously done, let's suppose that the starting point of our RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the $2d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the objective function is $f(x) = \sin(2x)$, we can now compute $f(x')$. We should now know point \textit{C} with coordinates $(x', f(x'))$. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. Using trigonometry we can compute $\alpha$. Our objective is to know the real amount of movement done by the agent on the function. We want to know how much is $\overline{AE}$.  From the first theorem of Euclid we know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this we can write the following proportion :
+As previously done, let's suppose that the starting point of the RL agent at epoch \textit{e} is the point \textit{A} with coordinates $(x, y)$. In the $1d$-case the agent can make only one of two actions for each epoch : \textit{move on} and \textit{go back}. Making a linear movement of the type \textit{move on} the arriving point at epoch \textit{e'} is \textit{B} with coordinates $(x', y)$. Knowing that the hidden objective function is $f(x) = \sin(2x)$, it is now possible to compute $f(x')$. Point \textit{C} with coordinates $(x', f(x'))$ should now be known. \textit{u} is the {\tt movement amount} and \textit{CB} equals to $f(x') - f(x)$ is $\delta$. Using trigonometry it is possible to compute $\alpha$. The objective is to know the real amount of movement done by the agent on the function. In order to do this the first thing to do is to know how much is $\overline{AE}$.  From the first theorem of Euclid it is possible to know that \textit{in a right-angled triangle, the square constructed on a cathetus is equivalent to the rectangle that has for dimensions the hypotenuse and the projection of the cathetus on the hypotenuse}. This means that in a right-angled triangle, the cathetus is proportional medium between the hypotenuse and its own projection on it. According to this it is possible to write the following proportion :
 
 \begin{equation}
 	h : u =  u : AD.
@@ -218,21 +218,21 @@ that is the same of :
 	 {\tt pojectionOnHypotenuse} = \dfrac{{\tt movementAmount} * {\tt movementAmount}}{{\tt hypotenuse}}
 \end{equation}
 
-of algorithm ~\ref{PMAlgo}. Now we have all elements in order to compute the \textit{real movement amount} represented by segment $\overline{AE}$. It is computed as :
+of algorithm ~\ref{PMAlgo}. Now all elements in order to compute the \textit{real movement amount} represented by segment $\overline{AE}$ are known. It is computed as :
 
 \begin{equation}
-	\overline{AE} = \overline{DA} \cos \alpha
+	\overline{AE} = \overline{DA} \cos \alpha.
 \end{equation}
 
-Both parametric and linear approach are effective. Therefore the question is why select one method instead of the other one. The answer to this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. This depends on the fact that the real amount of movement depends on the angle so it is lesser each time. 
+Both parametric and linear approach are effective. Therefore the question is why select one method instead of the other one. The answer to this question is simple. Adopting the parametric approach the optimization process is longer but more accurate. This depends on the fact that the real amount of movement is correlated with the largeness of the angle so it is lesser each time. \\
 
-On the other hand using the parametric approach, we could ideally train our agent on a set of specific functions and then it should have very good performances also on a generic, never previously explored, function using its knowledge about angles, actions and slope. 
+On the other hand using the parametric approach, the agent could be ideally trained on a set of specific functions and then it should make very good performances also on a generic, never previously explored, function using its knowledge about angles, actions and slope. \\
 
-Adopting the linear approach the optimization process is slower but less accurate. This depends on the fact that the movement is as the crow flies. Using the linear approach we cannot abstract from the concept of function. This means that we have to train our agent for every specific function in order to optimize its. Any change on a specific function, however small, invalidates the previous training.
+Adopting the linear approach the optimization process is slower but less accurate. This depends on the fact that the movement is as the crow flies. Using the linear approach the concept of function cannot be abstracted. This means that the agent has to be trained for every specific function in order to optimize its. Any change on a specific function, however small, invalidates the previous training.
 
 \subsection{Implementation}
 
-In order to formalize and solve the problem previously described adopting an RL approach, we use the BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan of Brown University. \\
+In order to formalize and solve the problem previously described adopting an RL approach, BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan of Brown University, has been used. \\
 
 BURLAP uses a highly flexible system for defining states and and actions of nearly any kind of form, supporting discrete continuous, and relational domains. Planning and learning algorithms range from classic forward search planning to value function-based stochastic planning and learning algorithms~\cite{BURLAPSite}. \\
 
@@ -247,31 +247,26 @@ In order to define customized MDPs, BURLAP offers a set of classes and interface
 The main features offered by BURLAP are :
 	
 \begin{itemize}
-	\item \textbf{State} : implementing this interface we define the state variables of our MDP state space. An instance of this object will specify a single state from the state space~\cite{BURLAPSite} .
-	\item \textbf{Action} : implementing this interface we define a possible action that the agent can select. If our MDP action set is discrete and unparametrized, we may consider using the provided concrete implementation {\tt SimpleAction}, which defines an action entirely by a single string name~\cite{BURLAPSite}.
-	\item \textbf{SampleModel} : implementing this interface we define the model of our MDP. This interface only requires us to implement methods that can sample a transition: spit back out a possible next state and reward given a prior state and action taken~\cite{BURLAPSite}.
-	\item  \textbf{Environment} : An MDP defines the nature of an environment, but ultimately, an agent will want to interact with an actual environment, either through learning or to execute a policy it computed from planning for the MDP. An environment has a specific state of the world that the agent can only modify by using the MDP actions. Implement this interface to provide an environment with which BURLAP agents can interact. If we define the MDP ourself, then we'll probably don't want to implement {\tt Environment} ourself and instead use the provided concrete {\tt SimulatedEnvironment} class, which takes an {\tt SADomain} with a {\tt SampleModel}, and simulates an environment for it~\cite{BURLAPSite}.
+	\item \textbf{State} : implementing this interface the state variables of our MDP state space can be defined. An instance of this object will specify a single state from the state space~\cite{BURLAPSite} .
+	\item \textbf{Action} : implementing this interface a possible action that the agent can select, can be defined. If the MDP action set is discrete and unparametrized, the provided concrete implementation {\tt SimpleAction}, which defines an action entirely by a single string name, can be adopted ~\cite{BURLAPSite}.
+	\item \textbf{SampleModel} : implementing this interface the model of the MDP can be defined. This interface only requires to implement methods that can sample a transition: spit back out a possible next state and reward given a prior state and action taken~\cite{BURLAPSite}.
+	\item  \textbf{Environment} : An MDP defines the nature of an environment, but ultimately, an agent will want to interact with an actual environment, either through learning or to execute a policy it computed from planning for the MDP. An environment has a specific state of the world that the agent can only modify by using the MDP actions. Implement this interface to provide an environment with which BURLAP agents can interact. If one defines a new MDP, then he will probably don't want to implement {\tt Environment} himself and instead use the provided concrete {\tt SimulatedEnvironment} class, which takes an {\tt SADomain} with a {\tt SampleModel}, and simulates an environment for it~\cite{BURLAPSite}.
 \end{itemize}
 
 An extended definition of classes and interfaces can be found at \url{http://burlap.cs.brown.edu/doc/index.html}. \\
 
-in order to model the problem described above, starting from features offered by BURLAP, we extend interfaces and implement abstract classes as shown in figure ~\ref{fig:RLUMLDiagram}. \\
+In order to model the problem described above, starting from features offered by BURLAP, interfaces and abstract classes have been implemented and extended as shown in figure ~\ref{fig:RLUMLDiagram}. \\
 
 Because of the detailed explanation of choices made to model the problem given in the first section of this chapter and in \textbf{Appendix A}, the mere analysis of architectural definition is left to the reader. The full code can be found at (...).
 
 \begin{figure} [h!]
-	\includegraphics[width= \textwidth , height = 10cm]{RLDiagram}
+	\includegraphics[width= 13cm , height = 9cm]{RLDiagram}
 	\caption{Class diagram of RL based optimization approach.}
 	\label{fig:RLUMLDiagram}
 \end{figure}
 
-\subsection{Humans in the Loop} Every time we get into a rental car, we have to learn how hard to press the gas pedal for a given amount of
-acceleration. Solving this problem requires learning a relationship between two continuous variables. Over the past 50 years, several studies of \textit{function learning} have shed light on how people come to understand continuous relationships (Carroll 1963; Brehmer 1971; 1974; Koh and Meyer 1991; Busemeyer et al. 1997; DeLosh et al. 1997; Kalish et al. 2004; McDaniel and Busemeyer 2005). It has become clear that people can learn and recall a wide variety of relationships,
-but demonstrate certain systematic biases that tell
-us about the mental representations and implicit assumptions that humans employ when solving function learning problems. Several models have been developed to understand the cognitive mechanisms behind function learning. These
-models tend to fall into two different theoretical camps. The first includes \textit{rule-based} theories (e.g., Carroll, 1963, Brehmer, 1974, Koh and Meyer, 1991), which suggest that people learn an explicit function from a given family, such as polynomials (Carroll 1963; McDaniel and Busemeyer 2005) or power-law functions (Koh and Meyer 1991). This approach attributes rich representations to human learners, but has traditionally given limited treatment to how such representations could be acquired. A second approach includes \textit{similarity-based} theories (e.g., DeLosh et al., 1997, Busemeyer et al., 1997), which focus on the idea that people learn by forming associations: if $x$ is used to predict $y$, observations with similar $x$ values should also have similar $y$ values. Most recently, hybrids of these two approaches have been proposed (e.g., Kalish et al., 2004, McDaniel and Busemeyer, 2005), with an associative learning process that acts on explicitly represented functions. Almost all past research on computational models of function learning has been oriented towards understanding the psychological processes that underlie human performance, or the steps by which people update and deploy
-their mental representations of continuous relationships \cite{Lucas2015}. In this thesis, we take a different approach, presenting a rational analysis of function learning. \\
+\subsection{Humans in the Loop} Every time one gets into a rental car, he/she have to learn how hard to press the gas pedal for a given amount of acceleration. Solving this problem requires learning a relationship between two continuous variables. Over the past 50 years, several studies of \textit{function learning} have shed light on how people come to understand continuous relationships (Carroll 1963; Brehmer 1971; 1974; Koh and Meyer 1991; Busemeyer et al. 1997; DeLosh et al. 1997; Kalish et al. 2004; McDaniel and Busemeyer 2005). It has become clear that people can learn and recall a wide variety of relationships, but demonstrate certain systematic biases that tell about the mental representations and implicit assumptions that humans employ when solving function learning problems. Several models have been developed to understand the cognitive mechanisms behind function learning. Those models tend to fall into two different theoretical camps. The first includes \textit{rule-based} theories (e.g., Carroll, 1963, Brehmer, 1974, Koh and Meyer, 1991), which suggest that people learn an explicit function from a given family, such as polynomials (Carroll 1963; McDaniel and Busemeyer 2005) or power-law functions (Koh and Meyer 1991). This approach attributes rich representations to human learners, but has traditionally given limited treatment to how such representations could be acquired. A second approach includes \textit{similarity-based} theories (e.g., DeLosh et al., 1997, Busemeyer et al., 1997), which focus on the idea that people learn by forming associations: if $x$ is used to predict $y$, observations with similar $x$ values should also have similar $y$ values. Most recently, hybrids of these two approaches have been proposed (e.g., Kalish et al., 2004, McDaniel and Busemeyer, 2005), with an associative learning process that acts on explicitly represented functions. Almost all past research on computational models of function learning has been oriented towards understanding the psychological processes that underlie human performance, or the steps by which people update and deploy their mental representations of continuous relationships \cite{Lucas2015}. In this thesis, a different approach is taken, presenting a rational analysis of function learning. \\
 
-We have seen that Gaussian process regression is a powerful tool to model, explore, and exploit unknown functions. However, Gaussian process regression might also be applied in a different, more psychological context, namely as a model of human cognition in general and function learning in particular. Recently, Lucas, Giffiths, Williams, and Kalish (2015) have proposed also use Gaussian process regression as a rational model of function learning that can explain various effects within the literature of human function learning. Within and exploration-exploitation context, Borji and Itti (2013) and Wu, Schultz, Speekenbrink, Nelson, and Meder (2017) showed that Gaussian process-based optimization can explain how participants actively search for the best output when trying to optimize $1-d$ functions \cite{Schulz095190}.\\
+It was seen that Gaussian process regression is a powerful tool to model, explore, and exploit unknown functions. However, Gaussian process regression might also be applied in a different, more psychological context, namely as a model of human cognition in general and function learning in particular. Recently, Lucas, Giffiths, Williams, and Kalish (2015) have proposed also use Gaussian process regression as a rational model of function learning that can explain various effects within the literature of human function learning. Within and exploration-exploitation context, Borji and Itti (2013) and Wu, Schultz, Speekenbrink, Nelson, and Meder (2017) showed that Gaussian process-based optimization can explain how participants actively search for the best output when trying to optimize $1-d$ functions \cite{Schulz095190}.\\
 
-In the next chapters, starting from those studies on $1d$ function learning, and using the previously cited mathematical tools, we will present an experiment about $2d$ function learning. We will finally compare human learning performances to RL agent's ones.
+In the next chapters, starting from those studies on $1d$ function learning, and using the previously cited mathematical tools, an experiment about $2$-d function learning will be presented. After that human learning performances will be compared to RL agent's ones.
