@@ -33,7 +33,7 @@ and by a positive definite covariance function
 	\label{fig:Multivatiate_Gaussian}
 \end{figure}
 
-\subsection{Acquisition Functions for Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which we denote by
+\subsection{Bayesian Optimization} Let's assume that the function $f(x)$ is drawn from a GP prior and that our observation are of the form $\{x_n \in \mathcal{X}\}\subsup{}{ n=1}{N}$, where $y_n \sim \mathcal{N}(f(x_n), v)$ and $v$ is the variance of noise introduced into the function observations. This prior and these data induce  posterior over functions; the acquisition function, which is denoted by
 
 \begin{equation}
 	a : \mathcal{X} \leftarrow \mathbb{R}^+,
@@ -103,7 +103,7 @@ Let's consider the following scenario :
 
 The nature of the movement the agent can make in each epoch can be of two different types : \textit{linear movement} or \textit{parametric movement}. A linear movement can be thought as a crow flies one. In this case the structure of the function is not really considered. On the other hand, a parametric movement can be thought as a real movement over the function curves. In this case the structure of the function influences the amount of the movement really done. \\
 
-If the movement is linear we compute angles as follow :
+If the movement is linear angles are computed as follow :
 
 \begin{algorithm}
 	/* knowing $(x, y)$ */ \;
@@ -130,7 +130,7 @@ If the movement is linear we compute angles as follow :
 	
 \end{algorithm}
 
-We can explain this algorithm briefly recalling some trigonometry. Let's suppose to be in a simple $1d$-case like the one represented in figure ~\ref{fig:LMComputations}.
+This algorithm can be explained recalling some trigonometry. Let's suppose to be in a simple $1d$-case like the one represented in figure ~\ref{fig:LMComputations}.
 
 \begin{figure} [h!]
 	\centering
@@ -230,7 +230,7 @@ On the other hand using the parametric approach, the agent could be ideally trai
 
 Adopting the linear approach the optimization process is slower but less accurate. This depends on the fact that the movement is as the crow flies. Using the linear approach the concept of function cannot be abstracted. This means that the agent has to be trained for every specific function in order to optimize its. Any change on a specific function, however small, invalidates the previous training.
 
-\subsection{Implementation}
+\subsection{BURLAP Java Library}
 
 In order to formalize and solve the problem previously described adopting an RL approach, BURLAP (Brown-UMBC Reinforcement Learning and Planning) Java library developed and maintained by James MacGlashan of Brown University, has been used. \\
 

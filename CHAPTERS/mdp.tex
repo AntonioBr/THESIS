@@ -2,7 +2,7 @@
 
 \section{Markov Decision Process}
 
-Markov Decision Processes (MDPs) are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate responses, but also subsequent situations. Hence an MDP can be described as a controlled \textit{Markov chain}\footnote{A sequence of random variables $X_0, X_1, . . . $ with values in a countable set $S$ is a \textit{Markov chain} if at any time $n$, the future states (or values) $X\textsubscript{n+1}, X\textsubscript{n+2}, . . .$ depend on the history $X_0, . . . , X_n$ only through the present state $X_n$ \cite{konstantopoulos2009markov}.}, where the control is given at each step by the chosen action. In this chapter we will present the structure of an MDP and many techniques to solve its.
+Markov Decision Processes (MDPs) are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate responses, but also subsequent situations. Hence an MDP can be described as a controlled \textit{Markov chain}\footnote{A sequence of random variables $X_0, X_1, . . . $ with values in a countable set $S$ is a \textit{Markov chain} if at any time $n$, the future states (or values) $X\textsubscript{n+1}, X\textsubscript{n+2}, . . .$ depend on the history $X_0, . . . , X_n$ only through the present state $X_n$ \cite{konstantopoulos2009markov}.}, where the control is given at each step by the chosen action. In this chapter the structure of an MDP and many techniques to solve its are presented.
 
 \subsection{Definition} Markov decision processes are defined as controlled stochastic processes satisfying the \textit{Markov property}\footnote{A stochastic process has the \textit{Markov property} if the probabilistic behaviour of the chain in the future depends only on its present value and discards its past behaviour.} and assigning reward values to state transitions~\cite{Put94}.  Formally, they are described by the $5$-tuple ($S$, $A$, $T$, $p()$, $R()$) where:
 
@@ -20,13 +20,13 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 
 \paragraph{Time Steps} The set of time steps $T$ is defined as the finite set $\{t_1, . . . ,t_M\}$ where the size of the action space is $M$, i.e. $|T| = M$. Speaking about time a distinction between \textit{epochs} and \textit{episodes} has to be made. An episode consists of a fixed number of epochs. An epoch is the smallest time unit in an MDP.
 
-\paragraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in a matrix form where $P_a$ is the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ is said to be stochastic. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov Decision Processes. If we write $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. This concept can be easily resumed through the following equation :
+\paragraph{Transition Probability} The transition probabilities $p()$ characterize the state dynamics of the system, i.e. indicate which states are likely to appear after the current state. For a given action $a$, $p(s'|s,a)$ represents the probability for the system to transit to state $s'$ after undertaking action $a$ in state $s$. This $p()$ function is usually represented in a matrix form where $P_a$ is the $|S|$ x $|S|$ matrix containing elements $\forall s, s', P\textsubscript{a, s, s'} = p(s'|s,a)$. Since each line of these matrices sums to one, the $P_a$ is said to be stochastic. The $p()$ probability distributions over the next state $s'$ follow the fundamental property which gives their name to Markov Decision Processes. If one writes $h_t = (s_0, a_0, ..., s\textsubscript{t-1}, a\textsubscript{a-1}, s_t)$ the history of states and actions until time step $t$, then the probability of reaching state $s\textsubscript{t+1}$ consecutively to action $a_t$ is only a function of $a_t$ and $s_t$, and not of the entire history $h_t$~\cite{Sigaud:2010:MDP:1841781}. This concept can be easily resumed through the following equation :
 
 \begin{equation}
 	\forall h_t, a_t, s\textsubscript{t+1} \quad P(s\textsubscript{t+1} | h_t, a_t) = P(s\textsubscript{t+1} | s_t, a_t) = p(s\textsubscript{t+1} | s_t, a_t)
 \end{equation}
 
-\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the reward we set up truly indicate the goal that has to be accomplished. If the achievement of sub-goals is rewarded, then the agent might find a way to achieve them without achieving the real goal. Reward signal is the way of communicating the agent \textit{what} goal to achieve, not \textit{how} the goal has to be achieved~\cite{SuttonBarto}.
+\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the reward set up truly indicate the goal that has to be accomplished. If the achievement of sub-goals is rewarded, then the agent might find a way to achieve them without achieving the real goal. Reward signal is the way of communicating the agent \textit{what} goal to achieve, not \textit{how} the goal has to be achieved~\cite{SuttonBarto}.
 
 \begin{figure}[h!]
 	\centering
@@ -122,9 +122,9 @@ V^*(s) = \max_{a \in A} \sum_{s'}p(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s
 
 This expression is called the \textit{Bellman optimality equation}. It states that the value of a state under an optimal policy must be equal to the expected return for the best action in a state~\cite{wiering2012reinforcement}.
 
-\subsection{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts we will recursively find : \textit{value iteration} and \textit{policy iteration}. \\
+\subsection{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts that will be recursively find : \textit{value iteration} and \textit{policy iteration}. \\
 
-Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In value iteration we start with a random value function and then we find a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
+Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In value iteration one starts with a random value function and then he finds a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
 
 \begin{equation}
 	V\textsubscript{k+1}(s) \leftarrow \max_{a} \sum_{s'} p(s, a, s') [R(s, a, s') + \gamma V_k(s')]
@@ -163,7 +163,7 @@ Instead, policy iteration computations of Bellman Equation are:
 
 Complexity of policy iteration is $O(S^2)$. \\
 
-Summarizing what said until now we can write: \\ 
+Summarizing what said until now it is possible to write: \\ 
 
 In value iteration :
 
@@ -278,7 +278,7 @@ with the learning rates $\alpha(s_t)$ converging to $0$ along the iterations~\ci
 A distinction can be made between \textit{every-visit} MC, which averages over all visits of a state $s \in S$ in all episodes, and \textit{first-visit} MC, which averages over just the returns obtained from the first visit to a state $s \in S$ for all episodes. Both variants will
 converge to $V^\pi$ for the current policy $\pi$ over time~\cite{wiering2012reinforcement} .
 
-Studying RL methods we have to distinguish between \textit{on-policy methods} and \textit{off-policy methods}.
+Studying RL methods it is necessary to distinguish between \textit{on-policy methods} and \textit{off-policy methods}.
 On-policy methods attempt to evaluate or improve the policy that is used to make decisions. Off-policy methods evaluate or improve a policy different from that used to generate the data. MC methods can be used for both on-policy and off-policy control, and the general pattern complies with the generalized policy iteration procedure. 
 
 \begin{table}
@@ -297,7 +297,7 @@ On-policy methods attempt to evaluate or improve the policy that is used to make
 
 The basic temporal difference algorithm is $TD(0)$. This algorithm relies on a comparison between the actually received reward and the reward expected from the previous estimations.
 
-If the estimated values $V(s_t)$ and $V(s\textsubscript{t+1})$ in states $s_t$ and $s\textsubscript{t+1}$ were exact, we would have 
+If the estimated values $V(s_t)$ and $V(s\textsubscript{t+1})$ in states $s_t$ and $s\textsubscript{t+1}$ were exact, one would have 
 
 \begin{equation}
 	V(s_t) = r\textsubscript{t+1} + \gamma r\textsubscript{t+2} + \gamma^2 r\textsubscript{t+3} + ...,
@@ -307,7 +307,7 @@ If the estimated values $V(s_t)$ and $V(s\textsubscript{t+1})$ in states $s_t$ a
 	V(s\textsubscript{t+1}) = r\textsubscript{t+2} + \gamma r\textsubscript{t+3} + \gamma^2r\textsubscript{t+4} + ... .
 \end{equation}
 
-Thus we would have 
+Thus one would have 
 
 \begin{equation}
 	V(s_t) = r\textsubscript{t+1} + \gamma V(s\textsubscript{t+1}).
@@ -333,13 +333,13 @@ Like Monte Carlo methods, TD ones perform estimation of action-value functions b
 	\forall s \in S, a \in A, \quad Q^\pi (s,a) = R(s, a) + \gamma \sum_{s'} p(s' \ s, a) V^\pi (s').
 \end{equation}
 
-The value of $Q^\pi(s,a)$ is interpreted as the expected value when starting from $s$, executing $a$ and then following the policy $\pi$ afterwards. We have $V^\pi(x) = Q^\pi(x, \pi(x))$ and the corresponding Bellman equation is :
+The value of $Q^\pi(s,a)$ is interpreted as the expected value when starting from $s$, executing $a$ and then following the policy $\pi$ afterwards. Having $V^\pi(x) = Q^\pi(x, \pi(x))$, the corresponding Bellman equation is :
 
 \begin{equation}
 	\forall s \in S, a \in A \quad Q^*(s, a) = R(s, a) + \gamma \sum_{s'}p(s' | s, a) \max_{b} Q^*(s', b)
 \end{equation}
 
-Than we have :
+Than :
 
 \begin{equation}
 \forall s \in S, \quad V^*(s) = \max_{a} Q^* (s,a ), \quad \pi^*(s) = \arg\max_{a} Q^*(s,a).
@@ -398,7 +398,7 @@ the information necessary to perform such an update is $(s_t, a_t, r\textsubscri
 
 The main difference between SARSA and Q-Learning lies in the definition of the error term. The $Q(s\textsubscript{t+1}, a\textsubscript{t+1})$ term in the equation \ref{eq:2.12}	is replaced by $\max_{a}Q(s\textsubscript{t+1}, a)$ in equation \ref{eq:2.13}. Updates are based on instantaneously available information. In this algorithm, the $T\textsubscript{tot}$ parameter corresponds to the number of iterations. There is here one learning rate $\alpha_t(s, a)$ for each state-action pair, it decreases at each visit of the corresponding  pair. The {\tt Simulate} function returns a new state and the corresponding reward according to the dynamics of the system. The choice of the current state and of the executed action is performed by functions {\tt ChooseState} and {\tt ChooseAction}. The {\tt Initialize} function initializes the $Q$ function with $Q_0$, which is often initialized with {\tt null} values, whereas more adequate choices can highly improve the performance~\cite{Sigaud:2010:MDP:1841781}.
 
-\subsection{SARSA($\lambda$)} Previous algorithms only perform one update per time step in the state that the agent is visiting. This update process is particularly slow. Indeed, an agent deprived of any information on the structure of the value function needs at least $n$ trials to propagate the immediate reward of a state to another state that is $n$ transitions away. Before this propagation is achieved, if the initial values are {\tt null}, the agent performs a random walk in the state space, which means that it needs an exponential number of steps as a function of $n$ before reaching the reward "trail" (figure \ref{fig:NonLambda}).
+\subsection{SARSA($\lambda$) Algorithm} Previous algorithms only perform one update per time step in the state that the agent is visiting. This update process is particularly slow. Indeed, an agent deprived of any information on the structure of the value function needs at least $n$ trials to propagate the immediate reward of a state to another state that is $n$ transitions away. Before this propagation is achieved, if the initial values are {\tt null}, the agent performs a random walk in the state space, which means that it needs an exponential number of steps as a function of $n$ before reaching the reward "trail" (figure \ref{fig:NonLambda}).
 
 \begin{figure}[h!]
 	\centering

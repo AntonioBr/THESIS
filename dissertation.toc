@@ -18,12 +18,12 @@
 \contentsline {subsection}{\numberline {2.2.4}Temporal Difference Learning}{18}
 \contentsline {subsection}{\numberline {2.2.5}Sarsa Algorithm : On-policy TD Control}{19}
 \contentsline {subsection}{\numberline {2.2.6}Q-learning Algorithm : Off-policy TD Control}{20}
-\contentsline {subsection}{\numberline {2.2.7}SARSA($\lambda $)}{21}
+\contentsline {subsection}{\numberline {2.2.7}SARSA($\lambda $) Algorithm}{21}
 \contentsline {chapter}{\numberline {3}Black-Box Optimization}{25}
 \contentsline {subsection}{\numberline {3.0.1}Gaussian Processes}{25}
-\contentsline {subsection}{\numberline {3.0.2}Acquisition Functions for Bayesian Optimization}{26}
+\contentsline {subsection}{\numberline {3.0.2}Bayesian Optimization}{26}
 \contentsline {subsection}{\numberline {3.0.3}An RL Approach To Black-Box Optimization}{28}
-\contentsline {subsection}{\numberline {3.0.4}Implementation}{33}
+\contentsline {subsection}{\numberline {3.0.4}BURLAP Java Library}{33}
 \contentsline {subsection}{\numberline {3.0.5}Humans in the Loop}{36}
 \contentsline {chapter}{\numberline {4}Experimental Setting}{39}
 \contentsline {section}{\numberline {4.1}Benchmark}{39}
@@ -33,12 +33,13 @@
 \contentsline {subparagraph}{Beale Function}{43}
 \contentsline {subparagraph}{Styblinski-Tang Revised Function}{45}
 \contentsline {subsection}{\numberline {4.1.2}Algorithm Configuration}{46}
-\contentsline {section}{\numberline {4.2}Human Case}{49}
+\contentsline {section}{\numberline {4.2}Experiment on Humans}{49}
 \contentsline {chapter}{\numberline {5}Results}{51}
-\contentsline {paragraph}{Himmelblau' s Function}{52}
-\contentsline {paragraph}{Sphere Function}{55}
-\contentsline {paragraph}{Beale Function}{58}
-\contentsline {paragraph}{Styblinski-Tang Function}{60}
+\contentsline {section}{\numberline {5.1}Sarsa($\lambda $)'s Performances on Test Functions}{52}
+\contentsline {subsection}{\numberline {5.1.1}Himmelblau' s Function}{52}
+\contentsline {subsection}{\numberline {5.1.2}Sphere Function}{55}
+\contentsline {subsection}{\numberline {5.1.3}Beale Function}{58}
+\contentsline {subsection}{\numberline {5.1.4}Styblinski-Tang Revised Function}{60}
 \contentsline {chapter}{\numberline {6}Appendix A}{65}
 \contentsline {paragraph}{First Step}{65}
 \contentsline {paragraph}{Second Step}{66}
