@@ -1,6 +1,6 @@
 \chapter{Results}
 
-This chapter is divided into two sections. In the first section results obtained from the experiment described in the first section of the previous chapter are analysed. For each function results obtained applying the four different declinations of {\tt SARSA($\lambda$)} algorithm are compared :
+This chapter is divided into two sections. In the first section results obtained from the experiment described in the first section of the previous chapter are analysed. For each function results obtained applying the four different declinations of {\tt SARSA($\lambda$)} algorithm are compared. Remember that the four possible declinations are :
 
 \begin{itemize}
 	\item Linear, not random search
@@ -8,6 +8,8 @@ This chapter is divided into two sections. In the first section results obtained
 	\item Parametric, not random search
 	\item Parametric, random search
 \end{itemize}
+
+All measures refer to results obtained in the greedy episode. The reason for this choice is to consider the algorithm's performances after giving a good enough training space composed by $150$ episodes, each one of $100$ epochs. \\
 
 Three different plots for three different metrics are employed. The first one measures the \textit{Euclidean distance} \footnote{In mathematics, the Euclidean distance is the "ordinary" straight-line distance between two points in an Euclidean space. It is computed as follow: 
 	
@@ -29,7 +31,7 @@ Note that this performance metric is evaluated on the true function values but t
 G_t = \dfrac{f(x^+, y^+) - f(x_1, y_1)}{f(x^* y^*) - f(x_1, y_1)}
 \end{equation}
 
-Where $x^+$ is the incumbent or best function sample found up to epoch $e$. The gap $G_t$ will therefore be a number between $0$ (indicating no improvement over the initial sample) and $1$ (if the incumbent is the maximum). Note that this performance metric is evaluated on the true function values but this information is not available to the optimization methods.~\cite{Hoffman:2011:PAB:3020548.3020587}}.
+Where $x^+$ is the incumbent or best function sample found up to epoch $e$. The gap $G_t$ will therefore be a number between $0$ (indicating no improvement over the initial sample) and $1$ (if the incumbent is the maximum). Note that this performance metric is evaluated on the true function values but this information is not available to the optimization methods.~\cite{Hoffman:2011:PAB:3020548.3020587}} computed on the greedy episode.
 
 %%% TODO: Description of the remaining two sections
 

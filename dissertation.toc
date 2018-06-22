@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {5.1.1}Himmelblau' s Function}{52}
 \contentsline {subsection}{\numberline {5.1.2}Sphere Function}{55}
 \contentsline {subsection}{\numberline {5.1.3}Beale Function}{58}
-\contentsline {subsection}{\numberline {5.1.4}Styblinski-Tang Revised Function}{60}
+\contentsline {subsection}{\numberline {5.1.4}Styblinski-Tang Revised Function}{61}
 \contentsline {chapter}{\numberline {6}Appendix A}{65}
 \contentsline {paragraph}{First Step}{65}
 \contentsline {paragraph}{Second Step}{66}
