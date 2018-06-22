@@ -62,7 +62,7 @@ In order to represent this customized version of Himmelblau' s Function using Ja
 	\label{fig:ContourPlotCustomizedHimmelblauFunction}
 \end{figure}
  
-\subparagraph{Paraboloid of Revolution} In mathematical optimization, Paraboloid of Revolution is a continuous, bivariate, multi-modal function. \\
+\subparagraph{Sphere Function} In mathematical optimization, Sphere function is a continuous, bivariate, multi-modal function. \\
 
 The original function is defined by: 
 
@@ -95,7 +95,7 @@ f(x, y) = -(x^2 + y^2) + 3560
 
 This function has its local maximum in $f(x, y) = 3560$.
 
-In order to represent this customized version of Paraboloid of Revolution function using Java Graphical Environment, it has been mapped in a space of $600 \times 600$ pixels and it has been properly rotated. The resulting contour plot is the one represented in figure ~\ref{fig:ContourPlotCustomizedParabolicFunction} 
+In order to represent this customized version of Sphere function function using Java Graphical Environment, it has been mapped in a space of $600 \times 600$ pixels and it has been properly rotated. The resulting contour plot is the one represented in figure ~\ref{fig:ContourPlotCustomizedParabolicFunction} 
 
 \begin{figure}[h!]
 	\centering
@@ -133,7 +133,7 @@ and it has been picked up of $2000$ units in order to have as less as possible n
 f(x, y) = -((1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2) + 2000
 \end{equation}
 
-This customized function has its global maximum in $f(x, y) = 1000$. \\
+This customized function has its global maximum in $f(x, y) = 2000$. \\
 
 In order to represent this function using Java Graphical Environment it has been mapped in a space of $600 \times 600$ pixels and it has been properly rotated. The resulting contour plot is the one represented in figure ~\ref{fig:ContourPlotCustomizedBealeFunction} 
 
@@ -203,17 +203,19 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 	\end{tabular}
 \end{sidewaystable}
 
-\subsection{Algorithm Configuration} The employed RL algorithm is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
+\subsection{Algorithm' s Configuration} The RL algorithm employed is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
 
 \begin{table} [h!]
-	\centering	
-	\begin{tabular}{|c||c|c|c|c|c|c|}
+	\centering
+	\resizebox{\linewidth}{!} {	
+	\begin{tabular}{|c||c|c|c|c|c|c|c|}
 		\hline 
-		& \textbf{$\lambda$}  & \textbf{$\epsilon$} & \textbf{qInit} & \textbf{Learning Rate}  & \textbf{Episodes}  & \textbf{Epochs} \\
+		& \textbf{$\lambda$}  & \textbf{$\epsilon$} & \textbf{qInit} & \textbf{Learning Rate} & \textbf{Discount Factor}  & \textbf{Episodes}  & \textbf{Epochs} \\
 		\hline \hline Configuration $1$
-		& $0.1$ & $0.1$ & $0$ & $1$  & $150$ & $100$  \\ 
+		& $0.1$ & $0.1$ & $0$ & $1$ & $0.99$  & $150$ & $100$  \\ 
 		\hline
 	\end{tabular}
+}
 \caption{Configuration Table}
 \label{ConfigurationTable}
 \end{table}
@@ -241,13 +243,15 @@ In the proposed configuration a low $\lambda$ value is employed. Typically it sh
 
 An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represents a random choice having absolutely no relations with the previous history. \\ 
 
-The main goal presented in this work is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an high cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requisites, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. Note that in addition to the $150$ training episodes there is also a greedy one. In the last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs is left unchanged.  \\
+A discount factor set to $0.99$ means the rewards will propagate as long as possible through time.
 
-Each declination of {\tt SARSA(\textit{$\lambda$})} corresponds to one combination of search techniques described in the previous chapter. In the implementation of random search the BURLAP {\tt RandomFactory} class has been used. {\tt RandomFactory} allows to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
+The main goal presented in this work is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an high cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requirements, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. Note that in addition to the $150$ training episodes there is also a greedy one. In this last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs, the {\tt qInit} parameter and the discount factor are left unchanged.  \\
+
+Each declination of {\tt SARSA(\textit{$\lambda$})} corresponds to one combination of search techniques described in the previous chapter. In the implementation of random search, the BURLAP {\tt RandomFactory} class has been used. {\tt RandomFactory} allows to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
 
 \section{Experiment on Humans}
 
-The test conducted on humans affects a cross-section of thirty people. In the selection process of test subjects the following three parameters with corresponding bounds were considered :
+The test conducted on humans affects a cross-section of twenty-three people. In the selection process of test subjects the following three parameters with corresponding bounds were considered :
 
 \begin{itemize}
 	\item \textbf{Sex} $\in \{Male, Female\}$
@@ -255,7 +259,7 @@ The test conducted on humans affects a cross-section of thirty people. In the se
 	\item \textbf{Calculus Knowledge} $\in \{Null, Basic, Advanced\}$ 
 \end{itemize}  
 
-Each of the test subjects was placed in front of a personal computer. The following rules have been proposed for individuals over the age of seven:
+Each one of the test subjects was placed in front of a personal computer. The following rules have been proposed :
 
 	
 \begin{itemize}
@@ -278,7 +282,7 @@ After that a chromatic scale indicating how positive the reward was for each cli
 	\label{fig:Cromatic Scale}
 \end{figure}
 
-A white screen (with a specific hidden function) of $600 \times 600$ pixels with which to interact according to the rules previously listed was finally proposed . For those under the age of seven the selected approach was different. The rules have been explained to them verbally. At each interaction with the environment, in addition to the colour, they were verbally encouraged or discouraged.
+A white screen (with a specific hidden function) of $600 \times 600$ pixels with which to interact according to the rules previously listed was finally proposed.
 
 
 

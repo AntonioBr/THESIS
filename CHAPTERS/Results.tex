@@ -17,9 +17,7 @@ Three different plots for three different metrics are employed. The first one me
 
 with $n \ge 0$. \\
 	
-Note that this performance metric is evaluated on the true function values but this information is not available for the optimization methods.}
-
- between point $(x_i, y_i)$ at epoch $e_i$, $\forall i \in n$ where $n$ is the number of epochs of greedy episode, and point $(x^*, y^*)$ which is the maximum. The second metric measures the \textit{proximity in percentage} \footnote{The \textit{proximity in percentage} between the current value function and the optimal one is computed as follow:
+Note that this performance metric is evaluated on the true function values but this information is not available for the optimization methods.} between point $(x_i, y_i)$ at epoch $e_i$, $\forall i \in n$ where $n$ is the number of epochs of greedy episode, and point $(x^*, y^*)$ which is the maximum. The second metric measures the \textit{proximity in percentage} \footnote{The \textit{proximity in percentage} between the current value function and the optimal one is computed as follow:
 
 \begin{equation}
 Proximity\_in\_ percentage = \frac{currentValueFunction \times 100}{optimalValueFunction}
@@ -75,7 +73,7 @@ Slower convergence of linear declinations compared to parametric ones depends on
 	\resizebox{\linewidth}{!} {
 	\begin{tabular}{c| cccccc}
 		\hline \textbf{Himmelblau' s Function}
-		& \textbf{Mean-ED} & \textbf{Standard deviation - ED}  \\ 
+		& \textbf{Mean (pixels)} & \textbf{Standard deviation}  \\ 
 		\hline Linear not Random
 		& $77.7$ &\cellcolor{red!25}$25.3$ \\ 
 		\hline Linear Random
@@ -108,7 +106,7 @@ Finally, the {\tt parametric, random} declination, as the corresponding linear d
 	\resizebox{\linewidth}{!} {
 	\begin{tabular}{c| cccccc} 
 		\hline \textbf{Himmelblau' s Function}
-		& \textbf{Mean- P} & \textbf{Standard deviation - P}  \\ 
+		& \textbf{Mean (\%)} & \textbf{Standard deviation}  \\ 
 		\hline Linear not Random
 		& \cellcolor{green!25}$98.5$ & \cellcolor{green!25}$0.96$  \\ 
 		\hline Linear Random
@@ -164,7 +162,7 @@ The {\tt parametric, random} declination of {\tt SARSA($\lambda$)} algorithm has
 	\resizebox{\linewidth}{!} {
 	\begin{tabular}{c| cccccc} 
 		\hline \textbf{Sphere Function}
-		& \textbf{Mean-ED} & \textbf{Standard deviation - ED} \\ 
+		& \textbf{Mean (pixels)} & \textbf{Standard deviation} \\ 
 		\hline Linear not Random
 		& $293.2$ &\cellcolor{red!25} $25.6$  \\ 
 		\hline Linear Random
@@ -197,7 +195,7 @@ In this case it is possible to underline that parametric declinations do better 
 	\resizebox{\linewidth}{!} {
 	\begin{tabular}{c| cccccc} 
 		\hline \textbf{Sphere Function}
-		& \textbf{Mean- P} & \textbf{Standard deviation - P} \\ 
+		& \textbf{Mean (\%)} & \textbf{Standard deviation} \\ 
 		\hline Linear not Random
 		& $97.3$ & \cellcolor{green!25}$0.49$ \\ 
 		\hline Linear Random
@@ -254,7 +252,7 @@ Generally speaking it is possible to affirm that those bad performances are the 
 \resizebox{\linewidth}{!} {
 	\begin{tabular}{c| cccccc} 
 		\hline \textbf{Beale Function}
-		& \textbf{Mean-ED} & \textbf{Standard deviation - ED} \\ 
+		& \textbf{Mean (pixels)} & \textbf{Standard deviation} \\ 
 		\hline Linear not Random
 		& $462.4$ & $25.7$\\ 
 		\hline Linear Random
@@ -277,7 +275,7 @@ Looking at plot (b) of figure \ref{fig:BealeResults} it is possible to note an i
 	\resizebox{\linewidth}{!} {
 		\begin{tabular}{c| cccccc} 
 			\hline \textbf{Beale Function}
-			& \textbf{Mean- P} & \textbf{Standard deviation - P} \\ 
+			& \textbf{Mean (\%)} & \textbf{Standard deviation} \\ 
 			\hline Linear not Random
 			& $97.25$ & \cellcolor{green!25}$0.70$\\ 
 			\hline Linear Random
@@ -330,7 +328,7 @@ Last two, parametric declinations give for the first time the possibility to rea
 	\resizebox{\linewidth}{!} {
 		\begin{tabular}{c| cccccc} 
 			\hline \textbf{Styblinski-Tang Function}
-			& \textbf{Mean-ED} & \textbf{Standard deviation - ED} \\ 
+			& \textbf{Mean (pixels)} & \textbf{Standard deviation} \\ 
 			\hline Linear not Random
 			& \cellcolor{red!25}$43.63$ & \cellcolor{red!25}$41.05$\\ 
 			\hline Linear Random
@@ -353,7 +351,7 @@ The performance just described is also proved by the percentage of value functio
 	\resizebox{\linewidth}{!} {
 		\begin{tabular}{c| cccccc} 
 			\hline \textbf{Styblinski-Tang Function}
-			& \textbf{Mean- P} & \textbf{Standard deviation - P}\\ 
+			& \textbf{Mean (\%)} & \textbf{Standard deviation}\\ 
 			\hline Linear not Random
 			& \cellcolor{green!25}$99.63$ & \cellcolor{green!25}$0.57$ \\ 
 			\hline Linear Random

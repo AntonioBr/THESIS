@@ -23,16 +23,16 @@
 \contentsline {subsection}{\numberline {3.0.1}Gaussian Processes}{25}
 \contentsline {subsection}{\numberline {3.0.2}Bayesian Optimization}{26}
 \contentsline {subsection}{\numberline {3.0.3}An RL Approach To Black-Box Optimization}{28}
-\contentsline {subsection}{\numberline {3.0.4}BURLAP Java Library}{33}
+\contentsline {subsection}{\numberline {3.0.4}BURLAP Java Library}{34}
 \contentsline {subsection}{\numberline {3.0.5}Humans in the Loop}{36}
 \contentsline {chapter}{\numberline {4}Experimental Setting}{39}
 \contentsline {section}{\numberline {4.1}Benchmark}{39}
 \contentsline {subsection}{\numberline {4.1.1}Test Functions}{39}
 \contentsline {subparagraph}{Himmelblau' s Function}{39}
-\contentsline {subparagraph}{Paraboloid of Revolution}{41}
+\contentsline {subparagraph}{Sphere Function}{41}
 \contentsline {subparagraph}{Beale Function}{43}
 \contentsline {subparagraph}{Styblinski-Tang Revised Function}{45}
-\contentsline {subsection}{\numberline {4.1.2}Algorithm Configuration}{46}
+\contentsline {subsection}{\numberline {4.1.2}Algorithm' s Configuration}{46}
 \contentsline {section}{\numberline {4.2}Experiment on Humans}{49}
 \contentsline {chapter}{\numberline {5}Results}{51}
 \contentsline {section}{\numberline {5.1}Sarsa($\lambda $)'s Performances on Test Functions}{52}
