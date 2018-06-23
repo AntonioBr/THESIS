@@ -11,7 +11,7 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 	\item $A$ is the set of all possible actions which control the state dynamics;
 	\item $T$ is the set of time steps where decisions need to be made;
 	\item $p()$ denotes the state transition probability function;
-	\item $r()$ provides the reward function defined on state transitions.	
+	\item $R()$ provides the reward function defined on state transitions.	
 \end{itemize}
 
 \paragraph{States} The set of environmental states $S$ is defined as the finite set $\{s_1, . . . , s_N\}$ where the size of the state space is $N$, i.e. $|S| = N$~\cite{wiering2012reinforcement}. Each state ${s \in S}$ is a vector of attributes (\textit{state variables}) that describes the current configuration of the system~\cite{Nevmyvaka}. More specifically, a state variable is the minimally dimensioned function of history that is necessary and sufficient to compute the "state of knowledge"~\cite{Powell}.

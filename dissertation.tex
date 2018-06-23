@@ -10,6 +10,7 @@
 \usepackage{rotating}
 \usepackage{subfigure}
 \usepackage[table]{xcolor}
+\usepackage{pdfpages}
 
 \makeatletter
 \DeclareRobustCommand{\textsupsub}[2]{{%
@@ -26,6 +27,8 @@
 
 \begin{document}
 	
+	\includepdf[pages=-]{FRONTESPIZIO/Frontespizio}
+	%\input{DEDICA/dedica}
 	\tableofcontents
 	
 	\input{CHAPTERS/introduction}
