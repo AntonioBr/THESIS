@@ -122,9 +122,9 @@ V^*(s) = \max_{a \in A} \sum_{s'}p(s, \pi(s), s') (R(s, a, s') + \gamma V^\pi (s
 
 This expression is called the \textit{Bellman optimality equation}. It states that the value of a state under an optimal policy must be equal to the expected return for the best action in a state~\cite{wiering2012reinforcement}.
 
-\subsection{Value Iteration vs Policy Iteration} Before studying how to solve MDPs let's clarify main differences between two key concepts that will be recursively find : \textit{value iteration} and \textit{policy iteration}. \\
+\subsection{Value Iteration vs Policy Iteration} Before studying how to solve MDPs, let's clarify the main differences between two key concepts that will be recursively find : \textit{value iteration} and \textit{policy iteration}. \\
 
-Both value iteration and policy iteration compute the same thing (all optimal values), i.e. they work with Bellman updates. In value iteration one starts with a random value function and then he finds a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
+Both value iteration and policy iteration, compute the same thing (all optimal values), i.e. they work with Bellman updates. In value iteration one starts with a random value function and then he finds a new (improved) value function in an iterative process, until reaching the optimal value function. Value iteration computation of Bellman Equation is:
 
 \begin{equation}
 	V\textsubscript{k+1}(s) \leftarrow \max_{a} \sum_{s'} p(s, a, s') [R(s, a, s') + \gamma V_k(s')]
@@ -161,11 +161,9 @@ Instead, policy iteration computations of Bellman Equation are:
 	\label{fig:PolicyIteration}
 \end{figure}
 
-Complexity of policy iteration is $O(S^2)$. \\
+The complexity of policy iteration is $O(S^2)$. \\
 
-Summarizing what said until now it is possible to write: \\ 
-
-In value iteration :
+Summarizing what said until now, it is possible to write that in policy iteration : \\ 
 
 \begin{itemize}
 	\item Every iteration updates both the values and implicitly the policy;

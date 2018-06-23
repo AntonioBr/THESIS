@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  23 JUN 2018 10:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  23 JUN 2018 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,27 +629,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
  []
 
 [14 <./IMAGES/ValueIterationPolicy.png> <./IMAGES/Policyiteration.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
@@ -657,7 +657,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 239--240
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 
  []
 
@@ -666,7 +666,7 @@ Underfull \vbox (badness 2253) has occurred while \output is active []
 
  [19]
 [20] [21]
-Overfull \hbox (24.54924pt too wide) in paragraph at lines 355--356
+Overfull \hbox (24.54924pt too wide) in paragraph at lines 353--354
 []\OT1/cmr/m/n/10.95 the in-for-ma-tion nec-es-sary to per-form such an up-date
  is $(\OML/cmm/m/it/10.95 s[]; a[]; r[]; s[]; a[]\OT1/cmr/m/n/10.95 )$,
  []
@@ -675,14 +675,14 @@ Overfull \hbox (24.54924pt too wide) in paragraph at lines 355--356
 File: IMAGES/NonLambda.png Graphic file (type png)
 
 <use IMAGES/NonLambda.png>
-Package pdftex.def Info: IMAGES/NonLambda.png used on input line 405.
+Package pdftex.def Info: IMAGES/NonLambda.png used on input line 403.
 (pdftex.def)             Requested size: 284.54257pt x 142.2678pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
@@ -691,7 +691,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--411
 File: IMAGES/SarsaLambdaTD.png Graphic file (type png)
 
 <use IMAGES/SarsaLambdaTD.png>
-Package pdftex.def Info: IMAGES/SarsaLambdaTD.png used on input line 456.
+Package pdftex.def Info: IMAGES/SarsaLambdaTD.png used on input line 454.
 (pdftex.def)             Requested size: 341.42778pt x 142.2672pt.
 ) (./CHAPTERS/RLapproach.tex [26 <./IMAGES/SarsaLambdaTD.png>]
 Chapter 3.
@@ -1253,7 +1253,7 @@ xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (75 pages, 7097760 bytes).
+Output written on dissertation.pdf (75 pages, 7097797 bytes).
 PDF statistics:
  446 PDF objects out of 1000 (max. 8388607)
  260 compressed objects within 3 object streams
