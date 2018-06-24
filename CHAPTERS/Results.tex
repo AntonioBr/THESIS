@@ -384,3 +384,44 @@ Looking at the third plot it is possible to note that the best performance is th
 		\hline
 	\end{tabular}
 \end{sidewaystable}
+
+\section{Humans' Strategies}
+
+In order to study humans' strategies in the optimization practice, three acquisition functions are considered :
+
+\begin{itemize}
+	\item Upper Confidence Bound (UCB)
+	\item Probability of Improvement (PoI)
+	\item Expected Improvement (EI)
+\end{itemize}
+
+In addition to acquisition functions, also the GP is represented. \\ 
+
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width=\linewidth]{IMAGES/Surrogate}
+	\caption{Visualization of the surrogate regression model and various acquisition functions\cite{DBLP:journals/pieee/ShahriariSWAF16}.}
+	\label{fig:surrogate}
+\end{figure}
+
+Only the best player's first performance for each function is considered. This means that even if each player has had three possibilities, each one composed of fifteen attempts, for each function (except for the Styblinski Revised function), only the first one of the three rounds made by the best player for that function is here considered. In the case there were two best players, the first one's performance is considered.  This choice depends on the fact that the aim of this thesis is defining humans' intuition and then compare its performances with ones achieved by an RL agent with a previous training but without "intuition". The best player is selected according to the highest score reached for each function. \\
+
+For all the fifteen attempts for each function, the first two attempts are employed in order to create the original GP. Starting from the third attempt, the white star is employed in order to underline the new attempt chosen by the human compared to the "best" proposed by the various acquisition functions. From this comparison it will be clear which acquisition function has led the human in his choice.
+
+\subsection{Himmelblau Function}
+In the case of the Himmelblau Function the player seems to reasoning according to no one on the considered acquisition functions until attempt number thirteen. Looking at the sequence of attempts, the player seems to choose an radically, exploratory approach. All acquisition functions, instead, present an exploitative approach based on observed data. Looking at the GP obtained at the fifteen attempt, we can notice that the original, hidden function is perfectly approximated.
+
+\subsection{Sphere Function}
+In the case of the Sphere Function the player seems to reasoning according to PoI acquisition function. The process to achieve the maximum is linear and the player never try a radical different exploratory attempt. After fifteen attempts, the GP approximates the real, hidden function still starting after six attempts.
+
+\subsection{Beale Function}
+In the case of the Beale Function the player seems to reasoning according to PoI acquisition function until the sixtieth attempt. Starting from the seventh attempt it seems to reasoning according to UCB acquisition function till the fifteenth attempt. After fifteen attempts, the GP does not totally approximate the real, hidden function, but underline the region of the maximum.
+
+
+\subsection{Styblinski Revised Function}
+The case of the Styblinski revised function is surely the most interesting one. The player can make only one attempt, so the best player is here defined just according to its only, knowledge free set of attempts. In this case the player seems to reasoning according to the UCB acquisition function. Also in this case, after fifteen attempt the GP does not totally approximate the real, hidden function, but underlines the region of the maximum. This means that the exploration of the player was not enough. It is very interesting to note how in this case it is possible to identify an acquisition function courrenspondant with the human reasoning process. It is also interesting to note how the best player in this case is different from the one of the Himmelblau Function. The two functions were selected because of their shapes' similarity. The results obtained considering them are different. \\
+
+%TODO: Parlare del livello di istruzione
+
+
+
