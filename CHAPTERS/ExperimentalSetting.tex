@@ -34,7 +34,7 @@ The function can be defined on any input domain but it is usually evaluated on $
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 12cm, height = 12cm]{modifiedHimmelblau.png}
+	\includegraphics[width= 8cm, height = 8cm]{modifiedHimmelblau.png}
 	\caption{Customized Himmelblau' s Function.}
 	\label{fig:CustomizedHimmelblauFunction}
 \end{figure}
@@ -57,7 +57,7 @@ In order to represent this customized version of Himmelblau' s Function using Ja
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 7cm, height = 7cm]{himmelblau.png}
+	\includegraphics[width= 4cm, height = 4cm]{himmelblau.png}
 	\caption{Contour plot of customized version of Himmelblau' s Function.}
 	\label{fig:ContourPlotCustomizedHimmelblauFunction}
 \end{figure}
@@ -76,8 +76,8 @@ The function can be defined on any input domain but it is usually evaluated on $
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 12cm, height = 12cm]{customizedParaboloid.png}
-	\caption{Customized Paraboloid of Revolution.}
+	\includegraphics[width= 8cm, height = 8cm]{customizedParaboloid.png}
+	\caption{Customized Sphere Function.}
 	\label{fig:CustomizedParaboloidOfRevolution}
 \end{figure}
 
@@ -99,8 +99,8 @@ In order to represent this customized version of Sphere function function using 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 7cm, height = 7cm]{parabolic.png}
-	\caption{Contour plot of customized Parabolic Function.}
+	\includegraphics[width= 4cm, height = 4cm]{parabolic.png}
+	\caption{Contour plot of customized Sphere Function.}
 	\label{fig:ContourPlotCustomizedParabolicFunction}
 \end{figure}
 
@@ -122,7 +122,7 @@ f(x, y) = -((1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2)
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 12cm, height = 12cm]{customizedBeale.png}
+	\includegraphics[width= 8cm, height = 8cm]{customizedBeale.png}
 	\caption{Customized Beale Function.}
 	\label{fig:CustomizedBealeFunction}
 \end{figure}
@@ -139,7 +139,7 @@ In order to represent this function using Java Graphical Environment it has been
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 7cm, height = 7cm]{beale.png}
+	\includegraphics[width= 4cm, height = 4cm]{beale.png}
 	\caption{Contour plot of customized Beale Function.}
 	\label{fig:ContourPlotCustomizedBealeFunction}
 \end{figure}
@@ -152,7 +152,7 @@ In order to represent this function using Java Graphical Environment it has been
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 12cm, height = 12cm]{customizedStyblinski.png}
+	\includegraphics[width= 8cm, height = 8cm]{customizedStyblinski.png}
 	\caption{Customized Styblinski Function.}
 	\label{fig:CustomizedStyblinskiFunction}
 \end{figure}
@@ -181,7 +181,7 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width= 7cm, height = 7cm]{styblinski.png}
+	\includegraphics[width= 4cm, height = 4cm]{styblinski.png}
 	\caption{Contour plot of customized Styblinski Function.}
 	\label{fig:ContourStyblinskiFunction}
 \end{figure}
@@ -255,9 +255,40 @@ The test conducted on humans affects a cross-section of twenty-three people. In 
 
 \begin{itemize}
 	\item \textbf{Sex} $\in \{Male, Female\}$
-	\item \textbf{Age} $\in [4, 52]$
-	\item \textbf{Calculus Knowledge} $\in \{Null, Basic, Advanced\}$ 
-\end{itemize}  
+	\item \textbf{Age} $\in [19, 50]$
+	\item \textbf{Math Knowledge Level} $\in \{Elementary, Medium, High\}$ 
+\end{itemize} 
+
+The mathematical knowledge level is considered elementary if the subject has never attended a course of basic calculus. The mathematical knowledge level is considered medium if the subject has attended at least a basic calculus course. The mathematical knowledge level is considered high if the subject has attended an advanced calculus course. \\
+
+The $71\%$ of considered humans are males, the remaining $29\%$ are females (plot (a) of figure \ref{fig:testSubjectsAttributes}). \\
+
+The $52\%$ of test subjects has an high mathematical educational level. The $43\%$ of test subjects has a medium mathematical educational level. The remaining $4\%$ of test subjects has an elementary, mathematical education level (pot (b) of figure \ref{fig:testSubjectsAttributes}). \\
+
+The $75\%$ of test subjects has an age between $19$ and $22$. The $21\%$ of test subjects has an age between $23$ and $26$. The remaining $4\%$ of test subjects has an age $> 26$ (plot (c) of figure \ref{fig:testSubjectsAttributes}). \\
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfigure[]{%
+			\label{fig:sex}
+			\includegraphics[width=0.4\textwidth]{Sex}
+		}
+		\subfigure[]{%
+			\label{fig:mathEdLevel}
+			\includegraphics[width=0.4\textwidth]{MathEdLevel}
+		}\\
+		\subfigure[]{%
+			\label{fig:Age}
+			\includegraphics[width=0.4\textwidth]{Age}
+		}		
+	\end{center}
+	\caption{
+		Test Subjects' Attributes.
+	}
+	\label{fig:testSubjectsAttributes}
+\end{figure}
+
+
 
 Each one of the test subjects was placed in front of a personal computer. The following rules have been proposed :
 
@@ -270,6 +301,8 @@ Each one of the test subjects was placed in front of a personal computer. The fo
 	\item \textit{The goal is to make as many points as possible with 15 clicks available for each game}.
 	\item \textit{No further explanation will be provided}.
 \end{itemize}
+
+\pagebreak
 
 After that a chromatic scale indicating how positive the reward was for each click was proposed.
 
