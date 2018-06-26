@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  25 JUN 2018 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  26 JUN 2018 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1029,26 +1029,29 @@ File: IMAGES/Age.png Graphic file (type png)
 
 <use IMAGES/Age.png>
 Package pdftex.def Info: IMAGES/Age.png used on input line 283.
-(pdftex.def)             Requested size: 143.9978pt x 128.37639pt.
+(pdftex.def)             Requested size: 180.0pt x 160.47049pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50]
-Underfull \vbox (badness 3343) has occurred while \output is active []
-
- [51 <./IMAGES/Sex.png> <./IMAGES/MathEdLevel.png> <./IMAGES/Age.png>]
-<IMAGES/scala.png, id=264, 56.46094pt x 186.6975pt>
+[50] <IMAGES/scala.png, id=258, 56.46094pt x 186.6975pt>
 File: IMAGES/scala.png Graphic file (type png)
- <use IMAGES/scala.png>
-Package pdftex.def Info: IMAGES/scala.png used on input line 311.
-(pdftex.def)             Requested size: 56.46078pt x 186.69704pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+<use IMAGES/scala.png>
+Package pdftex.def Info: IMAGES/scala.png used on input line 307.
+(pdftex.def)             Requested size: 25.81381pt x 85.35826pt.
 
- []
 
-) (./CHAPTERS/Results.tex [52 <./IMAGES/scala.png>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<IMAGES/Form.png, id=259, 795.97375pt x 627.34375pt>
+File: IMAGES/Form.png Graphic file (type png)
+ <use IMAGES/Form.png>
+Package pdftex.def Info: IMAGES/Form.png used on input line 316.
+(pdftex.def)             Requested size: 227.62004pt x 170.71564pt.
+
+[51 <./IMAGES/Sex.png> <./IMAGES/MathEdLevel.png> <./IMAGES/Age.png>])
+(./CHAPTERS/Results.tex [52 <./IMAGES/scala.png> <./IMAGES/Form.png>]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
@@ -1062,7 +1065,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
 [53
 
-] <IMAGES/HimmelblauDifference.png, id=274, 462.528pt x 346.896pt>
+] <IMAGES/HimmelblauDifference.png, id=276, 462.528pt x 346.896pt>
 File: IMAGES/HimmelblauDifference.png Graphic file (type png)
 
 <use IMAGES/HimmelblauDifference.png>
@@ -1070,7 +1073,7 @@ Package pdftex.def Info: IMAGES/HimmelblauDifference.png used on input line 45.
 
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/HimmelblauValueFunction.png, id=275, 462.528pt x 346.896pt>
+<IMAGES/HimmelblauValueFunction.png, id=277, 462.528pt x 346.896pt>
 File: IMAGES/HimmelblauValueFunction.png Graphic file (type png)
 
 <use IMAGES/HimmelblauValueFunction.png>
@@ -1078,7 +1081,7 @@ Package pdftex.def Info: IMAGES/HimmelblauValueFunction.png used on input line
 49.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/HimmelblauGap.png, id=276, 2409.0pt x 2409.0pt>
+<IMAGES/HimmelblauGap.png, id=278, 2409.0pt x 2409.0pt>
 File: IMAGES/HimmelblauGap.png Graphic file (type png)
 
 <use IMAGES/HimmelblauGap.png>
@@ -1099,14 +1102,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-[56] <IMAGES/ParabolicEuclidean.png, id=290, 462.528pt x 346.896pt>
+[56] <IMAGES/ParabolicEuclidean.png, id=292, 462.528pt x 346.896pt>
 File: IMAGES/ParabolicEuclidean.png Graphic file (type png)
 
 <use IMAGES/ParabolicEuclidean.png>
 Package pdftex.def Info: IMAGES/ParabolicEuclidean.png used on input line 134.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/SphereValueFunction.png, id=291, 462.528pt x 346.896pt>
+<IMAGES/SphereValueFunction.png, id=293, 462.528pt x 346.896pt>
 File: IMAGES/SphereValueFunction.png Graphic file (type png)
 
 <use IMAGES/SphereValueFunction.png>
@@ -1114,7 +1117,7 @@ Package pdftex.def Info: IMAGES/SphereValueFunction.png used on input line 138.
 
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/ParabolicGap.png, id=292, 2409.0pt x 2409.0pt>
+<IMAGES/ParabolicGap.png, id=294, 2409.0pt x 2409.0pt>
 File: IMAGES/ParabolicGap.png Graphic file (type png)
 
 <use IMAGES/ParabolicGap.png>
@@ -1141,21 +1144,21 @@ Overfull \hbox (1.95462pt too wide) in paragraph at lines 185--186
 .95 dec-li-na-tion starts from a value func-tion's prox-
  []
 
-[59] <IMAGES/BealeDifference.png, id=304, 462.528pt x 346.896pt>
+[59] <IMAGES/BealeDifference.png, id=306, 462.528pt x 346.896pt>
 File: IMAGES/BealeDifference.png Graphic file (type png)
 
 <use IMAGES/BealeDifference.png>
 Package pdftex.def Info: IMAGES/BealeDifference.png used on input line 223.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/BealeValueFunction.png, id=305, 462.528pt x 346.896pt>
+<IMAGES/BealeValueFunction.png, id=307, 462.528pt x 346.896pt>
 File: IMAGES/BealeValueFunction.png Graphic file (type png)
 
 <use IMAGES/BealeValueFunction.png>
 Package pdftex.def Info: IMAGES/BealeValueFunction.png used on input line 227.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/BealeGap.png, id=306, 2409.0pt x 2409.0pt>
+<IMAGES/BealeGap.png, id=308, 2409.0pt x 2409.0pt>
 File: IMAGES/BealeGap.png Graphic file (type png)
  <use IMAGES/BealeGap.png>
 Package pdftex.def Info: IMAGES/BealeGap.png used on input line 231.
@@ -1178,7 +1181,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
 [61 <./IMAGES/BealeDifference.png> <./IMAGES/BealeValueFunction.png> <./IMAGES/
 BealeGap.png>]
-<IMAGES/StyblinskiDifference.png, id=317, 462.528pt x 346.896pt>
+<IMAGES/StyblinskiDifference.png, id=319, 462.528pt x 346.896pt>
 File: IMAGES/StyblinskiDifference.png Graphic file (type png)
 
 <use IMAGES/StyblinskiDifference.png>
@@ -1186,7 +1189,7 @@ Package pdftex.def Info: IMAGES/StyblinskiDifference.png used on input line 303
 .
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/StyblinskiValueFunction.png, id=318, 462.528pt x 346.896pt>
+<IMAGES/StyblinskiValueFunction.png, id=320, 462.528pt x 346.896pt>
 File: IMAGES/StyblinskiValueFunction.png Graphic file (type png)
 
 <use IMAGES/StyblinskiValueFunction.png>
@@ -1194,7 +1197,7 @@ Package pdftex.def Info: IMAGES/StyblinskiValueFunction.png used on input line
 307.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/StyblinskiGap.png, id=319, 2409.0pt x 2409.0pt>
+<IMAGES/StyblinskiGap.png, id=321, 2409.0pt x 2409.0pt>
 File: IMAGES/StyblinskiGap.png Graphic file (type png)
 
 <use IMAGES/StyblinskiGap.png>
@@ -1220,7 +1223,7 @@ Underfull \vbox (badness 2512) has occurred while \output is active []
 Underfull \vbox (badness 2435) has occurred while \output is active []
 
  [65]
-[66] <IMAGES/ExpertStyblinskiDifference.png, id=338, 462.528pt x 346.896pt>
+[66] <IMAGES/ExpertStyblinskiDifference.png, id=340, 462.528pt x 346.896pt>
 File: IMAGES/ExpertStyblinskiDifference.png Graphic file (type png)
 
 <use IMAGES/ExpertStyblinskiDifference.png>
@@ -1228,7 +1231,7 @@ Package pdftex.def Info: IMAGES/ExpertStyblinskiDifference.png used on input li
 ne 419.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/ExpertStyblinskiValueFunction.png, id=339, 462.528pt x 346.896pt>
+<IMAGES/ExpertStyblinskiValueFunction.png, id=341, 462.528pt x 346.896pt>
 File: IMAGES/ExpertStyblinskiValueFunction.png Graphic file (type png)
 
 <use IMAGES/ExpertStyblinskiValueFunction.png>
@@ -1236,7 +1239,7 @@ Package pdftex.def Info: IMAGES/ExpertStyblinskiValueFunction.png used on input
  line 423.
 (pdftex.def)             Requested size: 143.9978pt x 107.99715pt.
 
-<IMAGES/ExpertGap.png, id=340, 2409.0pt x 2409.0pt>
+<IMAGES/ExpertGap.png, id=342, 2409.0pt x 2409.0pt>
 File: IMAGES/ExpertGap.png Graphic file (type png)
  <use IMAGES/ExpertGap.png>
 Package pdftex.def Info: IMAGES/ExpertGap.png used on input line 427.
@@ -1251,7 +1254,7 @@ Overfull \hbox (30.54674pt too wide) in paragraph at lines 438--439
 n-teed by the \OT1/cmtt/m/n/10.95 parametric,
  []
 
-<IMAGES/ExpertReasumingTable.png, id=348, 1177.39874pt x 677.53125pt>
+<IMAGES/ExpertReasumingTable.png, id=350, 1177.39874pt x 677.53125pt>
 File: IMAGES/ExpertReasumingTable.png Graphic file (type png)
 
 <use IMAGES/ExpertReasumingTable.png>
@@ -1266,7 +1269,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
-<IMAGES/Surrogate.png, id=353, 522.95375pt x 291.0875pt>
+<IMAGES/Surrogate.png, id=355, 522.95375pt x 291.0875pt>
 File: IMAGES/Surrogate.png Graphic file (type png)
 
 <use IMAGES/Surrogate.png>
@@ -1282,200 +1285,240 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
-[70]) (./CHAPTERS/Appendix1.tex [71] [72
+[70]) (./CHAPTERS/Conclusions.tex [71] [72
 
 ]
 Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Overfull \hbox (13.94008pt too wide) in paragraph at lines 7--8
+[]\OT1/cmr/m/n/10.95 This dec-li-na-tion pro-duces the best re-sults also with 
+the "Ex-pert" SARSA($\OML/cmm/m/it/10.95 ^^U$\OT1/cmr/m/n/10.95 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[73]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+) (./CHAPTERS/Appendix1.tex [74]
+Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-[73] <IMAGES/2xy.png, id=371, 808.01875pt x 682.55pt>
+[75
+
+] <IMAGES/2xy.png, id=379, 808.01875pt x 682.55pt>
 File: IMAGES/2xy.png Graphic file (type png)
  <use IMAGES/2xy.png>
 Package pdftex.def Info: IMAGES/2xy.png used on input line 32.
 (pdftex.def)             Requested size: 143.9978pt x 121.63516pt.
 
-<IMAGES/xsin(y).png, id=372, 828.09375pt x 618.31pt>
+<IMAGES/xsin(y).png, id=380, 828.09375pt x 618.31pt>
 File: IMAGES/xsin(y).png Graphic file (type png)
  <use IMAGES/xsin(y).png>
 Package pdftex.def Info: IMAGES/xsin(y).png used on input line 36.
 (pdftex.def)             Requested size: 143.9978pt x 107.51714pt.
 
-[74 <./IMAGES/2xy.png> <./IMAGES/xsin(y).png>] [75] [76] [77]
-<IMAGES/Lipschitz.png, id=387, 454.69875pt x 603.25375pt>
+[76 <./IMAGES/2xy.png> <./IMAGES/xsin(y).png>] [77] [78] [79]
+<IMAGES/Lipschitz.png, id=396, 454.69875pt x 603.25375pt>
 File: IMAGES/Lipschitz.png Graphic file (type png)
 
 <use IMAGES/Lipschitz.png>
 Package pdftex.def Info: IMAGES/Lipschitz.png used on input line 114.
 (pdftex.def)             Requested size: 284.53291pt x 284.52342pt.
 )
-<EXTRA/Grafici.pdf, id=388, 597.51233pt x 845.0471pt>
+<EXTRA/Grafici.pdf, id=397, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf>
-Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 41.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf>
-Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 41.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
 
-<EXTRA/Grafici.pdf, id=391, page=1, 597.51233pt x 845.0471pt>
+<EXTRA/Grafici.pdf, id=400, page=1, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [78 <./IMAGES/Lipschitz.png>]
+ [80 <./IMAGES/Lipschitz.png>]
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [79 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=445, page=2, 597.51233pt x 845.0471pt>
+ [81 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=453, page=2, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [80 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=473, page=3, 597.51233pt x 845.0471pt>
+ [82 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=481, page=3, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [81 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=501, page=4, 597.51233pt x 845.0471pt>
+ [83 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=509, page=4, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [82 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=529, page=5, 597.51233pt x 845.0471pt>
+ [84 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=537, page=5, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [83 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=557, page=6, 597.51233pt x 845.0471pt>
+ [85 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=566, page=6, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [84 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=585, page=7, 597.51233pt x 845.0471pt>
+ [86 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=594, page=7, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [85 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=614, page=8, 597.51233pt x 845.0471pt>
+ [87 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=622, page=8, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [86 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=643, page=9, 597.51233pt x 845.0471pt>
+ [88 <./EXTRA/Grafici.pdf>]
+<EXTRA/Grafici.pdf, id=651, page=9, 597.51233pt x 845.0471pt>
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
  <use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
 File: EXTRA/Grafici.pdf Graphic file (type pdf)
 
 <use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 40.
+Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
 (pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [87 <./EXTRA/Grafici.pdf>]
-(./CHAPTERS/Acknowledgements.tex [88
+ [89 <./EXTRA/Grafici.pdf>]
+(./CHAPTERS/Acknowledgements.tex [90
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
@@ -1487,7 +1530,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-) (./dissertation.bbl [89] [90
+) (./dissertation.bbl [91] [92
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
@@ -1512,7 +1555,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
  Lipschitz .
  []
 
-[91]
+[93]
 Underfull \hbox (badness 10000) in paragraph at lines 60--62
 []$\OT1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki / Multivariate _
  normal _
@@ -1524,7 +1567,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 $\OT1/cmr/m/n/10.95 .
  []
 
-[92]) [93] (./dissertation.aux)
+[94]) [95] (./dissertation.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1534,10 +1577,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7240 strings out of 492995
- 105205 string characters out of 6132705
- 188669 words of memory out of 5000000
- 10547 multiletter control sequences out of 15000+600000
+ 7249 strings out of 492995
+ 105363 string characters out of 6132705
+ 188738 words of memory out of 5000000
+ 10552 multiletter control sequences out of 15000+600000
  20142 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,20n,51p,2366b,3973s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1565,10 +1608,10 @@ xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (93 pages, 81951736 bytes).
+Output written on dissertation.pdf (95 pages, 81991937 bytes).
 PDF statistics:
- 769 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
+ 777 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 306 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 
