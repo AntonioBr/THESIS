@@ -1,12 +1,16 @@
 \chapter{Experimental Setting}
 
-The current chapter is divided into two sections. In the first one the benchmark of the experiment will be described. In the second one the same experiment applied to humans and its results will be discussed.
+The aim of this chapter is to describe the benchmarks of the experiments that have produced results analysed in the next few chapters. \\
+
+In the first part of the chapter, the benchmark of the experiment conducted in order to analyse the performances of the innovative algorithm previously introduced, will be described. 
+
+In the second part of the chapter, the benchmark of the experiment conducted on humans in order to better understand their acquisition functions in multivariate function learning, will be presented.
 
 \section{Benchmark}
 
 \subsection{Test Functions}
 
-The experiment described in this work is about maximize black-box functions adopting an RL based approach. The first important choice is about selecting suitable \textit{test functions}. In applied mathematics, test functions, also known as \textit{artificial landscapes}, are useful to evaluate characteristics of optimization algorithms. Four test functions have been chosen for this work:
+One of the experiments described in this work is about maximizing black-box functions adopting an RL based approach. A first relevant choice is about selecting suitable \textit{test functions}. In applied mathematics, test functions, also known as \textit{artificial landscapes}, are useful to evaluate characteristics of optimization algorithms. Four test functions have been chosen for this purpose :
 
 \begin{itemize}
 	\item Himmelblau' s Function;
@@ -45,7 +49,7 @@ Because of the aim to maximize the function has been inverted as follow :
 f(x, y) = -(x^2 + y -11)^2 + (x + y^2 - 7)^2
 \end{equation}
 
-it has been picked up of $2500$ units in order to have as less as possible negative values. So the final adopted function is :
+It has been picked up of $2500$ units in order to have as less as possible negative values. So the final adopted function is :
  
 \begin{equation}
 f(x, y) = -(x^2 + y -11)^2 + (x + y^2 - 7)^2 + 2500
@@ -62,7 +66,7 @@ In order to represent this customized version of Himmelblau' s Function using Ja
 	\label{fig:ContourPlotCustomizedHimmelblauFunction}
 \end{figure}
  
-\subparagraph{Sphere Function} In mathematical optimization, Sphere function is a continuous, bivariate, multi-modal function. \\
+\subparagraph{Sphere Function} In mathematical optimization, Sphere function is a continuous, bivariate, uni-modal function. \\
 
 The original function is defined by: 
 
@@ -104,7 +108,7 @@ In order to represent this customized version of Sphere function function using 
 	\label{fig:ContourPlotCustomizedParabolicFunction}
 \end{figure}
 
-\subparagraph{Beale Function} In mathematical optimization, Beale Function is a continuous, multi-modal function defined on a multi-dimensional space. The function is defined by: 
+\subparagraph{Beale Function} In mathematical optimization, Beale Function is a continuous, bivariate, multi-modal function. The original function is defined by: 
 
 \begin{equation}
 f(x, y) = (1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2
@@ -127,13 +131,13 @@ f(x, y) = -((1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2)
 	\label{fig:CustomizedBealeFunction}
 \end{figure}
 
-and it has been picked up of $2000$ units in order to have as less as possible negative values. So the final adopted function is :
+It has been picked up of $2000$ units in order to have as less as possible negative values. So the final adopted function is :
 
 \begin{equation}
 f(x, y) = -((1.5 - x + xy)^2 + (2.25 - x + xy^2)^2 + (2.625 - x + xy^3)^2) + 2000
 \end{equation}
 
-This customized function has its global maximum in $f(x, y) = 2000$. \\
+This customized function has its global maximum in $f(x, y) = 2000$.
 
 In order to represent this function using Java Graphical Environment it has been mapped in a space of $600 \times 600$ pixels and it has been properly rotated. The resulting contour plot is the one represented in figure ~\ref{fig:ContourPlotCustomizedBealeFunction} 
 
@@ -144,7 +148,7 @@ In order to represent this function using Java Graphical Environment it has been
 	\label{fig:ContourPlotCustomizedBealeFunction}
 \end{figure}
 
-\subparagraph{Styblinski-Tang Revised Function} In mathematical optimization, Styblinski-Tang Function is a continuous, multi-modal function defined on a multi-dimensional space. The original function is defined by :
+\subparagraph{Styblinski-Tang Revised Function} In mathematical optimization, Styblinski-Tang' s Function is a continuous, bivariate function. The original function is defined by :
 
 \begin{equation}
 	f(x) = \dfrac{\sum_{i=1}^{n} x_{i}^4 -16x_{i}^2 +5x_{i}}{2}
@@ -171,7 +175,7 @@ Because of the aim to maximize, it has been inverted as follow :
 f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + (y^4 - 16 * y^2 + 5 * y))
 \end{equation}
 
-and it has been picked up of $5000$ units in order to have as less as possible negative values. So the final adopted function is: 
+It has been picked up of $5000$ units in order to have as less as possible negative values. So the final adopted function is: 
 
 \begin{equation}
 f(x, y) = -((x^4 - 16 * x^2 + 5 * x) + (y^4 - 16 * y^2 + 5 * y)) + 5000
@@ -203,7 +207,7 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 	\end{tabular}
 \end{sidewaystable}
 
-\subsection{Algorithm' s Configuration} The RL algorithm employed is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
+\subsection{Basic SARSA($\lambda$) Algorithm' s Configuration} The RL algorithm employed in the current work is the {\tt SARSA($\lambda$)} one. It has only one configuration (summarized in table ~\ref{ConfigurationTable}) and four different declinations (summarized in table ~\ref{DeclinationTable}).
 
 \begin{table} [h!]
 	\centering
@@ -243,11 +247,13 @@ In the proposed configuration a low $\lambda$ value is employed. Typically it sh
 
 An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depends on the history, whereas the remaining $10\%$ represents a random choice having absolutely no relations with the previous history. \\ 
 
-A discount factor set to $0.99$ means the rewards will propagate as long as possible through time.
+A discount factor set to $0.99$ means the rewards will propagate as long as possible through time. \\
 
-The main goal presented in this work is to compare human optimization performances with {\tt SARSA($\lambda$)} ones in a context of uncertainty. Assuming that each try has an high cost, the number of possible tries must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requirements, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. Note that in addition to the $150$ training episodes there is also a greedy one. In this last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs, the {\tt qInit} parameter and the discount factor are left unchanged.  \\
+Assuming that each epoch's action has an high cost, the number of epochs must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requirements, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. The choice about those two parameters depends on results of specific tests conducted in order to understand correct values to employ. \\
 
-Each declination of {\tt SARSA(\textit{$\lambda$})} corresponds to one combination of search techniques described in the previous chapter. In the implementation of random search, the BURLAP {\tt RandomFactory} class has been used. {\tt RandomFactory} allows to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
+Note that in addition to the $150$ training episodes there is also a greedy one. In this last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs, the {\tt qInit} parameter and the discount factor are left unchanged.  \\
+
+Each declination of {\tt SARSA(\textit{$\lambda$})} is linear or parametric (search techniques described in the previous chapter). In addition to this each declination could be simple or random. In the last case the starting point for each episode is randomly selected from a set of ($600 \times 600$) possibilities. In the implementation of random search, the BURLAP {\tt RandomFactory} class has been used. {\tt RandomFactory} allows to logically group various random generators. The {\tt id} is set to $0$ and the {\tt seed} is set to $1$.
 
 \section{Experiment on Humans}
 
@@ -259,13 +265,13 @@ The test conducted on humans affects a cross-section of twenty-three people. In 
 	\item \textbf{Math Knowledge Level} $\in \{Elementary, Medium, High\}$ 
 \end{itemize} 
 
-The mathematical knowledge level is considered elementary if the subject has never attended a course of basic calculus. The mathematical knowledge level is considered medium if the subject has attended at least a basic calculus course. The mathematical knowledge level is considered high if the subject has attended an advanced calculus course. \\
-
 $71\%$ of test subjects are males, the remaining $29\%$ are females (plot (a) of figure \ref{fig:testSubjectsAttributes}). \\
 
-$52\%$ of test subjects has an high mathematical educational level. The $43\%$ of test subjects has a medium mathematical educational level. The remaining $4\%$ of test subjects has an elementary, mathematical education level (pot (b) of figure \ref{fig:testSubjectsAttributes}). \\
-
 $75\%$ of test subjects has an age between $19$ and $22$. The $21\%$ of test subjects has an age between $23$ and $26$. The remaining $4\%$ of test subjects has an age $> 26$ (plot (c) of figure \ref{fig:testSubjectsAttributes}). \\
+
+The mathematical knowledge level is considered elementary if the subject has never attended a course of basic calculus. The mathematical knowledge level is considered medium if the subject has attended at least a basic calculus course. The mathematical knowledge level is considered high if the subject has attended an advanced calculus course. \\
+
+$52\%$ of test subjects has an high mathematical educational level. The $43\%$ of test subjects has a medium mathematical educational level. The remaining $4\%$ of test subjects has an elementary, mathematical education level (pot (b) of figure \ref{fig:testSubjectsAttributes}). \\
 
 \begin{figure}[h!]
 	\begin{center}
@@ -309,11 +315,11 @@ After that a chromatic scale (the legend) indicating how positive the reward was
 	\label{fig:Cromatic Scale}
 \end{figure}
 
-A white screen (with a specific hidden function) of $600 \times 600$ pixels with which to interact according to the rules previously listed was finally proposed.
+A white screen (with a specific hidden function) of $600 \times 600$ pixels with which to interact according to the rules previously listed was finally provided.
 
-\begin{figure}
+\begin{figure} [h!]
 	\centering
-	\includegraphics[width= 8 cm, height= 6 cm]{IMAGES/Form}
+	\includegraphics[width= \textwidth, height= 8 cm]{IMAGES/Form}
 	\caption{GUI the player has to interact with during the experiment.}
 	\label{fig:form}
 \end{figure}

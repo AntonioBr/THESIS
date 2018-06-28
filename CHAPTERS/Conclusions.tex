@@ -4,15 +4,17 @@ The innovative Reinforcement Learning based approach to optimization of black-bo
 
 To be more specific, it is possible to say that it makes the best performance ever in the case of {\tt parametric, not random} declination.
 
-This declination produces the best results also with the "Expert" SARSA($\lambda$) algorithm, where the agent is trained on different functions and finally run on a never trained before black-box function. \\
+This declination produces the best results also in the case of the "Experienced" SARSA($\lambda$) algorithm, where the agent is trained on different functions and finally run on a never trained before black-box function. \\
 
-The reason for those unexpected results is that the {\tt parametric, not random} declination, depending also on the slope of the function in the definition of the real amount of movement, despite of its greater slowness, presents a greater accuracy and a greater aptitude in maintaining this accuracy in time. \\
+One possible reason for those results is that the {\tt parametric, not random} declination, despite of its greater slowness, depending also on the slope of the function in the definition of the real amount of movement, presents a greater accuracy and a greater aptitude in maintaining this accuracy in time. \\
 
-Performances of the algorithm presented in this work could be probably improved, introducing a dynamic computation of Lipschitz Constant which should dynamically regulate the selected rounding for angles used by in the decision process or/and substituting the employed discrete domain with a continuing domain. \\
+Performances of the algorithm presented in this work could be probably improved introducing a dynamic computation of Lipschitz Constant which should dynamically regulate the selected rounding for angles used in the decision process or/and substituting the employed discrete domain with a continuing domain. \\
 
 Tests conducted on humans, reveal that in two out of four cases, it was possible to match human optimization strategy to one of the three presented acquisition functions. In one case it was possible to decompose the human search process into two different phases and then match them with two different acquisition functions. \\
 
-Those results add innovation to researches conducted by ... on $2d$-functions and deserve to be explored also from a neuroscientific point of view. \\
+Those results add innovation to researches conducted by Borji and Itti (2013) and Wu, Schultz, Speekenbrink, Nelson, and Meder (2017) on one dimensional functions and deserve to be explored also from a neuroscientific point of view. \\
+
+The final experiment described in the current work shows that if a human and a RL agent have the same \textit{experience} about function to maximize, their optimization process, i.e. the acquisition functions employed, is very similar.
 
 
 

@@ -1,6 +1,6 @@
 \chapter{Appendix A}
 
-One of the most amazing aspect of the work presented in this thesis is the manner in which the goal has been reached. It is important to clarify that during the first weeks, it was not easy to understand the real target of the work. This initial uncertainty led to implement some strange solutions. Even if some of these approaches were not useful for the goal described in the previous chapters of this thesis, although they were very efficient in different contexts. For this reason the full history of the current research activity has been here recorded. In so doing, ten different main steps have been identified. 
+One of the most amazing aspect of the work presented in this thesis is the manner in which the goal has been reached. It is important to clarify that during the first weeks, it was not easy to understand the real target of the work. This initial uncertainty led to implement some strange solutions. Even if some of these approaches were not useful for the goal described in the previous chapters of this thesis, although they proved to be very efficient in different contexts. For this reason the full chronicle of the current research activity has been here recorded. In so doing, ten different main steps have been identified. 
 
 \paragraph{First Step} In the first attempt to reach the solution of the problem, the agent was allowed to take five different actions :
 
@@ -41,7 +41,7 @@ Unfortunately such a state representation prevents from the possibility to gener
 	\label{fig:ComparisonBetweenTwoFunctions}
 \end{figure}
 
-In addition to this, it became soon clear that the information concerning the number of remaining function' s soundings is redundant. It did not add any information to knowledge. In the implementation described above, the agent was in a terminal state when the number of remaining function soundings was equal to zero.
+In addition to this, it became soon clear that the information concerning the number of remaining function' s soundings was redundant. It did not add any information to knowledge. In the implementation described above, the agent was in a terminal state when the number of remaining function soundings was equal to zero.
 
 \paragraph{Second Step} The second step was globally equal to the first one except for two fundamental aspects. In the current step the possibility for the agent to make movements of different sizes was introduced. This possibility allowed its to reach the goal with a lower training time. 
 
@@ -49,7 +49,7 @@ The reward function was also redefined. It was equal to the percentage of proxim
 
 \paragraph{Third Step} In the third step an additionally change to the previous one was made. At the end of each episode, the agent was artificially forced to restart from the coordinates of the previous episode's best rewarded epoch. Results given by the combination of the last two approaches resulted to be very fruitful in the context well-known function optimization but not in the context described in this thesis. This choice forced the agent to take a specific action, breaking, in so doing, for at least one time the concept of environment formalized through a Markov Decision Process.
 
-\paragraph{Fourth Step} In the fourth step performances obtained through changes made in the second and third step were improved. This was possible imposing the agent to start each episode from the best rewarded epoch from all previous episodes.
+\paragraph{Fourth Step} In the fourth step, performances obtained through changes made in the second and third steps, were improved. This was possible imposing the agent to start each episode from the best rewarded epoch from all previous episodes.
 
 \paragraph{Fifth Step} The fifth step is one of the most important because of innovations introduced. The first change made regarded actions. In this step the possibility for the agent to directly choose the size of the movement was introduced. There were still four different possible \textit{movement actions} :
 
@@ -68,7 +68,7 @@ but the agent could select to move itself in one direction of :
 	\item \textit{movement amount} $\times 3$.
 \end{itemize}
 
-The unit of measurement of \textit{movement amount} was the \textit{pixel}. The basic amount of movement was 40 pixels. The real movement amount over function was computed through algorithm \ref{algoPixel} in Chapter $3$. It was proved that using this set of \textit{action movements} the algorithm converged more quickly to the maximum of the function but the precision was lower. 
+The unit of measurement of \textit{movement amount} was the \textit{pixel}. The basic amount of movement was $40$ pixels. The real movement amount over function was computed through algorithm \ref{algoPixel}, described in Chapter $3$. It was proved that using this set of \textit{action movements} the algorithm converged more quickly to the maximum of the function but the precision was lower. 
 
 In addition to this, the possibility for the agent to distinguish between \textit{move action} and \textit{dig action} was removed. Each time the agent made a movement it also sounded the function obtaining a reward. The reward was positive if its proximity to the global maximum was in percentage $\ge 75\%$, negative in other cases. As already explained, the disadvantage of the last choice is that in the context described in this thesis the objective function is unknown so it is not possible to compute the percentage of proximity to the maximum.
 
