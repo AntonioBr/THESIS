@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  28 JUN 2018 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.5)  29 JUN 2018 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,13 +1023,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <IMAGES/scala.png, id=264, 56.46094pt x 186.6975pt>
 File: IMAGES/scala.png Graphic file (type png)
  <use IMAGES/scala.png>
-Package pdftex.def Info: IMAGES/scala.png used on input line 313.
+Package pdftex.def Info: IMAGES/scala.png used on input line 314.
 (pdftex.def)             Requested size: 25.81381pt x 85.35826pt.
 
 <IMAGES/Form.png, id=265, 795.97375pt x 627.34375pt>
 File: IMAGES/Form.png Graphic file (type png)
  <use IMAGES/Form.png>
-Package pdftex.def Info: IMAGES/Form.png used on input line 322.
+Package pdftex.def Info: IMAGES/Form.png used on input line 323.
 (pdftex.def)             Requested size: 359.99457pt x 227.62405pt.
 )
 (./CHAPTERS/Results.tex [52 <./IMAGES/scala.png> <./IMAGES/Form.png>]
@@ -1265,12 +1265,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 470--471
 Underfull \vbox (badness 2065) has occurred while \output is active []
 
  [69 <./IMAGES/ExpertReasumingTable.png> <./IMAGES/Surrogate.png>] [70]
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
 [71]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
@@ -1342,174 +1342,7 @@ File: IMAGES/Lipschitz.png Graphic file (type png)
 <use IMAGES/Lipschitz.png>
 Package pdftex.def Info: IMAGES/Lipschitz.png used on input line 114.
 (pdftex.def)             Requested size: 284.53291pt x 284.52342pt.
-)
-<EXTRA/Grafici.pdf, id=397, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf>
-Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 41.
-(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf>
-Package pdftex.def Info: EXTRA/Grafici.pdf used on input line 41.
-(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-
-<EXTRA/Grafici.pdf, id=400, page=1, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [80 <./IMAGES/Lipschitz.png>]
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 1>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [81 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=453, page=2, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 2>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page2 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [82 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=481, page=3, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 3>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page3 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [83 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=509, page=4, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 4>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page4 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [84 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=537, page=5, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 5>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page5 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [85 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=566, page=6, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 6>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page6 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [86 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=594, page=7, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 7>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page7 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [87 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=622, page=8, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 8>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page8 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [88 <./EXTRA/Grafici.pdf>]
-<EXTRA/Grafici.pdf, id=651, page=9, 597.51233pt x 845.0471pt>
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
- <use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
-File: EXTRA/Grafici.pdf Graphic file (type pdf)
-
-<use EXTRA/Grafici.pdf, page 9>
-Package pdftex.def Info: EXTRA/Grafici.pdf, page9 used on input line 41.
-(pdftex.def)             Requested size: 562.12665pt x 795.00201pt.
- [89 <./EXTRA/Grafici.pdf>]
-(./CHAPTERS/Acknowledgements.tex [90
-
-]
+) (./CHAPTERS/Acknowledgements.tex [80 <./IMAGES/Lipschitz.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
@@ -1534,7 +1367,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
-) (./dissertation.bbl [91] [92
+) (./dissertation.bbl [81
+
+] [82
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
@@ -1559,7 +1394,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--48
  Lipschitz .
  []
 
-[93]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 60--62
 []$\OT1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki / Multivariate _
  normal _
@@ -1571,7 +1406,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 $\OT1/cmr/m/n/10.95 .
  []
 
-[94]) [95] (./dissertation.aux)
+[84]) [85] (./dissertation.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1584,13 +1419,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7250 strings out of 492995
- 105386 string characters out of 6132705
- 189778 words of memory out of 5000000
- 10553 multiletter control sequences out of 15000+600000
+ 7217 strings out of 492995
+ 104571 string characters out of 6132705
+ 187343 words of memory out of 5000000
+ 10522 multiletter control sequences out of 15000+600000
  20142 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,20n,51p,2366b,3974s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,20n,48p,2366b,3963s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
@@ -1615,10 +1450,10 @@ xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertation.pdf (95 pages, 81997463 bytes).
+Output written on dissertation.pdf (85 pages, 8338697 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
+ 496 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 311 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
