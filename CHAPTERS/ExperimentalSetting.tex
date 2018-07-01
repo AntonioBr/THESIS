@@ -216,7 +216,7 @@ This customized function has its global maximum in $f(x, y) = 5156.6638$. In ord
 		\hline 
 		& \textbf{$\lambda$}  & \textbf{$\epsilon$} & \textbf{qInit} & \textbf{Learning Rate} & \textbf{Discount Factor}  & \textbf{Episodes}  & \textbf{Epochs} \\
 		\hline \hline Configuration $1$
-		& $0.1$ & $0.1$ & $0$ & $1$ & $0.99$  & $150$ & $100$  \\ 
+		& $0.1$ & $0.1$ & $0$ & $1$ & $0.99$  & $150$ & $101$  \\ 
 		\hline
 	\end{tabular}
 }
@@ -249,7 +249,7 @@ An $\epsilon$ value equals to $0.1$ means that $90\%$ of selected actions depend
 
 A discount factor set to $0.99$ means the rewards will propagate as long as possible through time. \\
 
-Assuming that each epoch's action has an high cost, the number of epochs must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requirements, the number of episodes is set to $150$. Each episode is composed by $100$ epochs. The choice about those two parameters depends on results of specific tests conducted in order to understand correct values to employ. \\
+Assuming that each epoch's action has an high cost, the number of epochs must be as low as possible assuring, at the same time, a reasonable training space. In order to satisfy these requirements, the number of episodes is set to $150$. Each episode is composed by $101$ epochs. The choice about those two parameters depends on results of specific tests conducted in order to understand correct values to employ. \\
 
 Note that in addition to the $150$ training episodes there is also a greedy one. In this last episode the $\epsilon$ value and the \textit{learning rate} parameter are set to $0$. Instead, the number of epochs, the {\tt qInit} parameter and the discount factor are left unchanged.  \\
 
