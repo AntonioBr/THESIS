@@ -1,61 +1,61 @@
-\contentsline {chapter}{\numberline {1}Introduction}{5}
-\contentsline {chapter}{\numberline {2}Background}{7}
-\contentsline {section}{\numberline {2.1}Markov Decision Process}{7}
-\contentsline {subsection}{\numberline {2.1.1}Definition}{7}
-\contentsline {paragraph}{States}{8}
-\contentsline {paragraph}{Actions}{8}
-\contentsline {paragraph}{Time Steps}{8}
-\contentsline {paragraph}{Transition Probability}{8}
-\contentsline {paragraph}{Reward Function}{8}
-\contentsline {paragraph}{Policy}{9}
-\contentsline {paragraph}{Discount Factor}{11}
-\contentsline {subsection}{\numberline {2.1.2}Bellman Equation}{12}
-\contentsline {subsection}{\numberline {2.1.3}Value Iteration vs Policy Iteration}{13}
-\contentsline {section}{\numberline {2.2}Solving MDP}{15}
-\contentsline {subsection}{\numberline {2.2.1}Dynamic Programming}{15}
-\contentsline {subsection}{\numberline {2.2.2}Reinforcement Learning}{16}
-\contentsline {subsection}{\numberline {2.2.3}Monte Carlo Methods}{18}
-\contentsline {subsection}{\numberline {2.2.4}Temporal Difference Learning}{19}
-\contentsline {subsection}{\numberline {2.2.5}Sarsa Algorithm : On-policy TD Control}{21}
-\contentsline {subsection}{\numberline {2.2.6}Q-learning Algorithm : Off-policy TD Control}{22}
-\contentsline {subsection}{\numberline {2.2.7}SARSA($\lambda $) Algorithm}{23}
-\contentsline {chapter}{\numberline {3}Black-Box Optimization}{27}
-\contentsline {subsection}{\numberline {3.0.1}Gaussian Processes}{27}
-\contentsline {subsection}{\numberline {3.0.2}Bayesian Optimization}{28}
-\contentsline {subsection}{\numberline {3.0.3}An RL Approach To Black-Box Optimization}{30}
-\contentsline {subsection}{\numberline {3.0.4}BURLAP Java Library}{35}
-\contentsline {subsection}{\numberline {3.0.5}Humans in the Loop}{37}
-\contentsline {chapter}{\numberline {4}Experimental Setting}{41}
-\contentsline {section}{\numberline {4.1}Benchmark}{41}
-\contentsline {subsection}{\numberline {4.1.1}Test Functions}{41}
-\contentsline {subparagraph}{Himmelblau' s Function}{42}
-\contentsline {subparagraph}{Sphere Function}{43}
-\contentsline {subparagraph}{Beale Function}{45}
-\contentsline {subparagraph}{Styblinski-Tang Revised Function}{46}
-\contentsline {subsection}{\numberline {4.1.2}Basic SARSA($\lambda $) Algorithm' s Configuration}{49}
-\contentsline {section}{\numberline {4.2}Experiment on Humans}{50}
-\contentsline {chapter}{\numberline {5}Results}{53}
-\contentsline {section}{\numberline {5.1}Basic SARSA($\lambda $) Algorithm's Performances}{54}
-\contentsline {subsection}{\numberline {5.1.1}Himmelblau' s Function}{54}
-\contentsline {subsection}{\numberline {5.1.2}Sphere Function}{57}
-\contentsline {subsection}{\numberline {5.1.3}Beale Function}{60}
-\contentsline {subsection}{\numberline {5.1.4}Styblinski-Tang' s Revised Function}{63}
-\contentsline {section}{\numberline {5.2}"Experienced" SARSA($\lambda $) Algorithm}{65}
-\contentsline {section}{\numberline {5.3}Humans' Optimization Strategies}{68}
-\contentsline {subsection}{\numberline {5.3.1}Himmelblau Function}{70}
-\contentsline {subsection}{\numberline {5.3.2}Sphere Function}{70}
-\contentsline {subsection}{\numberline {5.3.3}Beale Function}{70}
-\contentsline {subsection}{\numberline {5.3.4}Styblinski Revised Function}{71}
-\contentsline {section}{\numberline {5.4}RL Agent's policy vs Humans' Strategies}{71}
-\contentsline {chapter}{\numberline {6}Conclusions}{73}
-\contentsline {chapter}{\numberline {7}Appendix A}{75}
-\contentsline {paragraph}{First Step}{75}
-\contentsline {paragraph}{Second Step}{76}
-\contentsline {paragraph}{Third Step}{77}
-\contentsline {paragraph}{Fourth Step}{77}
-\contentsline {paragraph}{Fifth Step}{77}
-\contentsline {paragraph}{Sixth Step}{78}
-\contentsline {paragraph}{Seventh Step}{78}
-\contentsline {paragraph}{Eighth Step}{78}
-\contentsline {paragraph}{Ninth Step}{79}
-\contentsline {paragraph}{Tenth Step}{79}
+\contentsline {chapter}{\numberline {1}Introduction}{7}
+\contentsline {chapter}{\numberline {2}Background}{9}
+\contentsline {section}{\numberline {2.1}Markov Decision Process}{9}
+\contentsline {subsection}{\numberline {2.1.1}Definition}{9}
+\contentsline {paragraph}{States}{10}
+\contentsline {paragraph}{Actions}{10}
+\contentsline {paragraph}{Time Steps}{10}
+\contentsline {paragraph}{Transition Probability}{10}
+\contentsline {paragraph}{Reward Function}{10}
+\contentsline {paragraph}{Policy}{11}
+\contentsline {paragraph}{Discount Factor}{13}
+\contentsline {subsection}{\numberline {2.1.2}Bellman Equation}{14}
+\contentsline {subsection}{\numberline {2.1.3}Value Iteration vs Policy Iteration}{15}
+\contentsline {section}{\numberline {2.2}Solving MDP}{17}
+\contentsline {subsection}{\numberline {2.2.1}Dynamic Programming}{17}
+\contentsline {subsection}{\numberline {2.2.2}Reinforcement Learning}{18}
+\contentsline {subsection}{\numberline {2.2.3}Monte Carlo Methods}{20}
+\contentsline {subsection}{\numberline {2.2.4}Temporal Difference Learning}{21}
+\contentsline {subsection}{\numberline {2.2.5}Sarsa Algorithm : On-policy TD Control}{23}
+\contentsline {subsection}{\numberline {2.2.6}Q-learning Algorithm : Off-policy TD Control}{24}
+\contentsline {subsection}{\numberline {2.2.7}SARSA($\lambda $) Algorithm}{25}
+\contentsline {chapter}{\numberline {3}Black-Box Optimization}{29}
+\contentsline {subsection}{\numberline {3.0.1}Gaussian Processes}{29}
+\contentsline {subsection}{\numberline {3.0.2}Bayesian Optimization}{30}
+\contentsline {subsection}{\numberline {3.0.3}An RL Approach To Black-Box Optimization}{32}
+\contentsline {subsection}{\numberline {3.0.4}BURLAP Java Library}{37}
+\contentsline {subsection}{\numberline {3.0.5}Humans in the Loop}{39}
+\contentsline {chapter}{\numberline {4}Experimental Setting}{43}
+\contentsline {section}{\numberline {4.1}Benchmark}{43}
+\contentsline {subsection}{\numberline {4.1.1}Test Functions}{43}
+\contentsline {subparagraph}{Himmelblau' s Function}{44}
+\contentsline {subparagraph}{Sphere Function}{45}
+\contentsline {subparagraph}{Beale Function}{47}
+\contentsline {subparagraph}{Styblinski-Tang Revised Function}{48}
+\contentsline {subsection}{\numberline {4.1.2}Basic SARSA($\lambda $) Algorithm' s Configuration}{51}
+\contentsline {section}{\numberline {4.2}Experiment on Humans}{52}
+\contentsline {chapter}{\numberline {5}Results}{55}
+\contentsline {section}{\numberline {5.1}Basic SARSA($\lambda $) Algorithm's Performances}{56}
+\contentsline {subsection}{\numberline {5.1.1}Himmelblau' s Function}{56}
+\contentsline {subsection}{\numberline {5.1.2}Sphere Function}{59}
+\contentsline {subsection}{\numberline {5.1.3}Beale Function}{62}
+\contentsline {subsection}{\numberline {5.1.4}Styblinski-Tang' s Revised Function}{65}
+\contentsline {section}{\numberline {5.2}"Experienced" SARSA($\lambda $) Algorithm}{67}
+\contentsline {section}{\numberline {5.3}Humans' Optimization Strategies}{70}
+\contentsline {subsection}{\numberline {5.3.1}Himmelblau Function}{72}
+\contentsline {subsection}{\numberline {5.3.2}Sphere Function}{72}
+\contentsline {subsection}{\numberline {5.3.3}Beale Function}{72}
+\contentsline {subsection}{\numberline {5.3.4}Styblinski Revised Function}{73}
+\contentsline {section}{\numberline {5.4}RL Agent's policy vs Humans' Strategies}{73}
+\contentsline {chapter}{\numberline {6}Conclusions}{75}
+\contentsline {chapter}{\numberline {7}Appendix A}{77}
+\contentsline {paragraph}{First Step}{77}
+\contentsline {paragraph}{Second Step}{78}
+\contentsline {paragraph}{Third Step}{79}
+\contentsline {paragraph}{Fourth Step}{79}
+\contentsline {paragraph}{Fifth Step}{79}
+\contentsline {paragraph}{Sixth Step}{80}
+\contentsline {paragraph}{Seventh Step}{80}
+\contentsline {paragraph}{Eighth Step}{80}
+\contentsline {paragraph}{Ninth Step}{81}
+\contentsline {paragraph}{Tenth Step}{81}
