@@ -4,7 +4,7 @@
 
 Markov Decision Processes (MDPs) are a classical formalization of sequential decision making under uncertainty, where actions influence not just immediate responses, but also subsequent situations. Hence an MDP can be described as a controlled \textit{Markov chain}\footnote{A sequence of random variables $X_0, X_1, . . . $ with values in a countable set $S$ is a \textit{Markov chain} if at any time $n$, the future states (or values) $X\textsubscript{n+1}, X\textsubscript{n+2}, . . .$ depend on the history $X_0, . . . , X_n$ only through the present state $X_n$ \cite{konstantopoulos2009markov}.}, where the control is given at each step by the chosen action. In this chapter the structure of an MDP and many techniques to solve its, are presented.
 
-\subsection{Definition} Markov decision processes are defined as controlled stochastic processes satisfying the \textit{Markov property}\footnote{A stochastic process has the \textit{Markov property} if the probabilistic behaviour of the chain in the future depends only on its present value and discards its past behaviour.} and assigning reward values to state transitions~\cite{Put94}.  Formally, they are described by the $5$-tuple ($S$, $A$, $T$, $p()$, $R()$) where:
+\subsection{Definition} Markov Decision Processes are defined as controlled stochastic processes satisfying the \textit{Markov property}\footnote{A stochastic process has the \textit{Markov property} if the probabilistic behaviour of the chain in the future depends only on its present value and discards its past behaviour.} and assigning reward values to state transitions~\cite{Put94}.  Formally, they are described by the $5$-tuple ($S$, $A$, $T$, $p()$, $R()$) where:
 
 \begin{itemize}
 	\item $S$ is the state space in which the process’ evolution takes place;
@@ -26,7 +26,7 @@ Markov Decision Processes (MDPs) are a classical formalization of sequential dec
 	\forall h_t, a_t, s\textsubscript{t+1} \quad P(s\textsubscript{t+1} | h_t, a_t) = P(s\textsubscript{t+1} | s_t, a_t) = p(s\textsubscript{t+1} | s_t, a_t)
 \end{equation}
 
-\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system, i.e. the MDP, should be controlled~\cite{wiering2012reinforcement}. It is critical that the reward set up truly indicate the goal that has to be accomplished. If the achievement of sub-goals is rewarded, then the agent might find a way to achieve them without achieving the real, final goal. Reward signal is the way of communicating the agent \textit{what} goal to achieve, not \textit{how} the goal has to be achieved~\cite{SuttonBarto}.
+\paragraph{Reward Function} The reward function specifies rewards for being in a state, or doing some action in a state. The state reward function is defined as $R : S \rightarrow \mathbb{R}$, and it specifies the reward obtained in states. The reward function is an important part of the MDP that specifies implicitly the \textit{goal} of learning. Thus, the reward function is used to give direction in which way the system should be controlled~\cite{wiering2012reinforcement}. It is critical that the reward set up truly indicate the goal that has to be accomplished. If the achievement of sub-goals is rewarded, then the agent might find a way to achieve them without achieving the real, final goal. Reward signal is the way of communicating the agent \textit{what} goal to achieve, not \textit{how} the goal has to be achieved~\cite{SuttonBarto}.
 
 \begin{figure}[h!]
 	\centering
@@ -75,16 +75,13 @@ As shown in figure \ref{fig:Policy_application_schema} each time an agent perfor
  
 As previously said, the final goal of an optimal policy is to gather the greatest reward possible. In MDPs, there are several ways of taking into account the future in the current behaviour but there are basically three models of optimality which are sufficient to cover most of the approaches in the literature :
 
-\begin{figure}[h!]
-\begin{equation*}
-E[\sum_{t = 0}^h r_t]
-\qquad
-E[\sum_{t = 0}^\infty \gamma^t r_t]
-\qquad
-\lim\limits_{h \rightarrow \infty} E[\dfrac{1}{h} \sum_{t = 0}^h r_t]
-\end{equation*}
-\caption{Optimality : \textbf{a)} finite horizon, \textbf{b)} discounted, infinite horizon, \textbf{c)} average reward}
-\end{figure}
+\begin{itemize}
+ \item $ \displaystyle E[\sum_{t = 0}^h r_t] \rightarrow$ finite horizon.
+ \item $ \displaystyle
+ 	E[\sum_{t = 0}^\infty \gamma^t r_t] \rightarrow$ discounted, infinite horizon.
+ \item $ \displaystyle
+ 	\lim\limits_{h \rightarrow \infty} E[\dfrac{1}{h} \sum_{t = 0}^h r_t] \rightarrow$ average reward.
+\end{itemize}
 
 Note that $E[\cdot]$ denotes the expectation operator.
 
@@ -327,7 +324,7 @@ measures the error between the current estimation $V(s_t)$ and the corrected est
 
 Like Monte Carlo methods, TD ones perform estimation of action-value functions based on the experience of the agent and can do it without a model of the underlying MDP; however, they combine this estimation using local estimation propagation mechanisms coming from dynamic programming, resulting in their incremental properties. Thus TD methods, which are at the heart of most reinforcement learning algorithms, are characterized by this combination of estimation methods with local updates incremental properties~\cite{Sigaud:2010:MDP:1841781}.
 
-\subsection{Sarsa Algorithm : On-policy TD Control} Knowing the exact value of all states is not always enough to determine how to proceed. If the agent does not know which action results in reaching any particular state, i.e. if the agent does not have a model of the transition function, knowing $V$ does not help it determine its policy.  To solve this problem, Watkins ~\cite{watkins1992q} introduced the action-value function $Q$, whose knowledge is similar to the knowledge of $V$ when $p$ is known. The action-value function of a fixed policy $\pi$ whose value function is $V^\pi$ is :
+\subsection{SARSA Algorithm : On-policy TD Control} Knowing the exact value of all states is not always enough to determine how to proceed. If the agent does not know which action results in reaching any particular state, i.e. if the agent does not have a model of the transition function, knowing $V$ does not help it determine its policy.  To solve this problem, Watkins ~\cite{watkins1992q} introduced the action-value function $Q$, whose knowledge is similar to the knowledge of $V$ when $p$ is known. The action-value function of a fixed policy $\pi$ whose value function is $V^\pi$ is :
 
 \begin{equation}
 	\forall s \in S, a \in A, \quad Q^\pi (s,a) = R(s, a) + \gamma \sum_{s'} p(s' \ s, a) V^\pi (s').

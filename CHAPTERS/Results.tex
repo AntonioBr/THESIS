@@ -19,7 +19,7 @@ Three different plots for three different metrics are employed. The first one me
 
 with $n \ge 0$. \\
 	
-Note that this performance metric is evaluated on the true function values but this information is not available for the optimization methods.} between point $(x_i, y_i)$ at epoch $e_i$, $\forall i \in n$ where $n$ is the number of epochs of greedy episode, and point $(x^*, y^*)$ which is the maximum. The second metric measures the \textit{proximity in percentage} \footnote{The \textit{proximity in percentage} between the current value function and the optimal one is computed as follow:
+Note that this performance metric is evaluated on the true function values but this information is not available for the optimization methods.} between point $(x_i, y_i)$ at epoch $e_i$, $\forall i \in n$ where $n$ is the number of epochs of greedy episode, and point $(x^*, y^*)$ which is the maximum. The second metric measures the \textit{function proximity in percentage} \footnote{The \textit{proximity in percentage} between the current value function and the optimal one is computed as follow:
 
 \begin{equation}
 Proximity\_in\_ percentage = \frac{currentValueFunction \times 100}{optimalValueFunction}
@@ -93,7 +93,7 @@ Slower convergence of linear declinations compared to parametric ones depends on
 \caption{Euclidean Metric's Performances}
 \end{table}
 
-Plot (b) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Percentage of Value Function' s Proximity metric}.
+Plot (b) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Function Proximity in Percentage} metric.
 
 All declinations, except for the {\tt linear, random} one, start with an high level of value function's proximity to the maximum. It depends on the function's shape. 
 
@@ -123,7 +123,7 @@ Finally, the {\tt parametric, random} declination, as the corresponding linear d
 	\end{tabular}
 }
 \label{HimmelblauTabProximity}
-\caption{Value Function' s Proximity.} 
+\caption{Function Proximity in Percentage.} 
 \end{table}
 
 Plot (c) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt linear, random} one. Looking at table $5.9$ it is possible to note that {\tt linear, random} declination achieves point $(3.67, -1.57)$ with a value function of $2498.457$ out of $2500.0$.
@@ -182,7 +182,7 @@ The {\tt parametric, random} declination of {\tt SARSA($\lambda$)} algorithm has
 \caption{Euclidean Metric's Performances}
 \end{table}
 
-Plot (b) of figure ~\ref{fig:ParabolicResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Percentage of Value Function' s Proximity metric}. 
+Plot (b) of figure ~\ref{fig:ParabolicResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained considering the \textit{Function Proximity in Percentage} metric. 
 
 The {\tt linear, not random} declination starts from a value function's proximity of about $97.5\%$ from the maximum. It is completely unable to improve this percentage. Already starting from the first epochs it develops a recurrent pattern. This behaviour allows its to have the lowest standard deviation of the declinations' set (table $5.4$). Unfortunately the value function's proximity mean is the second lowest one. 
  
@@ -212,7 +212,7 @@ In this case it is possible to underline that parametric declinations do better 
 	\end{tabular} 
 }
 \label{ParabolicTabProximity}
-\caption{Value Function' s Proximity.} 
+\caption{Function Proximity in Percentage.} 
 \end{table}
 
 Plot (c) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained using the \textit{Gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt parametric, not random} one. Looking at table $5.9$ it is possible to note that {\tt parametric, not random} declination achieves point $(-1.033, -1.099)$ with a value function of $3557.722$ out of $3560.0$.
@@ -291,11 +291,11 @@ Looking at plot (b) of figure \ref{fig:BealeResults} it is possible to note an i
 			\hline 
 		\end{tabular} 
 }
+	\caption{Function Proximity in Percentage.} 
 	\label{BealeTabProximity}
-	\caption{Value Function' s Proximity.} 
 \end{table}
 
-Deception can also be revealed by observing plot (c) of figure \ref{fig:BealeTabProximity}. The relatively best performing declination is the {\tt parametric, not random} one which achieves an effectiveness in finding the maximum of about $0.8$ out of $1.0$. It is also proved by table $5.9$. {\tt Parametric, not random} declination achieves point $(-0.77, 1.5599)$ with a value function of $1997.392$ out of $2000$. The worst performing one is the {\tt linear, not random} declination with a constant \textit{Gap value} equals to $0$.
+Deception can also be revealed by observing plot (c) of figure \ref{fig:BealeResults}. The relatively best performing declination is the {\tt parametric, not random} one which achieves an effectiveness in finding the maximum of about $0.8$ out of $1.0$. It is also proved by table $5.9$. {\tt Parametric, not random} declination achieves point $(-0.77, 1.5599)$ with a value function of $1997.392$ out of $2000$. The worst performing one is the {\tt linear, not random} declination with a constant \textit{Gap value} equals to $0$.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -368,7 +368,7 @@ The performance just described is also proved by the percentage of value functio
 		\end{tabular} 
 	}
 	\label{StyblinskiTabProximity}
-	\caption{Value Function' s Proximity.} 
+	\caption{Function Proximity in Percentage.} 
 \end{table}
 
 Looking at the third plot it is possible to note that the best performance is the one of the {\tt parametric, not random} declination. This result obviously depends on the fact that around the thirty-ninth epoch it reaches the maximum for then decisively distance itself from it. This behaviour is again due to the absence of an adequate training space. This lack prevents the agent from developing an optimal policy.
@@ -387,7 +387,7 @@ Looking at the third plot it is possible to note that the best performance is th
 	\end{tabular}
 \end{sidewaystable}
 
-\section{"Experienced" SARSA($\lambda$) Algorithm}
+\section{ \enquote{Experienced} SARSA($\lambda$) Algorithm}
 
 In the previous section, performances of SARSA($\lambda$) algorithm on single test functions have been analysed. In this section a different experiment on SARSA($\lambda$) algorithm is described. For each declination, the algorithm has been trained according to the unique, previously described configuration on Himmelblau's Function, Sphere Function, Beale Function. At the beginning of each training, except for the Himmelblau's Function's one, for each different declination, the {\tt qTable} obtained from previous trainings on previous functions, has been loaded and updated. The agent was finally executed on Styblinski-Tang' s Revised Function, only using the greedy configuration. It is possible to resume what just said as shown in algorithm \ref{ExpertAlgo}.
 
@@ -410,6 +410,13 @@ In the previous section, performances of SARSA($\lambda$) algorithm on single te
 	\caption{"Expert" Sarsa($\lambda$) Algorithm} 
 	\label{ExpertAlgo}
 \end{algorithm}
+
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width=\linewidth]{IMAGES/ExpertReasumingTable}
+	\caption{Expert Sarsa($\lambda$)'s Performances Table}
+	\label{fig:expertreasumingtable}
+\end{figure}
  
 The goal of this experiment is to measure how much the \textit{previously acquired experience} from training on different functions, is useful in maximizing a new, never tested before black-box function.
 
@@ -441,13 +448,6 @@ The less reach previously acquired experience is guaranteed by the {\tt parametr
 
 In general, it is possible to say that the two declinations able to guarantee an adequate previously acquired experience useful to maximize black-box, never tested before functions, only running the greedy episode, are the {\tt parametric, not random} declination and the {\tt linear, not random} declination. It is interesting to note that they are both {\tt non random} declinations. It clearly depends on the location of the random starting points during the training phase. Changing the selected seed, those declinations could give better performances.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{IMAGES/ExpertReasumingTable}
-	\caption{Expert Sarsa($\lambda$)'s Performances Table}
-	\label{fig:expertreasumingtable}
-\end{figure}
-
 \section{Humans' Optimization Strategies}
 
 In order to study humans' strategies in the optimization of black-box functions, three acquisition functions are considered :
@@ -463,33 +463,33 @@ In addition to acquisition functions, also the GP is represented. \\
 \begin{figure} [h!]
 	\centering
 	\includegraphics[width=\linewidth]{IMAGES/Surrogate}
-	\caption{Visualization of the surrogate regression model and various acquisition functions\cite{DBLP:journals/pieee/ShahriariSWAF16}.}
+	\caption{An example of a GP and associated acquisition functions.}
 	\label{fig:surrogate}
 \end{figure}
 
 Only the best player's first performance for each function is considered. This means that even if each player has had three possibilities, each one composed of fifteen attempts, for each function (except for the Styblinski-Tang Revised function), only the first one of the three rounds made by the best player for the function itself is here considered. This choice is made in order to study humans' behaviour in the case of no previously experience of the specific function to optimize. The best player is selected according to the highest score reached for each function. In the case there were two best players, the first one's performance is considered.  \\
 
-Results obtained for each function can be found at \url{https://github.com/AntonioBr/IMAGES/tree/master/HUMANS} . For each function,  for all the fifteen attempts considered, the first three attempts are employed in order to create the original GP. Starting from the fourth attempt, the white star is employed in order to underline the new attempt chosen by the human compared to the "best" one proposed by the various acquisition functions. Other black points represent previously made attempts. Comparing choices made by human and acquisition functions, it will be clear which one of considered acquisition functions, has led the human in his/her choices.
+Results obtained for each function can be found at this link \footnote{\url{https://github.com/AntonioBr/IMAGES/tree/master/HUMANS}} . For each function,  for all the fifteen attempts considered, the first three attempts are employed in order to create the original GP. Starting from the fourth attempt, the white star is employed in order to underline the new attempt chosen by the human compared to the "best" one proposed by the various acquisition functions. Other black points represent previously made attempts. Comparing choices made by human and acquisition functions, it will be clear which one of considered acquisition functions, has led the human in his/her choices.
 
 \subsection{Himmelblau Function}
-In the case of the Himmelblau's Function the player maximizes according to no one on the considered acquisition functions. Looking at the sequence of attempts, the player seems to choose a radically, exploratory approach. All acquisition functions, instead, present an exploitative approach based on observed data. Looking at the GP obtained at the fifteen attempt, it is possible to note that the original, hidden function is well approximated.
+In the case of the Himmelblau's Function the best player maximizes according to no one on the considered acquisition functions. Looking at the sequence of attempts, the player seems to choose a radically, exploratory approach. All acquisition functions, instead, present a balanced explorative-exploitative approach based on observed data. Looking at the GP obtained at the fifteen attempt, it is possible to note that the original, black-box function is well approximated.
 
 \subsection{Sphere Function}
-In the case of the Sphere Function the player maximizes according to {\tt PoI} acquisition function. The process to achieve the maximum is linear and the player never try a radical different exploratory attempt. The GP well approximates the real, hidden function still starting from the sixtieth attempt.
+In the case of the Sphere Function the best player maximizes according to {\tt PoI} acquisition function. The process to achieve the maximum is linear and the player never try a radical different exploratory attempt. The GP well approximates the real, black-box function still starting from the sixtieth attempt.
 
 \subsection{Beale Function}
-In the case of the Beale Function the player maximizes according to {\tt PoI} acquisition function until the sixtieth attempt. Starting from the seventh attempt it maximizes according to {\tt UCB} acquisition function till the fifteenth attempt. After fifteen attempts, the GP does not well approximate the real, hidden function, but isolates the region of the maximum.
+In the case of the Beale Function the best player maximizes according to {\tt PoI} acquisition function until the sixtieth attempt. Starting from the seventh attempt it maximizes according to {\tt UCB} acquisition function till the fifteenth attempt. After fifteen attempts, the GP does not well approximate the real, hidden function, but isolates the region of the maximum.
 
 \subsection{Styblinski Revised Function}
-The case of the Styblinski revised function is surely the most interesting one. By default, the player can make only one round composed by fifteen attempts. The best player is here defined just according to its only, experience-free set of attempts. In this case the player maximizes according to the {\tt UCB} acquisition function. Also in this case, after fifteen attempts the GP does not well approximate the real, hidden function, but isolates the region of the maximum. This means that the player did not make enough exploration. It is interesting to note how it is possible to identify an acquisition function corresponding to the human reasoning process, considering that it was not possible in the case of the Himmelblau's Function. It is also interesting to note how the best player in this case is different from the one of the Himmelblau Function. The two functions were selected because of their shapes' similarity. Results obtained are different for the two similar functions. \\
+The case of the Styblinski revised function is surely the most interesting one. By default, the best player can make only one round composed by fifteen attempts. The best player is here defined just according to its only, experience-free set of attempts. In this case the best player maximizes according to the {\tt UCB} acquisition function. Also in this case, after fifteen attempts the GP does not well approximate the real, black-box function, but isolates the region of the maximum. This means that the player did not make enough exploration. It is interesting to note how it is possible to identify an acquisition function corresponding to the human reasoning process, considering that it was not possible in the case of the Himmelblau's Function. It is also interesting to note how the best player in this case is different from the one of the Himmelblau Function. The two functions were selected because of their shapes' similarity. Results obtained are different for the two similar functions. \\
 
 In the $100\%$ of cases, best players are male. Their mathematical knowledge level is in the $100\%$ of cases the highest possible. They are all test subjects with an age between $19$ and $22$.
 
 \section{RL Agent's  policy vs Humans' Strategies}
-All experiments described in the previous sections are useful to better understand the one described in the current section. As previously said, one of the main goals of this thesis is comparing humans' strategies with the policy adopted by a RL agent in the optimization of black-box $3d$-functions. In order to do this, it has been considered the case of maximization of Styblinski-Tang' s Revised Function. In the previous section, humans' strategy with no previously acquired knowledge about a specific function, has been studied. Making the same study on performances of a RL agent could be not very fruitful because of the great amount of training required by the algorithm in order to obtain acceptable results. Despite of this, a good choice is to compare humans' performances and RL agent's ones in the case of maximization of black-box $3d$-functions with \textit{previously acquired experience}. To be more specific, when one of the human test subjects, maximizes the Styblinski-Tang's Revised Function, he/she has already had experience with optimization of Himmelblau's Function, Sphere Function, Beale Function. The same is for the RL agent in the case of the "Experienced" SARSA($\lambda$) algorithm.
+All experiments described in the previous sections are useful to better understand the one described in the current section. As previously said, one of the main goals of this thesis is comparing humans' strategies with the policy adopted by a RL agent in the optimization of black-box $2d$-functions. In order to do this, it has been considered the case of maximization of Styblinski-Tang' s Revised Function. In the previous section, humans' strategy with no previously acquired knowledge about a specific function, has been studied. Making the same study on performances of a RL agent could be not very fruitful because of the great amount of training required by the algorithm in order to obtain acceptable results. Despite of this, a good choice is to compare humans' performances and RL agent's ones in the case of maximization of black-box $2d$-functions with \textit{previously acquired experience}. To be more specific, when one of the human test subjects, maximizes the Styblinski-Tang's Revised Function, he/she has already had experience with optimization of Himmelblau's Function, Sphere Function, Beale Function. The same is for the RL agent in the case of the \enquote{Experienced} SARSA($\lambda$) algorithm.
 
-In the human case, the best player optimizes according to the {\tt UCB} acquisition function. After fifteen attempts the GP does not well approximate the real, hidden function, but isolates the region of the maximum. The case of RL agent is more complex. As seen in the plots of figure \ref{fig:ExpertResults}, the {\tt parametric, not random} declination is the one with the best performances. The RL agent which operates according to this declination, doesn't optimize according to a specific acquisition function until epoch $60$ (figures can be found at \url{https://github.com/AntonioBr/IMAGES/tree/master/EXPERIENCED SARSA LAMBDA}). Starting from the sixtieth epoch, it optimizes according both to the {\tt UCB} acquisition function, and, more rarely, according to the {\tt PoI} acquisition functions. At the end of the $101$ epochs of the unique episode run on the Styblinski-Tang's Revised Function, the GP developed starting from performances obtained by the RL agent, better approximates the real, hidden function if compared with the case of the GP developed starting from the human performances. \\
+In the human case, the best player optimizes according to the {\tt UCB} acquisition function. After fifteen attempts the GP does not well approximate the real, black-box function, but isolates the region of the maximum. The case of RL agent is more complex. As seen in the plots of figure \ref{fig:ExpertResults}, the {\tt parametric, not random} declination is the one with the best performances. The RL agent which operates according to this declination, doesn't optimize according to a specific acquisition function until epoch $60$ (figures can be found at this link \footnote{\url{https://github.com/AntonioBr/IMAGES/tree/master/EXPERIENCED SARSA LAMBDA}}). Starting from the sixtieth epoch, it optimizes according both to the {\tt UCB} acquisition function, and, more rarely, according to the {\tt PoI} acquisition functions. At the end of the $101$ epochs of the unique episode run on the Styblinski-Tang's Revised Function, the GP developed starting from performances obtained by the RL agent, better approximates the real, hidden function if compared with the case of the GP developed starting from the human performances. \\
 
-Those results can be explained as follow. The RL based, optimization process is slower (and apparently less accurate) than humans' one because of limits imposed by the definition of the agent, e.g. the limited amount of movement for each epoch and the movement schema, and because of the absence of \textit{intuition}. Despite of this RL based optimization approach' s deficit, it is very interesting to note how the subtended acquisition function could sometimes be the same for the RL agent and humans in the optimization of the same black-box $3d$-function. 
+Those results can be explained as follow. The RL based, optimization process is slower (and apparently less accurate) than humans' one because of limits imposed by the definition of the agent, e.g. the limited amount of movement for each epoch and the movement schema, and because of the absence of \textit{intuition}. Despite of this RL based optimization approach' s deficit, it is very interesting to note how the subtended acquisition function could sometimes be the same for the RL agent and humans in the optimization of the same black-box $2d$-function. 
 
 
