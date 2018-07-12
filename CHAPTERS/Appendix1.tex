@@ -68,7 +68,7 @@ but the agent could select to move itself in one direction of :
 	\item \textit{movement amount} $\times 3$.
 \end{itemize}
 
-The unit of measurement of \textit{movement amount} was the \textit{pixel}. The basic amount of movement was $40$ pixels. The real movement amount over function was computed through algorithm \ref{algoPixel}, described in Chapter $3$. It was proved that using this set of \textit{action movements} the algorithm converged more quickly to the maximum of the function but the precision was lower. 
+The unit of measurement of \textit{movement amount} was the \textit{pixel}. The basic amount of movement was $40$ pixels. The real movement amount over function was computed through algorithm \ref{algoPixel}, described in \textbf{Chapter $3$}. It was proved that using this set of \textit{action movements} the algorithm converged more quickly to the maximum of the function but the precision was lower. 
 
 In addition to this, the possibility for the agent to distinguish between \textit{move action} and \textit{dig action} was removed. Each time the agent made a movement it also sounded the function obtaining a reward. The reward was positive if its proximity to the global maximum was in percentage $\ge 75\%$, negative in other cases. As already explained, the disadvantage of the last choice is that in the context described in this thesis the objective function is unknown so it is not possible to compute the percentage of proximity to the maximum.
 
@@ -83,11 +83,11 @@ In this step the reward was still based on the concept of percentage with an eng
 \paragraph{Eighth Step} This step can be defined as an experimental step. Here the agent was made able to explore more. In order to do this the possibility to start each episode from a random point was introduced. Through this experiment it was proved that more exploration gave the possibility to prevent many limit cases but it did not always entail an improvement in algorithm performances in terms of time and precision.
 
 \paragraph{Ninth Step} The current one is the second revolutionary step. It introduces two innovative elements: the \textit{parametric movement} and the \textit{stop action}.
-As explained in chapter $3$, the parametric movement allows to compute the \textit{real agent's movement amount} keeping in consideration an approximation of function' s shape.
+As explained in \textbf{Chapter $3$}, the parametric movement allows to compute the \textit{real agent's movement amount} keeping in consideration an approximation of function' s shape.
 
 Speaking about the second innovation introduced,  it is important to say that when \textit{stop action} was selected, the simulation of the current episode was interrupted. Consequences from introduction of this new action were very interesting. Given a inadequate training space, the \textit{stop action} led to an immediate stop. This depended on the fact that rather than receiving more negative rewards before reaching a maximum better than the current one (i.e. the starting point itself), it computed that the optimal policy consisted in staying around the starting point itself, still moving according to a recurring pattern that minimizes the negative rewards.
 
-\paragraph{Tenth Step} This represents the last step before the final version of the project. In this version the state was revolutionised. It was now composed of the last two angles of improvements computed as described in chapter $3$. Angles varied between $- \pi$ and $+ \pi$ because also a worsening is here considered. Angles were rounded to the nearest multiple of two. The choices introduced in this step were unexpectedly not fruitful. The failure depended on two factors. Last two angles as the unique component of the state were not enough and the rounding cannot be chosen a priori. The correct choice of rounding should depend on the \textit{Lipschitz Constant}. 
+\paragraph{Tenth Step} This represents the last step before the final version of the project. In this version the state was revolutionised. It was now composed of the last two angles of improvements computed as described in \textbf{Chapter $3$}. Angles varied between $- \pi$ and $+ \pi$ because also a worsening is here considered. Angles were rounded to the nearest multiple of two. The choices introduced in this step were unexpectedly not fruitful. The failure depended on two factors. Last two angles as the unique component of the state were not enough and the rounding cannot be chosen a priori. The correct choice of rounding should depend on the shape of the function. If the function is flat the rounding should be fine-grained, otherwise it could be less fine. In order to make this choice, the \textit{Lipschitz Constant} could be employed. 
 
 Let's consider a single-variable function $f(x)$ for $x$ inside a domain $D$. The magnitude of the slope of $f(x)$ for two points $(x_1, f(x_1))$ and $(x_2, f(x_2))$ is thus 
 
@@ -112,7 +112,7 @@ L\textsubscript{x\textsubscript{n}} = sup|\dfrac{\partial f}{\partial x_n}|.
 \begin{figure} [h!]
 	\centering
 	\includegraphics[width= 10cm, height = 10cm]{Lipschitz.png}
-	\caption{Let's consider a $2d$-function $f(x) = x^2$ defined in the domain $x \in [0, 2]$. If $|\frac{df}{dx} f(x) | = 2x$, then $L = \sup |\frac{df}{dx}| = 2 \times 2 = 4$.}
+	\caption{Let's consider a $1d$-function $f(x) = x^2$ defined in the domain $x \in [0, 2]$. If $|\frac{df}{dx} f(x) | = 2x$, then $L = \sup |\frac{df}{dx}| = 2 \times 2 = 4$.}
 	\label{fig:Lipschitz}
 \end{figure}
 

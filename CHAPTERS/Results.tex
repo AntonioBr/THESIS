@@ -70,7 +70,7 @@ The {\tt parametric, not random} declination has worst performances of the decli
 
 Finally, the {\tt parametric, random} declination selects a starting point near to the global maximum but it is unable to maintain a low Euclidean distance from it until epoch seventy. Starting from this epoch it develops a recurrent pattern similar to one previously described. Despite of this it is possible to say that its performances are worse compared to the first two ones.
 
-Slower convergence of linear declinations compared to parametric ones depends on the fact that in the first case, as already explained in chapter $3$, greater movements are done at each epoch and a lower training time is required to achieve the maximum. The amount of parametric movements are strictly conditioned by the function's shape. If this represents an obstacle to a fast convergence, however it is an incentive to an higher precision. \\
+Slower convergence of linear declinations compared to parametric ones depends on the fact that in the first case, as already explained in \textbf{Chapter $3$}, greater movements are done at each epoch and a lower training time is required to achieve the maximum. The amount of parametric movements are strictly conditioned by the function's shape. If this represents an obstacle to a fast convergence, however it is an incentive to an higher precision. \\
 
 \begin{table} [h!]
 	\centering
@@ -215,7 +215,7 @@ In this case it is possible to underline that parametric declinations do better 
 \caption{Function Proximity in Percentage.} 
 \end{table}
 
-Plot (c) of figure ~\ref{fig:HimmelblauResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained using the \textit{Gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt parametric, not random} one. Looking at table $5.9$ it is possible to note that {\tt parametric, not random} declination achieves point $(-1.033, -1.099)$ with a value function of $3557.722$ out of $3560.0$.
+Plot (c) of figure ~\ref{fig:ParabolicResults} graphically represents performances of the four possible declinations of {\tt SARSA($\lambda$)} algorithm obtained using the \textit{Gap metric}. According to this plot the most effective declination of {\tt SARSA($\lambda$)} algorithm in finding the maximum is the {\tt parametric, not random} one. Looking at table $5.9$ it is possible to note that {\tt parametric, not random} declination achieves point $(-1.033, -1.099)$ with a value function of $3557.722$ out of $3560.0$.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -371,7 +371,7 @@ The performance just described is also proved by the percentage of value functio
 	\caption{Function Proximity in Percentage.} 
 \end{table}
 
-Looking at the third plot it is possible to note that the best performance is the one of the {\tt parametric, not random} declination. This result obviously depends on the fact that around the thirty-ninth epoch it reaches the maximum for then decisively distance itself from it. This behaviour is again due to the absence of an adequate training space. This lack prevents the agent from developing an optimal policy.
+Looking at the third plot of figure \ref{fig:StyblinskiResults}, it is possible to note that the best performance is the one of the {\tt parametric, not random} declination. This result obviously depends on the fact that around the thirty-ninth epoch it reaches the maximum for then decisively distance itself from it. This behaviour is again due to the absence of an adequate training space. This lack prevents the agent from developing an optimal policy.
 
 \begin{sidewaystable} 
 	\centering
@@ -442,7 +442,7 @@ The goal of this experiment is to measure how much the \textit{previously acquir
 	\label{fig:ExpertResults}
 \end{figure}
 
-Looking at plot (a) of figure $5.5$ it is immediately possible to note that the richest previously acquired experience is given by the {\tt parametric, not random} configuration. In this case, the previously acquired experience on previously tested functions is well expendable with unknown functions. The average Euclidean distance from the maximum in the greedy episode, executed on the never tested function, is equal to $104.90887$ pixels. Despite of this positive value, it is also important to underline the high instability in the same measure. The standard deviation is equal to $44.7648$. The average percentage of value function's proximity to the maximum, is  equal to $98.7678\%$ with a standard deviation of $0.6472$. The general good performance of this declination is confirmed by the fact that the {\tt Gap Value} is the highest between the considered declinations of the employed configuration (plot (c) of figure $5.5$). 
+Looking at plot (a) of figure \ref{fig:ExpertResults} it is immediately possible to note that the richest previously acquired experience is given by the {\tt parametric, not random} configuration. In this case, the previously acquired experience on previously tested functions is well expendable with unknown functions. The average Euclidean distance from the maximum in the greedy episode, executed on the never tested function, is equal to $104.90887$ pixels. Despite of this positive value, it is also important to underline the high instability in the same measure. The standard deviation is equal to $44.7648$. The average percentage of value function's proximity to the maximum, is  equal to $98.7678\%$ with a standard deviation of $0.6472$. The general good performance of this declination is confirmed by the fact that the {\tt Gap Value} is the highest between the considered declinations of the employed configuration (plot (c) of figure \ref{fig:ExpertResults}). 
 
 The less reach previously acquired experience is guaranteed by the {\tt parametric, random} configuration. In this case, the Euclidean distance from the maximum constantly swings between $400$ and $500$ pixels. The average Euclidean distance is $441.6829$ pixels with a greater instability certified by the high average standard deviation ($45.5996$) of this measure. Despite of those bad values, it is important to underline that the average percentage of value function's proximity to the maximum is equal to $98.3243\%$ with the lowest standard deviation, which is equal to $0.384$. The general bad performance of this declination is also certified by the lowest {\tt Gap Value} which is equal to $0.6$.
 
